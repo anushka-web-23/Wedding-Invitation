@@ -1072,9 +1072,14 @@ function showRSVP(event){
 }
 
 <script>
-function enterInvitation(){
-  document.getElementById("inviteCover").classList.add("hide");
-  document.body.style.overflow = "auto";
+function enterInvitation() {
+    const cover = document.getElementById("inviteCover");
+
+    if (cover) {
+        cover.classList.add("hide");
+    }
+
+    document.body.style.overflow = "auto";
 }
 </script>
 </body>
