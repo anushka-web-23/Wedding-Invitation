@@ -27,6 +27,7 @@ body{
     overflow-x:hidden;
 }
 
+
 /* =====================================================
    YOU ARE INVITED OPENING
    ===================================================== */
@@ -77,6 +78,8 @@ body{
 
     box-shadow:
         0 20px 70px rgba(70,40,25,.10);
+
+    animation:inviteCardReveal 1.2s ease;
 }
 
 .invite-symbol{
@@ -87,13 +90,9 @@ body{
 
 .invite-small{
     font-family:'Montserrat',sans-serif;
-
     font-size:10px;
-
     letter-spacing:5px;
-
     text-transform:uppercase;
-
     margin-bottom:25px;
 }
 
@@ -103,7 +102,6 @@ body{
     font-size:clamp(55px,13vw,88px);
 
     font-weight:500;
-
     line-height:.85;
 
     color:#6b4438;
@@ -115,7 +113,6 @@ body{
     font-family:'Cormorant Garamond',serif;
 
     font-size:25px;
-
     line-height:1.4;
 
     margin-bottom:28px;
@@ -129,7 +126,6 @@ body{
     font-family:'Montserrat',sans-serif;
 
     font-size:11px;
-
     letter-spacing:4px;
 
     margin-bottom:34px;
@@ -139,7 +135,6 @@ body{
     border:1px solid #6b4438;
 
     background:#6b4438;
-
     color:white;
 
     padding:15px 28px;
@@ -147,7 +142,6 @@ body{
     font-family:'Montserrat',sans-serif;
 
     font-size:10px;
-
     letter-spacing:3px;
 
     cursor:pointer;
@@ -177,7 +171,6 @@ body{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
@@ -282,6 +275,11 @@ body{
     animation:bounce 2s infinite;
 }
 
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
 @keyframes heroReveal{
 
     from{
@@ -304,6 +302,20 @@ body{
 
     50%{
         transform:translateX(-50%) translateY(8px);
+    }
+
+}
+
+@keyframes inviteCardReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
     }
 
 }
@@ -523,6 +535,117 @@ h2{
 
 
 /* =====================================================
+   OUR FAMILIES
+   ===================================================== */
+
+.families{
+    background:#f3e8dc;
+
+    text-align:center;
+}
+
+.family-intro{
+    max-width:620px;
+
+    margin:20px auto 0;
+
+    line-height:1.9;
+
+    font-size:14px;
+}
+
+.family-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:45px;
+}
+
+.family-card{
+    background:#fffdf9;
+
+    padding:45px 30px;
+
+    border:1px solid rgba(100,70,50,.12);
+
+    box-shadow:
+        0 15px 45px rgba(50,30,20,.07);
+
+    transition:.4s;
+}
+
+.family-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 20px 55px rgba(50,30,20,.11);
+}
+
+.family-symbol{
+    font-size:30px;
+
+    margin-bottom:15px;
+}
+
+.family-card h3{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:36px;
+
+    font-weight:500;
+
+    color:#6b4438;
+}
+
+.family-line{
+    width:55px;
+
+    height:1px;
+
+    background:#b89b83;
+
+    margin:18px auto 25px;
+}
+
+.family-member{
+    padding:14px 0;
+
+    border-bottom:1px solid rgba(100,70,50,.10);
+}
+
+.family-member:last-child{
+    border-bottom:none;
+}
+
+.family-member strong{
+    display:block;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:23px;
+
+    font-weight:600;
+}
+
+.family-member span{
+    display:block;
+
+    margin-top:5px;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    opacity:.65;
+}
+
+
+/* =====================================================
    VENUE
    ===================================================== */
 
@@ -681,7 +804,24 @@ footer p{
         letter-spacing:3px;
     }
 
+    .family-grid{
+        grid-template-columns:1fr;
+    }
+
+    .family-card{
+        padding:38px 20px;
+    }
+
+    .family-card h3{
+        font-size:32px;
+    }
+
 }
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
 
 @media(max-width:380px){
 
@@ -709,29 +849,6 @@ footer p{
 
     .invite-title{
         font-size:52px;
-    }
-
-}
-
-
-/* =====================================================
-   EXTRA INVITATION ANIMATION
-   ===================================================== */
-
-.invite-card{
-    animation:inviteCardReveal 1.2s ease;
-}
-
-@keyframes inviteCardReveal{
-
-    from{
-        opacity:0;
-        transform:translateY(30px) scale(.97);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
     }
 
 }
@@ -772,12 +889,6 @@ footer p{
         <div class="invite-date">
             25 · NOVEMBER · 2026
         </div>
-
-        <!-- IMPORTANT:
-             Direct inline function.
-             Isliye separate JavaScript function
-             ki zarurat nahi hai.
-        -->
 
         <button
             class="invite-btn"
@@ -1082,6 +1193,165 @@ footer p{
                 src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=700&q=85"
                 alt="Wedding memory"
             >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OUR FAMILIES
+     ===================================================== -->
+
+<section class="families">
+
+    <div class="container">
+
+        <div class="flower">
+            ❀
+        </div>
+
+        <h2>
+            Our Families
+        </h2>
+
+        <p class="family-intro">
+            With the love and blessings of our families,
+            we invite you to celebrate this beautiful beginning.
+        </p>
+
+        <div class="family-grid">
+
+
+            <!-- =================================================
+                 SRASHTI FAMILY
+                 ================================================= -->
+
+            <div class="family-card">
+
+                <div class="family-symbol">
+                    🌸
+                </div>
+
+                <h3>
+                    Srashti's Family
+                </h3>
+
+                <div class="family-line"></div>
+
+                <div class="family-member">
+
+                    <strong>
+                        Mr. Vishnu Kumar Bansal
+                    </strong>
+
+                    <span>
+                        Father
+                    </span>
+
+                </div>
+
+
+                <div class="family-member">
+
+                    <strong>
+                        Mrs. Shaily Bansal
+                    </strong>
+
+                    <span>
+                        Mother
+                    </span>
+
+                </div>
+
+
+                <div class="family-member">
+
+                    <strong>
+                        Kushal Agrawal
+                    </strong>
+
+                    <span>
+                        Younger Brother
+                    </span>
+
+                </div>
+
+
+                <div class="family-member">
+
+                    <strong>
+                        Anushka Agrawal
+                    </strong>
+
+                    <span>
+                        Younger Sister
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TANMAY FAMILY
+                 ================================================= -->
+
+            <div class="family-card">
+
+                <div class="family-symbol">
+                    🤍
+                </div>
+
+                <h3>
+                    Tanmay's Family
+                </h3>
+
+                <div class="family-line"></div>
+
+
+                <div class="family-member">
+
+                    <strong>
+                        Mr. Pankaj Goyal
+                    </strong>
+
+                    <span>
+                        Father
+                    </span>
+
+                </div>
+
+
+                <div class="family-member">
+
+                    <strong>
+                        Mrs. Doly Goyal
+                    </strong>
+
+                    <span>
+                        Mother
+                    </span>
+
+                </div>
+
+
+                <div class="family-member">
+
+                    <strong>
+                        Krishna Goyal
+                    </strong>
+
+                    <span>
+                        Younger Brother
+                    </span>
+
+                </div>
+
+            </div>
+
 
         </div>
 
