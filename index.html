@@ -508,10 +508,116 @@ footer p{
     }
 
 }
+   /* ===== YOU ARE INVITED OPENING ===== */
+.invite-cover{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    linear-gradient(rgba(250,245,238,.88),rgba(250,245,238,.94)),
+    url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=90')
+    center/cover;
+  transition:opacity .9s ease, visibility .9s ease;
+}
+
+.invite-cover.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.invite-card{
+  width:min(90%,520px);
+  padding:45px 25px;
+  border:1px solid rgba(120,85,65,.35);
+  background:rgba(255,255,255,.35);
+  backdrop-filter:blur(5px);
+}
+
+.invite-symbol{
+  font-size:38px;
+  margin-bottom:22px;
+}
+
+.invite-small{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+
+.invite-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,12vw,82px);
+  line-height:.9;
+  color:#6b4438;
+  margin:0 0 18px;
+}
+
+.invite-names{
+  font-family:'Cormorant Garamond',serif;
+  font-size:25px;
+  margin-bottom:28px;
+}
+
+.invite-date{
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  letter-spacing:4px;
+  margin-bottom:32px;
+}
+
+.invite-btn{
+  border:1px solid #6b4438;
+  background:#6b4438;
+  color:white;
+  padding:14px 27px;
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  letter-spacing:3px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.invite-btn:hover{
+  background:transparent;
+  color:#6b4438;
+} 
 </style>
 </head>
 
 <body>
+    <div class="invite-cover" id="inviteCover">
+  <div class="invite-card">
+
+    <div class="invite-symbol">❀</div>
+
+    <div class="invite-small">
+      Together With Their Families
+    </div>
+
+    <h1 class="invite-title">You Are<br>Invited</h1>
+
+    <div class="invite-names">
+      To Celebrate The Wedding Of<br>
+      <strong>Aarav &amp; Ananya</strong>
+    </div>
+
+    <div class="invite-date">
+      25 · NOVEMBER · 2026
+    </div>
+
+    <button class="invite-btn" onclick="enterInvitation()">
+      ENTER INVITATION →
+    </button>
+
+  </div>
+</div>
 
 <!-- ================= HERO ================= -->
 
@@ -965,7 +1071,11 @@ function showRSVP(event){
 
 }
 
+<script>
+function enterInvitation(){
+  document.getElementById("inviteCover").classList.add("hide");
+  document.body.style.overflow = "auto";
+}
 </script>
-
 </body>
 </html>
