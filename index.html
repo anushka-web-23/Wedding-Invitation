@@ -7,6 +7,7 @@
 <title>Aarav & Ananya | Wedding Invitation</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
 
 *{
@@ -26,17 +27,161 @@ body{
     overflow-x:hidden;
 }
 
-/* ================= HERO ================= */
+/* =====================================================
+   YOU ARE INVITED OPENING
+   ===================================================== */
 
-.hero{
-    min-height:100vh;
-    position:relative;
+.invite-cover{
+    position:fixed;
+    inset:0;
+    z-index:99999;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
     text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(250,245,238,.88),
+        rgba(250,245,238,.95)
+    ),
+    url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=90')
+    center/cover;
+
+    opacity:1;
+    visibility:visible;
+
+    transition:
+        opacity .9s ease,
+        visibility .9s ease;
+}
+
+.invite-cover.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.invite-card{
+    width:min(90%,520px);
+
+    padding:48px 25px;
+
+    border:1px solid rgba(120,85,65,.35);
+
+    background:rgba(255,255,255,.38);
+
+    backdrop-filter:blur(6px);
+
+    box-shadow:
+        0 20px 70px rgba(70,40,25,.10);
+}
+
+.invite-symbol{
+    font-size:40px;
+    color:#6b4438;
+    margin-bottom:20px;
+}
+
+.invite-small{
+    font-family:'Montserrat',sans-serif;
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    margin-bottom:25px;
+}
+
+.invite-title{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(55px,13vw,88px);
+
+    font-weight:500;
+
+    line-height:.85;
+
+    color:#6b4438;
+
+    margin-bottom:22px;
+}
+
+.invite-names{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:25px;
+
+    line-height:1.4;
+
+    margin-bottom:28px;
+}
+
+.invite-names strong{
+    font-weight:600;
+}
+
+.invite-date{
+    font-family:'Montserrat',sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    margin-bottom:34px;
+}
+
+.invite-btn{
+    border:1px solid #6b4438;
+
+    background:#6b4438;
+
+    color:white;
+
+    padding:15px 28px;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+.invite-btn:hover{
+    background:transparent;
+    color:#6b4438;
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero{
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
     color:#6b4a3a;
 
     overflow:hidden;
@@ -52,7 +197,9 @@ body{
 
 .hero::after{
     content:"";
+
     position:absolute;
+
     inset:0;
 
     margin:18px;
@@ -68,6 +215,7 @@ body{
 
 .hero-content{
     position:relative;
+
     z-index:2;
 
     animation:heroReveal 1.8s ease;
@@ -75,7 +223,9 @@ body{
 
 .small-title{
     font-size:11px;
+
     letter-spacing:6px;
+
     text-transform:uppercase;
 
     margin-bottom:25px;
@@ -158,7 +308,10 @@ body{
 
 }
 
-/* ================= COMMON ================= */
+
+/* =====================================================
+   COMMON
+   ===================================================== */
 
 section{
     padding:90px 20px;
@@ -182,7 +335,10 @@ h2{
     font-weight:500;
 }
 
-/* ================= INTRO ================= */
+
+/* =====================================================
+   INTRO
+   ===================================================== */
 
 .intro{
     text-align:center;
@@ -200,7 +356,10 @@ h2{
     font-size:14px;
 }
 
-/* ================= COUNTDOWN ================= */
+
+/* =====================================================
+   COUNTDOWN
+   ===================================================== */
 
 .countdown-section{
     background:#e8d4c0;
@@ -248,7 +407,10 @@ h2{
     letter-spacing:2px;
 }
 
-/* ================= STORY ================= */
+
+/* =====================================================
+   STORY
+   ===================================================== */
 
 .story{
     text-align:center;
@@ -266,7 +428,10 @@ h2{
     font-size:14px;
 }
 
-/* ================= EVENTS ================= */
+
+/* =====================================================
+   EVENTS
+   ===================================================== */
 
 .events{
     background:#f3e8dc;
@@ -321,7 +486,10 @@ h2{
     margin-top:10px;
 }
 
-/* ================= GALLERY ================= */
+
+/* =====================================================
+   GALLERY
+   ===================================================== */
 
 .gallery{
     text-align:center;
@@ -353,7 +521,10 @@ h2{
     transform:scale(1.04);
 }
 
-/* ================= VENUE ================= */
+
+/* =====================================================
+   VENUE
+   ===================================================== */
 
 .venue{
     background:#e8d4c0;
@@ -395,7 +566,10 @@ h2{
     opacity:.75;
 }
 
-/* ================= RSVP ================= */
+
+/* =====================================================
+   RSVP
+   ===================================================== */
 
 .rsvp{
     text-align:center;
@@ -413,7 +587,10 @@ h2{
     font-size:14px;
 }
 
-/* ================= FOOTER ================= */
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 footer{
     padding:70px 20px;
@@ -437,7 +614,10 @@ footer p{
     letter-spacing:3px;
 }
 
-/* ================= MOBILE ================= */
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
 
 @media(max-width:600px){
 
@@ -475,13 +655,33 @@ footer p{
         font-size:32px;
     }
 
-    .hero::after{
-        margin:12px;
+    .invite-card{
+        width:90%;
+
+        padding:40px 18px;
+    }
+
+    .invite-small{
+        font-size:8px;
+
+        letter-spacing:3px;
+    }
+
+    .invite-title{
+        font-size:58px;
+    }
+
+    .invite-names{
+        font-size:22px;
+    }
+
+    .invite-date{
+        font-size:9px;
+
+        letter-spacing:3px;
     }
 
 }
-
-/* ================= SMALL MOBILE ================= */
 
 @media(max-width:380px){
 
@@ -507,119 +707,97 @@ footer p{
         letter-spacing:3px;
     }
 
-}
-   /* ===== YOU ARE INVITED OPENING ===== */
-.invite-cover{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:
-    linear-gradient(rgba(250,245,238,.88),rgba(250,245,238,.94)),
-    url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=90')
-    center/cover;
-  transition:opacity .9s ease, visibility .9s ease;
+    .invite-title{
+        font-size:52px;
+    }
+
 }
 
-.invite-cover.hide{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
+
+/* =====================================================
+   EXTRA INVITATION ANIMATION
+   ===================================================== */
 
 .invite-card{
-  width:min(90%,520px);
-  padding:45px 25px;
-  border:1px solid rgba(120,85,65,.35);
-  background:rgba(255,255,255,.35);
-  backdrop-filter:blur(5px);
+    animation:inviteCardReveal 1.2s ease;
 }
 
-.invite-symbol{
-  font-size:38px;
-  margin-bottom:22px;
+@keyframes inviteCardReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
 }
 
-.invite-small{
-  font-family:'Montserrat',sans-serif;
-  font-size:10px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-  margin-bottom:22px;
-}
-
-.invite-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(52px,12vw,82px);
-  line-height:.9;
-  color:#6b4438;
-  margin:0 0 18px;
-}
-
-.invite-names{
-  font-family:'Cormorant Garamond',serif;
-  font-size:25px;
-  margin-bottom:28px;
-}
-
-.invite-date{
-  font-family:'Montserrat',sans-serif;
-  font-size:11px;
-  letter-spacing:4px;
-  margin-bottom:32px;
-}
-
-.invite-btn{
-  border:1px solid #6b4438;
-  background:#6b4438;
-  color:white;
-  padding:14px 27px;
-  font-family:'Montserrat',sans-serif;
-  font-size:10px;
-  letter-spacing:3px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.invite-btn:hover{
-  background:transparent;
-  color:#6b4438;
-} 
 </style>
 </head>
 
+
 <body>
-    <div class="invite-cover" id="inviteCover">
-  <div class="invite-card">
 
-    <div class="invite-symbol">❀</div>
 
-    <div class="invite-small">
-      Together With Their Families
+<!-- =====================================================
+     YOU ARE INVITED OPENING
+     ===================================================== -->
+
+<div class="invite-cover" id="inviteCover">
+
+    <div class="invite-card">
+
+        <div class="invite-symbol">
+            ❀
+        </div>
+
+        <div class="invite-small">
+            Together With Their Families
+        </div>
+
+        <h1 class="invite-title">
+            You Are<br>
+            Invited
+        </h1>
+
+        <div class="invite-names">
+            To Celebrate The Wedding Of<br>
+            <strong>Aarav &amp; Ananya</strong>
+        </div>
+
+        <div class="invite-date">
+            25 · NOVEMBER · 2026
+        </div>
+
+        <!-- IMPORTANT:
+             Direct inline function.
+             Isliye separate JavaScript function
+             ki zarurat nahi hai.
+        -->
+
+        <button
+            class="invite-btn"
+            type="button"
+            onclick="
+                document.getElementById('inviteCover').classList.add('hide');
+                document.body.style.overflow='auto';
+            "
+        >
+            ENTER INVITATION →
+        </button>
+
     </div>
 
-    <h1 class="invite-title">You Are<br>Invited</h1>
-
-    <div class="invite-names">
-      To Celebrate The Wedding Of<br>
-      <strong>Aarav &amp; Ananya</strong>
-    </div>
-
-    <div class="invite-date">
-      25 · NOVEMBER · 2026
-    </div>
-
-    <button class="invite-btn" onclick="enterInvitation()">
-      ENTER INVITATION →
-    </button>
-
-  </div>
 </div>
 
-<!-- ================= HERO ================= -->
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
 
 <section class="hero">
 
@@ -629,13 +807,17 @@ footer p{
             Together with their families
         </div>
 
-        <h1>Aarav</h1>
+        <h1>
+            Aarav
+        </h1>
 
         <div class="and">
             &
         </div>
 
-        <h1>Ananya</h1>
+        <h1>
+            Ananya
+        </h1>
 
         <div class="date">
             25 · NOVEMBER · 2026
@@ -650,7 +832,9 @@ footer p{
 </section>
 
 
-<!-- ================= INTRO ================= -->
+<!-- =====================================================
+     INTRO
+     ===================================================== -->
 
 <section class="intro">
 
@@ -675,7 +859,9 @@ footer p{
 </section>
 
 
-<!-- ================= COUNTDOWN ================= -->
+<!-- =====================================================
+     COUNTDOWN
+     ===================================================== -->
 
 <section class="countdown-section">
 
@@ -714,7 +900,9 @@ footer p{
 </section>
 
 
-<!-- ================= STORY ================= -->
+<!-- =====================================================
+     STORY
+     ===================================================== -->
 
 <section class="story">
 
@@ -745,7 +933,9 @@ footer p{
 </section>
 
 
-<!-- ================= EVENTS ================= -->
+<!-- =====================================================
+     EVENTS
+     ===================================================== -->
 
 <section class="events">
 
@@ -760,6 +950,7 @@ footer p{
         </h2>
 
         <div class="event-grid">
+
 
             <div class="event-card">
 
@@ -836,6 +1027,7 @@ footer p{
 
             </div>
 
+
         </div>
 
     </div>
@@ -843,7 +1035,9 @@ footer p{
 </section>
 
 
-<!-- ================= GALLERY ================= -->
+<!-- =====================================================
+     GALLERY
+     ===================================================== -->
 
 <section class="gallery">
 
@@ -860,28 +1054,34 @@ footer p{
         <div class="gallery-grid">
 
             <img
-            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=85"
-            alt="Wedding memory">
+                src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=85"
+                alt="Wedding memory"
+            >
 
             <img
-            src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=85"
-            alt="Wedding memory">
+                src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=85"
+                alt="Wedding memory"
+            >
 
             <img
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=85"
-            alt="Wedding memory">
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=85"
+                alt="Wedding memory"
+            >
 
             <img
-            src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=700&q=85"
-            alt="Wedding memory">
+                src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=700&q=85"
+                alt="Wedding memory"
+            >
 
             <img
-            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=85"
-            alt="Wedding memory">
+                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=85"
+                alt="Wedding memory"
+            >
 
             <img
-            src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=700&q=85"
-            alt="Wedding memory">
+                src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=700&q=85"
+                alt="Wedding memory"
+            >
 
         </div>
 
@@ -890,7 +1090,9 @@ footer p{
 </section>
 
 
-<!-- ================= VENUE ================= -->
+<!-- =====================================================
+     VENUE
+     ===================================================== -->
 
 <section class="venue">
 
@@ -911,12 +1113,11 @@ footer p{
         </p>
 
         <a
-        class="map-btn"
-        href="https://www.google.com/maps"
-        target="_blank">
-
+            class="map-btn"
+            href="https://www.google.com/maps"
+            target="_blank"
+        >
             VIEW LOCATION
-
         </a>
 
     </div>
@@ -924,7 +1125,9 @@ footer p{
 </section>
 
 
-<!-- ================= RSVP ================= -->
+<!-- =====================================================
+     RSVP
+     ===================================================== -->
 
 <section class="rsvp">
 
@@ -944,12 +1147,11 @@ footer p{
         </p>
 
         <a
-        class="rsvp-btn"
-        href="#"
-        onclick="showRSVP(event)">
-
+            class="rsvp-btn"
+            href="#"
+            onclick="showRSVP(event)"
+        >
             RSVP NOW
-
         </a>
 
     </div>
@@ -957,12 +1159,14 @@ footer p{
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
 
 <footer>
 
     <h2>
-        Aarav & Ananya
+        Aarav &amp; Ananya
     </h2>
 
     <p>
@@ -976,11 +1180,15 @@ footer p{
 </footer>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
 
 <script>
 
-/* ================= COUNTDOWN ================= */
+/* =====================================================
+   COUNTDOWN
+   ===================================================== */
 
 const weddingDate =
 new Date("November 25, 2026 19:00:00").getTime();
@@ -1059,7 +1267,9 @@ updateCountdown();
 setInterval(updateCountdown,1000);
 
 
-/* ================= RSVP ================= */
+/* =====================================================
+   RSVP
+   ===================================================== */
 
 function showRSVP(event){
 
@@ -1071,16 +1281,8 @@ function showRSVP(event){
 
 }
 
-<script>
-function enterInvitation() {
-    const cover = document.getElementById("inviteCover");
-
-    if (cover) {
-        cover.classList.add("hide");
-    }
-
-    document.body.style.overflow = "auto";
-}
 </script>
+
+
 </body>
 </html>
