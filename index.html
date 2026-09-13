@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aarav & Ananya | Wedding Invitation</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fffaf5;
+    color:#3d2924;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+section{
+    padding:80px 20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    background:
+      linear-gradient(rgba(55,30,20,.25),rgba(55,30,20,.45)),
+      url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=85')
+      center/cover;
+    color:white;
+}
+
+.hero-content{
+    animation:fadeUp 1.5s ease;
+    padding:25px;
+}
+
+.small-title{
+    font-size:13px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(65px,13vw,120px);
+    line-height:.8;
+    font-weight:500;
+}
+
+.and{
+    font-family:'Cormorant Garamond',serif;
+    font-size:40px;
+    margin:20px 0;
+    font-style:italic;
+}
+
+.date{
+    font-size:14px;
+    letter-spacing:4px;
+    margin-top:30px;
+}
+
+.scroll{
+    position:absolute;
+    bottom:30px;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+/* INTRO */
+
+.intro{
+    text-align:center;
+    background:#fffaf5;
+}
+
+.flower{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.intro h2,
+.story h2,
+.events h2,
+.gallery h2,
+.venue h2,
+.rsvp h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:52px;
+    font-weight:500;
+}
+
+.intro p{
+    max-width:600px;
+    margin:20px auto;
+    line-height:1.9;
+    font-size:14px;
+}
+
+/* COUNTDOWN */
+
+.countdown-section{
+    background:#ead8c8;
+    text-align:center;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    width:100px;
+    padding:20px 10px;
+    background:rgba(255,255,255,.65);
+    border:1px solid rgba(70,40,30,.15);
+}
+
+.time-box strong{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-size:42px;
+    font-weight:500;
+}
+
+.time-box span{
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+/* STORY */
+
+.story{
+    text-align:center;
+}
+
+.story-text{
+    max-width:650px;
+    margin:25px auto;
+    line-height:2;
+    font-size:14px;
+}
+
+/* EVENTS */
+
+.events{
+    background:#f5ebe2;
+    text-align:center;
+}
+
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    max-width:750px;
+    margin:40px auto 0;
+}
+
+.event-card{
+    background:white;
+    padding:35px 20px;
+    border-radius:2px;
+    transition:.3s;
+    box-shadow:0 10px 35px rgba(70,40,30,.07);
+}
+
+.event-card:hover{
+    transform:translateY(-5px);
+}
+
+.event-icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.event-card h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;
+    font-weight:500;
+}
+
+.event-card p{
+    font-size:12px;
+    line-height:1.8;
+    margin-top:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+    text-align:center;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:40px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+/* VENUE */
+
+.venue{
+    text-align:center;
+    background:#ead8c8;
+}
+
+.venue p{
+    margin:15px auto;
+    line-height:1.8;
+    max-width:500px;
+    font-size:14px;
+}
+
+.map-btn,
+.rsvp-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 28px;
+    background:#3d2924;
+    color:white;
+    text-decoration:none;
+    font-size:11px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.map-btn:hover,
+.rsvp-btn:hover{
+    opacity:.8;
+}
+
+/* RSVP */
+
+.rsvp{
+    text-align:center;
+}
+
+.rsvp p{
+    margin:20px auto;
+    max-width:550px;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:60px 20px;
+    text-align:center;
+    background:#3d2924;
+    color:white;
+}
+
+footer h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:45px;
+    font-weight:400;
+}
+
+footer p{
+    font-size:11px;
+    letter-spacing:2px;
+    margin-top:15px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    section{
+        padding:65px 18px;
+    }
+
+    .hero h1{
+        font-size:68px;
+    }
+
+    .intro h2,
+    .story h2,
+    .events h2,
+    .gallery h2,
+    .venue h2,
+    .rsvp h2{
+        font-size:43px;
+    }
+
+    .event-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-grid img{
+        height:210px;
+    }
+
+    .time-box{
+        width:75px;
+    }
+
+    .time-box strong{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="small-title">
+Together with their families
+</div>
+
+<h1>Aarav</h1>
+
+<div class="and">&</div>
+
+<h1>Ananya</h1>
+
+<div class="date">
+25 · NOVEMBER · 2026
+</div>
+
+</div>
+
+<div class="scroll">
+SCROLL TO DISCOVER ↓
+</div>
+
+</section>
+
+
+<!-- INTRO -->
+<section class="intro">
+
+<div class="container">
+
+<div class="flower">❈</div>
+
+<h2>We're Getting Married</h2>
+
+<p>
+With joyful hearts and the blessings of our families,
+we invite you to celebrate the beginning of our beautiful journey together.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- COUNTDOWN -->
+<section class="countdown-section">
+
+<div class="container">
+
+<h2>Counting Every Moment</h2>
+
+<div class="countdown">
+
+<div class="time-box">
+<strong id="days">00</strong>
+<span>DAYS</span>
+</div>
+
+<div class="time-box">
+<strong id="hours">00</strong>
+<span>HOURS</span>
+</div>
+
+<div class="time-box">
+<strong id="minutes">00</strong>
+<span>MINUTES</span>
+</div>
+
+<div class="time-box">
+<strong id="seconds">00</strong>
+<span>SECONDS</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STORY -->
+<section class="story">
+
+<div class="container">
+
+<div class="flower">♡</div>
+
+<h2>Our Story</h2>
+
+<p class="story-text">
+Two hearts, one beautiful journey and countless memories.
+What started with a simple hello slowly became a story
+we want to cherish for a lifetime.
+Now, surrounded by the people we love,
+we are ready to begin our forever.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- EVENTS -->
+<section class="events">
+
+<div class="container">
+
+<div class="flower">✦</div>
+
+<h2>The Wedding Celebrations</h2>
+
+<div class="event-grid">
+
+<div class="event-card">
+<div class="event-icon">🌼</div>
+<h3>Haldi</h3>
+<p>
+23 November 2026<br>
+11:00 AM<br>
+Family Residence
+</p>
+</div>
+
+<div class="event-card">
+<div class="event-icon">🌿</div>
+<h3>Mehndi</h3>
+<p>
+24 November 2026<br>
+5:00 PM<br>
+Family Residence
+</p>
+</div>
+
+<div class="event-card">
+<div class="event-icon">💍</div>
+<h3>Wedding</h3>
+<p>
+25 November 2026<br>
+7:00 PM<br>
+Royal Wedding Venue
+</p>
+</div>
+
+<div class="event-card">
+<div class="event-icon">🥂</div>
+<h3>Reception</h3>
+<p>
+26 November 2026<br>
+7:30 PM<br>
+Grand Celebration Hall
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section class="gallery">
+
+<div class="container">
+
+<div class="flower">❈</div>
+
+<h2>Our Memories</h2>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=85">
+
+<img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=85">
+
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=85">
+
+<img src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=700&q=85">
+
+<img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=85">
+
+<img src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=700&q=85">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VENUE -->
+<section class="venue">
+
+<div class="container">
+
+<div class="flower">📍</div>
+
+<h2>The Wedding Venue</h2>
+
+<p>
+Royal Wedding Venue<br>
+Beautiful Celebration Hall<br>
+Hathras, Uttar Pradesh
+</p>
+
+<a class="map-btn"
+href="https://www.google.com/maps"
+target="_blank">
+VIEW LOCATION
+</a>
+
+</div>
+
+</section>
+
+
+<!-- RSVP -->
+<section class="rsvp">
+
+<div class="container">
+
+<div class="flower">♡</div>
+
+<h2>Will You Join Us?</h2>
+
+<p>
+Your presence and blessings will make our celebration
+even more special.
+</p>
+
+<a class="rsvp-btn"
+href="#"
+onclick="alert('RSVP form will be added in the next step!')">
+RSVP NOW
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<h2>Aarav & Ananya</h2>
+
+<p>25 · 11 · 2026</p>
+
+<p>Made with love ♡</p>
+
+</footer>
+
+
+<script>
+
+const weddingDate = new Date("November 25, 2026 19:00:00").getTime();
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+
+    const distance = weddingDate - now;
+
+    if(distance <= 0){
+        document.getElementById("days").innerHTML="00";
+        document.getElementById("hours").innerHTML="00";
+        document.getElementById("minutes").innerHTML="00";
+        document.getElementById("seconds").innerHTML="00";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance / (1000*60*60)) % 24);
+    const minutes = Math.floor((distance / (1000*60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    document.getElementById("days").innerHTML=days;
+    document.getElementById("hours").innerHTML=hours;
+    document.getElementById("minutes").innerHTML=minutes;
+    document.getElementById("seconds").innerHTML=seconds;
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+</script>
+
+</body>
+</html>
