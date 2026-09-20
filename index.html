@@ -8,6 +8,10 @@
 
 <style>
 
+/* ================================
+   BASIC
+================================ */
+
 *{
     margin:0;
     padding:0;
@@ -19,187 +23,229 @@ html{
 }
 
 body{
-    font-family:Georgia, "Times New Roman", serif;
+    margin:0;
+    font-family:Georgia,"Times New Roman",serif;
     background:#fffaf5;
     color:#4b3028;
 }
 
 
-/* =========================
-   FIRST INVITATION PAGE — ROYAL ENVELOPE
-========================= */
+/* =========================================
+   ROYAL OPENING PAGE
+========================================= */
 
 #inviteCover{
     position:fixed;
     inset:0;
-    z-index:9999;
+    width:100%;
+    height:100vh;
+
+    z-index:999999;
+
+    background:#f5e4cc;
+
     overflow:hidden;
-    background:#f7eadb;
-    transition:opacity 1.2s ease;
+
+    opacity:1;
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
 }
+
+#inviteCover.opening{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+
+/* Main invitation image */
 
 .royalCover{
     position:relative;
+
     width:100%;
     height:100%;
 
-    background-image:url("wedding-cover.png");
-    background-position:center center;
-    background-repeat:no-repeat;
+    background-image:
+        url("wedding-cover.png");
+
     background-size:cover;
+
+    background-position:center center;
+
+    background-repeat:no-repeat;
+
+    cursor:pointer;
+
+    transform:scale(1);
+
+    transition:
+        transform 1.2s ease;
 }
+
+#inviteCover.opening .royalCover{
+    transform:scale(1.06);
+}
+
+
+/* =========================================
+   FALLING PETALS
+========================================= */
 
 .royalPetals{
     position:absolute;
+
     inset:0;
+
     overflow:hidden;
+
     pointer-events:none;
+
+    z-index:3;
 }
 
 .royalPetal{
     position:absolute;
-    top:-35px;
 
-    width:11px;
-    height:17px;
+    top:-50px;
+
+    width:12px;
+    height:20px;
+
+    background:#8d1823;
 
     border-radius:100% 0 100% 0;
 
-    background:#8f1724;
+    opacity:.75;
 
-    opacity:.65;
-
-    animation:royalFall linear infinite;
+    animation:
+        fallingPetal linear infinite;
 }
 
 .royalPetal:nth-child(1){
-    left:8%;
-    animation-duration:9s;
-    animation-delay:1s;
-}
-
-.royalPetal:nth-child(2){
-    left:24%;
-    animation-duration:12s;
-    animation-delay:3s;
-}
-
-.royalPetal:nth-child(3){
-    left:47%;
+    left:7%;
     animation-duration:10s;
     animation-delay:0s;
 }
 
-.royalPetal:nth-child(4){
-    left:71%;
+.royalPetal:nth-child(2){
+    left:21%;
     animation-duration:13s;
     animation-delay:2s;
 }
 
-.royalPetal:nth-child(5){
-    left:89%;
-    animation-duration:11s;
+.royalPetal:nth-child(3){
+    left:38%;
+    animation-duration:9s;
     animation-delay:4s;
 }
 
-@keyframes royalFall{
+.royalPetal:nth-child(4){
+    left:58%;
+    animation-duration:12s;
+    animation-delay:1s;
+}
+
+.royalPetal:nth-child(5){
+    left:76%;
+    animation-duration:10s;
+    animation-delay:3s;
+}
+
+.royalPetal:nth-child(6){
+    left:92%;
+    animation-duration:14s;
+    animation-delay:5s;
+}
+
+@keyframes fallingPetal{
 
     0%{
         transform:
-            translate3d(0,-40px,0)
+            translateY(-60px)
             rotate(0deg);
     }
 
-    50%{
+    30%{
         transform:
-            translate3d(35px,50vh,0)
-            rotate(180deg);
+            translateY(30vh)
+            translateX(25px)
+            rotate(100deg);
+    }
+
+    60%{
+        transform:
+            translateY(65vh)
+            translateX(-25px)
+            rotate(220deg);
     }
 
     100%{
         transform:
-            translate3d(-25px,110vh,0)
+            translateY(110vh)
+            translateX(30px)
             rotate(360deg);
     }
-
 }
 
+
+/* =========================================
+   CLICK AREA
+   Entire envelope area is clickable
+========================================= */
+
 .envelopeClickArea{
+
     position:absolute;
 
     left:50%;
-    top:50%;
-
-    width:min(82vw,820px);
-    height:min(40vw,600px);
+    top:60%;
 
     transform:translate(-50%,-50%);
 
+    width:65%;
+    height:38%;
+
     border:0;
-    padding:0;
-    margin:0;
 
     background:transparent;
 
     cursor:pointer;
 
     z-index:10;
+
+    outline:none;
 }
 
 .envelopeClickArea:focus{
     outline:none;
 }
 
-#inviteCover.opening .royalCover{
 
-    transform:scale(1.035);
-
-    transition:
-        transform 1.15s ease;
-}
-
-#inviteCover.opening{
-
-    opacity:0;
-
-    pointer-events:none;
-}
-
-@media(max-width:600px){
-
-    .royalCover{
-        background-position:center center;
-    }
-
-    .envelopeClickArea{
-
-        width:94vw;
-        height:42vh;
-
-        top:50%;
-    }
-
-}
-
-
-/* =========================
+/* =========================================
    HERO
-========================= */
+========================================= */
 
 .hero{
+
     min-height:100vh;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     text-align:center;
 
-    padding:50px 20px;
+    padding:60px 20px;
 
     background:
         linear-gradient(
-            rgba(80,35,20,.28),
-            rgba(80,35,20,.38)
+            rgba(80,35,20,.25),
+            rgba(80,35,20,.40)
         ),
         url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=90")
         center/cover no-repeat;
@@ -213,13 +259,18 @@ body{
 
 .save{
     font-size:18px;
-    letter-spacing:5px;
+
+    letter-spacing:6px;
+
     margin-bottom:25px;
 }
 
 .hero h1{
     font-size:80px;
+
     font-weight:normal;
+
+    line-height:1.05;
 
     text-shadow:
         0 4px 20px rgba(0,0,0,.4);
@@ -227,121 +278,149 @@ body{
 
 .amp{
     font-size:45px;
+
     font-style:italic;
-    margin:5px 0;
+
+    margin:8px 0;
 }
 
 .date{
     margin-top:40px;
 
-    font-size:24px;
+    font-size:23px;
+
     letter-spacing:6px;
+
     font-weight:600;
 }
 
 
-/* =========================
-   GENERAL
-========================= */
+/* =========================================
+   COMMON SECTIONS
+========================================= */
 
 section{
-    padding:80px 20px;
+    padding:85px 20px;
 }
 
 .container{
     max-width:1100px;
+
     margin:auto;
 }
 
 .sectionTitle{
     text-align:center;
+
     margin-bottom:45px;
 }
 
 .sectionTitle h2{
     font-size:42px;
+
     font-weight:normal;
+
     margin-bottom:12px;
+
+    color:#5a342a;
 }
 
 .sectionTitle p{
     color:#8a6557;
+
+    font-size:16px;
 }
 
 
-/* =========================
+/* =========================================
    INTRO
-========================= */
+========================================= */
 
 .intro{
     text-align:center;
+
     background:#fffaf5;
 }
 
 .intro p{
     max-width:750px;
+
     margin:auto;
 
     line-height:1.9;
+
     font-size:18px;
+
+    color:#684b40;
 }
 
 
-/* =========================
+/* =========================================
    COUNTDOWN
-========================= */
+========================================= */
 
 .countdown{
     background:#f3e5da;
+
     text-align:center;
 }
 
 .countBox{
+
     display:flex;
 
     justify-content:center;
 
-    gap:30px;
+    align-items:center;
+
+    gap:25px;
 
     flex-wrap:wrap;
 }
 
 .timeBox{
-    width:120px;
 
-    padding:22px 10px;
+    width:125px;
+
+    padding:23px 10px;
 
     background:white;
 
     border-radius:8px;
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,.06);
+        0 5px 20px rgba(0,0,0,.07);
 }
 
 .timeBox span{
+
     display:block;
 
-    font-size:35px;
+    font-size:36px;
 
     color:#7b4b3d;
+
+    margin-bottom:6px;
 }
 
 .timeBox small{
+
     letter-spacing:2px;
+
     color:#8b7065;
 }
 
 
-/* =========================
+/* =========================================
    STORY
-========================= */
+========================================= */
 
 .story{
     background:white;
 }
 
 .storyText{
+
     max-width:800px;
 
     margin:auto;
@@ -351,18 +430,21 @@ section{
     line-height:2;
 
     font-size:17px;
+
+    color:#65483e;
 }
 
 
-/* =========================
+/* =========================================
    EVENTS
-========================= */
+========================================= */
 
 .events{
     background:#fffaf5;
 }
 
 .eventGrid{
+
     display:grid;
 
     grid-template-columns:
@@ -372,9 +454,10 @@ section{
 }
 
 .eventCard{
+
     background:white;
 
-    padding:30px 20px;
+    padding:32px 20px;
 
     text-align:center;
 
@@ -389,42 +472,52 @@ section{
 }
 
 .eventCard:hover{
+
     transform:translateY(-6px);
 
     box-shadow:
-        0 12px 30px rgba(0,0,0,.1);
+        0 12px 30px rgba(0,0,0,.10);
 }
 
 .eventCard h3{
-    font-size:25px;
+
+    font-size:26px;
 
     margin-bottom:15px;
 
     font-weight:normal;
+
+    color:#6a392d;
 }
 
 .eventCard .eventDate{
+
     font-weight:bold;
 
-    margin-bottom:8px;
+    margin-bottom:10px;
+
+    color:#7b4b3d;
 }
 
 .eventCard p{
+
     line-height:1.7;
 
     color:#76594e;
 }
 
 
-/* =========================
+/* =========================================
    GALLERY
-========================= */
+========================================= */
 
 .gallery{
+
     background:#f3e5da;
 }
 
 .galleryGrid{
+
     display:grid;
 
     grid-template-columns:
@@ -434,6 +527,7 @@ section{
 }
 
 .galleryGrid img{
+
     width:100%;
 
     height:300px;
@@ -448,6 +542,7 @@ section{
 }
 
 .galleryGrid img:hover{
+
     transform:scale(1.03);
 
     box-shadow:
@@ -455,15 +550,16 @@ section{
 }
 
 
-/* =========================
+/* =========================================
    FAMILIES
-========================= */
+========================================= */
 
 .families{
     background:white;
 }
 
 .familyGrid{
+
     display:grid;
 
     grid-template-columns:1fr 1fr;
@@ -472,6 +568,7 @@ section{
 }
 
 .familyCard{
+
     background:#fffaf5;
 
     padding:35px;
@@ -485,35 +582,44 @@ section{
 }
 
 .familyCard h3{
+
     font-size:28px;
 
     font-weight:normal;
 
     margin-bottom:25px;
+
+    color:#633b30;
 }
 
 .familyCard p{
+
     margin:12px 0;
 
     line-height:1.6;
+
+    color:#65483e;
 }
 
 .familyCard strong{
+
     font-size:17px;
 }
 
 
-/* =========================
+/* =========================================
    VENUE
-========================= */
+========================================= */
 
 .venue{
+
     text-align:center;
 
     background:#f3e5da;
 }
 
 .venueBox{
+
     max-width:700px;
 
     margin:auto;
@@ -529,20 +635,25 @@ section{
 }
 
 .venueBox h3{
+
     font-size:32px;
 
     font-weight:normal;
 
     margin-bottom:15px;
+
+    color:#633b30;
 }
 
 .venueBox p{
+
     line-height:1.8;
 
     color:#76594e;
 }
 
 .mapBtn{
+
     display:inline-block;
 
     margin-top:25px;
@@ -563,31 +674,37 @@ section{
 }
 
 .mapBtn:hover{
+
     background:#4b3028;
 
     transform:translateY(-2px);
 }
 
 
-/* =========================
+/* =========================================
    RSVP
-========================= */
+========================================= */
 
 .rsvp{
+
     text-align:center;
 
     background:white;
 }
 
 .rsvpText{
+
     max-width:650px;
 
     margin:auto;
 
     line-height:1.8;
+
+    color:#65483e;
 }
 
 .rsvpBtn{
+
     display:inline-block;
 
     margin-top:25px;
@@ -606,15 +723,17 @@ section{
 }
 
 .rsvpBtn:hover{
+
     background:#4b3028;
 }
 
 
-/* =========================
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 footer{
+
     background:#4b3028;
 
     color:white;
@@ -625,6 +744,7 @@ footer{
 }
 
 footer h2{
+
     font-size:38px;
 
     font-weight:normal;
@@ -633,31 +753,32 @@ footer h2{
 }
 
 footer p{
+
     letter-spacing:3px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================
+   TABLET
+========================================= */
 
 @media(max-width:800px){
 
     .hero h1{
-        font-size:52px;
+        font-size:55px;
     }
 
     .amp{
-        font-size:32px;
+        font-size:35px;
     }
 
     .date{
-        font-size:18px;
+        font-size:19px;
         letter-spacing:4px;
     }
 
     .sectionTitle h2{
-        font-size:34px;
+        font-size:35px;
     }
 
     .eventGrid{
@@ -669,7 +790,7 @@ footer p{
     }
 
     .galleryGrid img{
-        height:220px;
+        height:230px;
     }
 
     .familyGrid{
@@ -679,15 +800,50 @@ footer p{
 }
 
 
-@media(max-width:500px){
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .royalCover{
+
+        background-size:cover;
+
+        background-position:center center;
+    }
+
+    .envelopeClickArea{
+
+        width:88%;
+
+        height:35%;
+
+        top:58%;
+    }
 
     .hero h1{
         font-size:43px;
     }
 
+    .amp{
+        font-size:30px;
+    }
+
     .date{
-        font-size:17px;
+        font-size:16px;
+
         letter-spacing:3px;
+    }
+
+    .save{
+        font-size:13px;
+
+        letter-spacing:4px;
+    }
+
+    .sectionTitle h2{
+        font-size:31px;
     }
 
     .eventGrid{
@@ -696,6 +852,10 @@ footer p{
 
     .galleryGrid{
         grid-template-columns:1fr;
+    }
+
+    .galleryGrid img{
+        height:280px;
     }
 
     .countBox{
@@ -708,6 +868,27 @@ footer p{
 
 }
 
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .timeBox{
+        width:90px;
+    }
+
+    .timeBox span{
+        font-size:30px;
+    }
+
+}
+
 </style>
 </head>
 
@@ -715,39 +896,53 @@ footer p{
 <body>
 
 
-<!-- =========================
-     FIRST ENTER PAGE
-========================= -->
+<!-- =================================================
+     ROYAL FRONT / ENVELOPE
+================================================= -->
 
 <div id="inviteCover">
 
-    <div class="royalCover">
+    <div
+        class="royalCover"
+        onclick="enterInvitation()"
+    >
+
+        <!-- Floating petals -->
 
         <div class="royalPetals">
 
             <span class="royalPetal"></span>
+
             <span class="royalPetal"></span>
+
             <span class="royalPetal"></span>
+
             <span class="royalPetal"></span>
+
+            <span class="royalPetal"></span>
+
             <span class="royalPetal"></span>
 
         </div>
 
 
+        <!-- Invisible clickable envelope area -->
+
         <button
             class="envelopeClickArea"
-            onclick="enterInvitation()"
-            aria-label="Open wedding invitation">
-        </button>
+            aria-label="Open invitation"
+            onclick="event.stopPropagation(); enterInvitation();"
+        ></button>
 
     </div>
 
 </div>
 
 
-<!-- =========================
+
+<!-- =================================================
      HERO
-========================= -->
+================================================= -->
 
 <section class="hero">
 
@@ -778,9 +973,10 @@ footer p{
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      INTRO
-========================= -->
+================================================= -->
 
 <section class="intro">
 
@@ -812,9 +1008,10 @@ footer p{
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      COUNTDOWN
-========================= -->
+================================================= -->
 
 <section class="countdown">
 
@@ -834,6 +1031,7 @@ footer p{
 
 
         <div class="countBox">
+
 
             <div class="timeBox">
 
@@ -886,6 +1084,7 @@ footer p{
 
             </div>
 
+
         </div>
 
     </div>
@@ -893,9 +1092,10 @@ footer p{
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      STORY
-========================= -->
+================================================= -->
 
 <section class="story">
 
@@ -924,7 +1124,9 @@ footer p{
 
             </p>
 
+
             <br>
+
 
             <p>
 
@@ -941,9 +1143,10 @@ footer p{
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      EVENTS
-========================= -->
+================================================= -->
 
 <section class="events">
 
@@ -984,6 +1187,7 @@ footer p{
             </div>
 
 
+
             <div class="eventCard">
 
                 <h3>
@@ -1003,6 +1207,7 @@ footer p{
             </div>
 
 
+
             <div class="eventCard">
 
                 <h3>
@@ -1020,6 +1225,7 @@ footer p{
                 </p>
 
             </div>
+
 
 
             <div class="eventCard">
@@ -1048,9 +1254,10 @@ footer p{
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      GALLERY
-========================= -->
+================================================= -->
 
 <section class="gallery">
 
@@ -1071,17 +1278,42 @@ footer p{
 
         <div class="galleryGrid">
 
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80">
 
-            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80">
+            <img
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80"
+                alt="Wedding"
+            >
 
-            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80">
 
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80">
+            <img
+                src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80"
+                alt="Wedding"
+            >
 
-            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80">
 
-            <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=900&q=80">
+            <img
+                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80"
+                alt="Wedding"
+            >
+
+
+            <img
+                src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80"
+                alt="Wedding"
+            >
+
+
+            <img
+                src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80"
+                alt="Wedding"
+            >
+
+
+            <img
+                src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=900&q=80"
+                alt="Wedding"
+            >
+
 
         </div>
 
@@ -1090,9 +1322,10 @@ footer p{
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      FAMILIES
-========================= -->
+================================================= -->
 
 <section class="families">
 
@@ -1120,7 +1353,9 @@ footer p{
                     Srashti's Family
                 </h3>
 
+
                 <p>
+
                     <strong>
                         Mr. Vishnu Kumar Bansal
                     </strong>
@@ -1128,10 +1363,12 @@ footer p{
                     <br>
 
                     Father
+
                 </p>
 
 
                 <p>
+
                     <strong>
                         Mrs. Shaily Bansal
                     </strong>
@@ -1139,10 +1376,12 @@ footer p{
                     <br>
 
                     Mother
+
                 </p>
 
 
                 <p>
+
                     <strong>
                         Kushal Agrawal
                     </strong>
@@ -1150,10 +1389,12 @@ footer p{
                     <br>
 
                     Younger Brother
+
                 </p>
 
 
                 <p>
+
                     <strong>
                         Anushka Agrawal
                     </strong>
@@ -1161,9 +1402,11 @@ footer p{
                     <br>
 
                     Younger Sister
+
                 </p>
 
             </div>
+
 
 
             <div class="familyCard">
@@ -1174,6 +1417,7 @@ footer p{
 
 
                 <p>
+
                     <strong>
                         Mr. Pankaj Goyal
                     </strong>
@@ -1181,10 +1425,12 @@ footer p{
                     <br>
 
                     Father
+
                 </p>
 
 
                 <p>
+
                     <strong>
                         Mrs. Doly Goyal
                     </strong>
@@ -1192,10 +1438,12 @@ footer p{
                     <br>
 
                     Mother
+
                 </p>
 
 
                 <p>
+
                     <strong>
                         Krishna Goyal
                     </strong>
@@ -1203,6 +1451,7 @@ footer p{
                     <br>
 
                     Younger Brother
+
                 </p>
 
             </div>
@@ -1215,9 +1464,10 @@ footer p{
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      VENUE
-========================= -->
+================================================= -->
 
 <section class="venue">
 
@@ -1264,7 +1514,8 @@ footer p{
             <a
                 href="https://maps.app.goo.gl/4o7F85QBuyG4CtwS8"
                 target="_blank"
-                class="mapBtn">
+                class="mapBtn"
+            >
 
                 📍 Get Directions
 
@@ -1277,9 +1528,10 @@ footer p{
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      RSVP
-========================= -->
+================================================= -->
 
 <section class="rsvp">
 
@@ -1309,7 +1561,10 @@ footer p{
             </p>
 
 
-            <a href="#" class="rsvpBtn">
+            <a
+                href="#"
+                class="rsvpBtn"
+            >
                 RSVP NOW
             </a>
 
@@ -1320,9 +1575,10 @@ footer p{
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      FOOTER
-========================= -->
+================================================= -->
 
 <footer>
 
@@ -1343,38 +1599,49 @@ footer p{
 </footer>
 
 
-<!-- =========================
+
+<!-- =================================================
      JAVASCRIPT
-========================= -->
+================================================= -->
 
 <script>
+
+
+/* =========================================
+   OPEN INVITATION
+========================================= */
 
 function enterInvitation(){
 
     const cover =
         document.getElementById("inviteCover");
 
-    cover.classList.add("opening");
+    if(
+        !cover.classList.contains("opening")
+    ){
 
-    setTimeout(function(){
+        cover.classList.add("opening");
 
-        cover.style.display = "none";
-
-    },1200);
+    }
 
 }
 
 
-/* COUNTDOWN */
+/* =========================================
+   COUNTDOWN
+========================================= */
 
 const weddingDate =
-new Date("November 30, 2026 19:00:00").getTime();
+    new Date(
+        "November 30, 2026 19:00:00"
+    ).getTime();
 
 
 function updateCountdown(){
 
     const now =
         new Date().getTime();
+
 
     const distance =
         weddingDate - now;
@@ -1407,8 +1674,10 @@ function updateCountdown(){
 
     const hours =
         Math.floor(
-            (distance %
-            (1000 * 60 * 60 * 24))
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            )
             /
             (1000 * 60 * 60)
         );
@@ -1416,8 +1685,10 @@ function updateCountdown(){
 
     const minutes =
         Math.floor(
-            (distance %
-            (1000 * 60 * 60))
+            (
+                distance %
+                (1000 * 60 * 60)
+            )
             /
             (1000 * 60)
         );
@@ -1425,8 +1696,10 @@ function updateCountdown(){
 
     const seconds =
         Math.floor(
-            (distance %
-            (1000 * 60))
+            (
+                distance %
+                (1000 * 60)
+            )
             /
             1000
         );
@@ -1452,12 +1725,15 @@ function updateCountdown(){
 
 updateCountdown();
 
+
 setInterval(
     updateCountdown,
     1000
 );
 
+
 </script>
+
 
 </body>
 </html>
