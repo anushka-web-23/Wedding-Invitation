@@ -25,115 +25,326 @@ body{
 }
 
 /* =========================
-   FIRST INVITATION PAGE
+   FIRST INVITATION PAGE — ENVELOPE
 ========================= */
 
 #inviteCover{
     position:fixed;
     inset:0;
     z-index:9999;
-
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-
     background:
-        linear-gradient(rgba(35,12,6,.52),rgba(35,12,6,.68)),
-        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=90")
-        center/cover no-repeat;
-
-    color:white;
+        radial-gradient(circle at 20% 20%,rgba(238,190,174,.30),transparent 28%),
+        radial-gradient(circle at 80% 80%,rgba(221,181,137,.25),transparent 30%),
+        #fff8f2;
+    color:#5d3c32;
+    overflow:hidden;
 }
 
-.coverBox{
-    position:relative;
-    width:90%;
-    max-width:700px;
-    padding:75px 35px;
-
-    border:1px solid rgba(255,255,255,.85);
-    outline:1px solid rgba(255,255,255,.35);
-    outline-offset:12px;
-
-    background:rgba(50,20,10,.25);
-    backdrop-filter:blur(4px);
-
-    color:white;
-    border-radius:4px;
-
-    box-shadow:0 20px 60px rgba(0,0,0,.4);
-}
-
-.coverBox::before{
+#inviteCover::before,
+#inviteCover::after{
     content:"✦";
     position:absolute;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
+    color:#c49a68;
     font-size:22px;
+    opacity:.65;
 }
 
-.coverBox::after{
-    content:"✦";
+#inviteCover::before{top:12%;left:12%;}
+#inviteCover::after{bottom:12%;right:12%;}
+
+.envelopeWrap{
+    position:relative;
+    width:390px;
+    max-width:88vw;
+    height:470px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+}
+
+.envelope{
+    position:relative;
+    width:360px;
+    height:235px;
+    max-width:100%;
+    background:#f3d9ca;
+    border:1px solid #cda88f;
+    border-radius:5px;
+    box-shadow:0 25px 65px rgba(74,43,30,.20);
+    perspective:1000px;
+}
+
+/* Invitation card inside envelope */
+.invitationCard{
     position:absolute;
-    bottom:20px;
     left:50%;
-    transform:translateX(-50%);
-    font-size:18px;
+    top:50%;
+    width:275px;
+    height:190px;
+    transform:translate(-50%,-40%);
+    background:#fffdf9;
+    border:1px solid #d6b38e;
+    box-shadow:0 10px 35px rgba(75,45,30,.18);
+    padding:25px 15px;
+    z-index:2;
+    opacity:1;
+    transition:
+        transform 1.2s cubic-bezier(.2,.75,.25,1),
+        opacity .5s ease;
 }
 
-.coverSmall{
-    font-size:16px;
-    letter-spacing:7px;
-    margin-bottom:28px;
-    font-weight:bold;
+.invitationCard::before{
+    content:"";
+    position:absolute;
+    inset:8px;
+    border:1px solid rgba(191,151,102,.55);
+    pointer-events:none;
 }
 
-.coverBox h1{
-    font-size:68px;
-    font-weight:normal;
-    letter-spacing:3px;
-    margin-bottom:5px;
-    text-shadow:0 4px 18px rgba(0,0,0,.5);
-}
-
-.coverAnd{
-    font-size:34px;
-    font-style:italic;
-    margin:5px 0;
-}
-
-.coverDate{
-    font-size:20px;
-    letter-spacing:6px;
-    margin:30px 0 40px;
-}
-
-.enterBtn{
-    padding:16px 42px;
-
-    border:1px solid white;
-    background:white;
-    color:#6b4032;
-
-    font-size:15px;
-    font-weight:bold;
+.invitationCard small{
+    display:block;
+    font-size:10px;
     letter-spacing:4px;
-
-    cursor:pointer;
-    border-radius:3px;
-
-    transition:all .4s ease;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    color:#9b705d;
+    margin-bottom:13px;
 }
 
-.enterBtn:hover{
+.invitationCard h2{
+    font-size:29px;
+    font-weight:normal;
+    color:#6b4032;
+    margin:3px 0;
+}
+
+.invitationCard .cardAnd{
+    font-size:19px;
+    font-style:italic;
+    color:#b28770;
+}
+
+.invitationCard p{
+    margin-top:13px;
+    font-size:11px;
+    letter-spacing:2px;
+    color:#896758;
+}
+
+/* Envelope back/front */
+.envelopeBack{
+    position:absolute;
+    inset:0;
+    background:#efd2c2;
+    border-radius:5px;
+    z-index:1;
+}
+
+/* Front triangular folds */
+.envelopeFront{
+    position:absolute;
+    inset:0;
+    z-index:4;
+    overflow:hidden;
+    border-radius:5px;
+    pointer-events:none;
+}
+
+.envelopeFront::before{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0;
+    height:0;
+    border-left:180px solid #f7dfd2;
+    border-top:118px solid transparent;
+}
+
+.envelopeFront::after{
+    content:"";
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:0;
+    height:0;
+    border-right:180px solid #f7dfd2;
+    border-top:118px solid transparent;
+}
+
+/* Top flap */
+.envelopeFlap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:150px;
+    background:#e8c5b3;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top center;
+    transition:transform 1.15s cubic-bezier(.76,0,.18,1);
+    z-index:6;
+    backface-visibility:hidden;
+    filter:drop-shadow(0 4px 4px rgba(75,45,30,.10));
+}
+
+/* Wax/seal */
+.envelopeSeal{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#b97969;
+    color:#fffaf5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    box-shadow:0 4px 12px rgba(80,45,30,.20);
+    z-index:7;
+    transition:opacity .35s ease,transform .35s ease;
+}
+
+/* Button */
+.envelopeButton{
+    position:absolute;
+    left:50%;
+    bottom:-92px;
+    transform:translateX(-50%);
+    padding:14px 31px;
+    border:1px solid #a47762;
+    background:#fffdf9;
+    color:#6b4032;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:3px;
+    cursor:pointer;
+    white-space:nowrap;
+    box-shadow:0 6px 18px rgba(80,45,30,.10);
+    transition:.3s ease;
+    z-index:10;
+}
+
+.envelopeButton:hover{
     background:#6b4032;
     color:white;
-    transform:translateY(-3px);
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    transform:translateX(-50%) translateY(-2px);
+}
+
+/* Decorative line */
+.envelopeLabel{
+    position:absolute;
+    top:-78px;
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
+    color:#8e6656;
+    font-size:12px;
+    letter-spacing:5px;
+    white-space:nowrap;
+}
+
+.envelopeLabel span{
+    display:block;
+    margin-top:9px;
+    font-size:34px;
+    letter-spacing:2px;
+    color:#6b4032;
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+/* OPEN */
+#inviteCover.opening .envelopeFlap{
+    transform:rotateX(180deg);
+}
+
+#inviteCover.opening .invitationCard{
+    transform:translate(-50%,-145%);
+}
+
+#inviteCover.opening .envelopeSeal{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(.5);
+}
+
+#inviteCover.opening .envelopeButton{
+    opacity:0;
+    pointer-events:none;
+}
+
+#inviteCover.opening{
+    animation:hideInvitation 1s ease forwards;
+    animation-delay:2.25s;
+}
+
+@keyframes hideInvitation{
+    from{opacity:1;}
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+@media(max-width:500px){
+    .envelopeWrap{
+        height:430px;
+    }
+
+    .envelope{
+        width:310px;
+        height:205px;
+    }
+
+    .envelopeFlap{
+        height:130px;
+    }
+
+    .envelopeFront::before{
+        border-left-width:155px;
+        border-top-width:103px;
+    }
+
+    .envelopeFront::after{
+        border-right-width:155px;
+        border-top-width:103px;
+    }
+
+    .invitationCard{
+        width:245px;
+        height:165px;
+        padding:20px 10px;
+    }
+
+    .invitationCard h2{
+        font-size:25px;
+    }
+
+    .invitationCard small{
+        font-size:8px;
+        letter-spacing:3px;
+    }
+
+    .envelopeLabel{
+        top:-65px;
+        font-size:10px;
+        letter-spacing:4px;
+    }
+
+    .envelopeLabel span{
+        font-size:28px;
+    }
+
+    .envelopeButton{
+        bottom:-82px;
+        font-size:10px;
+        padding:12px 23px;
+        letter-spacing:2px;
+    }
 }
 
 /* =========================
@@ -630,17 +841,40 @@ footer p{
 
 <div id="inviteCover">
 
-    <div class="coverBox">
+    <div class="envelopeWrap">
 
-        <div class="coverSmall">
-            YOU ARE INVITED
+        <div class="envelopeLabel">
+            WEDDING INVITATION
+            <span>Srashti &amp; Tanmay</span>
         </div>
 
-        <h1>Srashti</h1>
+        <div class="envelope">
 
-        <div class="coverAnd">
-            &amp;
+            <div class="envelopeBack"></div>
+
+            <div class="invitationCard">
+                <small>YOU ARE INVITED</small>
+                <h2>Srashti</h2>
+                <div class="cardAnd">&amp;</div>
+                <h2>Tanmay</h2>
+                <p>30 · NOVEMBER · 2026</p>
+            </div>
+
+            <div class="envelopeFront"></div>
+
+            <div class="envelopeFlap"></div>
+
+            <div class="envelopeSeal">✦</div>
+
+            <button class="envelopeButton" onclick="enterInvitation()">
+                ENTER INVITATION
+            </button>
+
         </div>
+
+    </div>
+
+</div>
 
         <h1>Tanmay</h1>
 
@@ -1092,14 +1326,15 @@ function enterInvitation(){
 
     const cover = document.getElementById("inviteCover");
 
-    cover.style.transition = "opacity 0.8s ease";
-    cover.style.opacity = "0";
+    cover.classList.add("opening");
 
     setTimeout(function(){
 
         cover.style.display = "none";
 
-    },800);
+    },3300);
+
+},800);
 
 }
 
