@@ -4,1351 +4,1168 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aarav & Ananya | Wedding Invitation</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<title>Srashti & Tanmay | Wedding Invitation</title>
 
 <style>
-:root{
-  --paper:#fffaf6;
-  --paper2:#fff4ee;
-  --rose:#9f3f4c;
-  --rose2:#c96c78;
-  --wine:#6e2634;
-  --gold:#b58a45;
-  --green:#65745b;
-  --ink:#4b3940;
-  --line:rgba(126,75,82,.18);
-}
 
 *{
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  margin:0;
-  background:#eadfd8;
-  color:var(--ink);
-  font-family:"DM Sans",sans-serif;
+    font-family:Georgia, "Times New Roman", serif;
+    background:#fffaf5;
+    color:#4b3028;
 }
 
-button,a{
-  font:inherit;
+/* =========================
+   FIRST INVITATION PAGE
+========================= */
+
+#inviteCover{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background:
+        linear-gradient(rgba(35,12,6,.52),rgba(35,12,6,.68)),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=90")
+        center/cover no-repeat;
+
+    color:white;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
+.coverBox{
+    position:relative;
+    width:90%;
+    max-width:700px;
+    padding:75px 35px;
+
+    border:1px solid rgba(255,255,255,.85);
+    outline:1px solid rgba(255,255,255,.35);
+    outline-offset:12px;
+
+    background:rgba(50,20,10,.25);
+    backdrop-filter:blur(4px);
+
+    color:white;
+    border-radius:4px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
 }
 
-.page{
-  width:min(100%,520px);
-  margin:auto;
-  background:var(--paper);
-  min-height:100vh;
-  overflow:hidden;
-  box-shadow:0 0 50px rgba(68,36,39,.18);
-  position:relative;
+.coverBox::before{
+    content:"✦";
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:22px;
 }
 
-section{
-  position:relative;
-  padding:82px 24px;
-  overflow:hidden;
+.coverBox::after{
+    content:"✦";
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:18px;
 }
 
-.section-inner{
-  position:relative;
-  z-index:2;
+.coverSmall{
+    font-size:16px;
+    letter-spacing:7px;
+    margin-bottom:28px;
+    font-weight:bold;
 }
 
-.kicker{
-  font-size:11px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  color:var(--rose);
-  margin-bottom:10px;
+.coverBox h1{
+    font-size:68px;
+    font-weight:normal;
+    letter-spacing:3px;
+    margin-bottom:5px;
+    text-shadow:0 4px 18px rgba(0,0,0,.5);
 }
 
-h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:48px;
-  line-height:.9;
-  font-weight:500;
-  color:var(--wine);
-  margin:0 0 16px;
+.coverAnd{
+    font-size:34px;
+    font-style:italic;
+    margin:5px 0;
 }
 
-.small-copy{
-  max-width:390px;
-  margin:0 auto;
-  line-height:1.8;
-  font-size:14px;
-  color:#765f64;
+.coverDate{
+    font-size:20px;
+    letter-spacing:6px;
+    margin:30px 0 40px;
 }
 
-.script{
-  font-family:"Great Vibes",cursive;
-  color:var(--rose);
+.enterBtn{
+    padding:16px 42px;
+
+    border:1px solid white;
+    background:white;
+    color:#6b4032;
+
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:4px;
+
+    cursor:pointer;
+    border-radius:3px;
+
+    transition:all .4s ease;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
 }
 
-/* FLOWERS */
-
-.botanical{
-  position:absolute;
-  width:190px;
-  height:150px;
-  pointer-events:none;
-  opacity:.78;
+.enterBtn:hover{
+    background:#6b4032;
+    color:white;
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
-.botanical.tl{
-  left:-34px;
-  top:-10px;
-  transform:rotate(-10deg);
-}
-
-.botanical.br{
-  right:-42px;
-  bottom:-5px;
-  transform:rotate(165deg);
-}
-
-.stem{
-  position:absolute;
-  width:3px;
-  height:145px;
-  background:var(--green);
-  left:85px;
-  top:5px;
-  border-radius:50%;
-  transform:rotate(28deg);
-}
-
-.leaf{
-  position:absolute;
-  width:42px;
-  height:18px;
-  border-radius:100% 0 100% 0;
-  background:#7e9272;
-  transform-origin:right center;
-}
-
-.l1{
-  left:50px;
-  top:35px;
-  transform:rotate(-20deg);
-}
-
-.l2{
-  left:75px;
-  top:62px;
-  transform:rotate(35deg);
-}
-
-.l3{
-  left:35px;
-  top:82px;
-  transform:rotate(-35deg);
-}
-
-.l4{
-  left:94px;
-  top:98px;
-  transform:rotate(40deg);
-}
-
-.flower{
-  position:absolute;
-  width:34px;
-  height:34px;
-  border-radius:50%;
-  background:
-    radial-gradient(circle,#f6d7c6 0 22%,#c96c78 24% 42%,transparent 44%),
-    radial-gradient(circle at 70% 35%,#efc1c7 0 30%,transparent 31%);
-}
-
-.f1{
-  left:10px;
-  top:12px;
-}
-
-.f2{
-  left:130px;
-  top:48px;
-}
-
-.f3{
-  left:22px;
-  top:112px;
-}
-
-/* PETALS */
-
-.petals{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:3;
-}
-
-.petal{
-  position:absolute;
-  width:7px;
-  height:11px;
-  border-radius:70% 20% 70% 20%;
-  background:#d88993;
-  opacity:.65;
-  animation:fall linear infinite;
-}
-
-.p1{
-  left:10%;
-  animation-duration:9s;
-  animation-delay:-2s;
-}
-
-.p2{
-  left:28%;
-  animation-duration:12s;
-  animation-delay:-7s;
-}
-
-.p3{
-  left:52%;
-  animation-duration:10s;
-  animation-delay:-4s;
-}
-
-.p4{
-  left:73%;
-  animation-duration:13s;
-  animation-delay:-8s;
-}
-
-.p5{
-  left:90%;
-  animation-duration:11s;
-  animation-delay:-5s;
-}
-
-@keyframes fall{
-  0%{
-    transform:translateY(-30px) rotate(0);
-  }
-
-  100%{
-    transform:translateY(105vh) translateX(55px) rotate(330deg);
-  }
-}
-
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  min-height:100vh;
-  padding:0;
-  display:flex;
-  align-items:flex-end;
+    min-height:100vh;
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,250,246,.12),
-      rgba(255,250,246,.92) 74%
-    ),
-    radial-gradient(
-      circle at 50% 20%,
-      #f4d9d2,
-      #ead4cb 42%,
-      #d7b8ac 100%
-    );
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:50px 20px;
+
+    background:
+        linear-gradient(rgba(80,35,20,.28),rgba(80,35,20,.38)),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=90")
+        center/cover no-repeat;
+
+    color:white;
 }
 
-.hero-art{
-  position:absolute;
-  inset:0;
-
-  background:
-    radial-gradient(
-      ellipse at 15% 25%,
-      rgba(181,138,69,.20),
-      transparent 24%
-    ),
-    radial-gradient(
-      ellipse at 82% 22%,
-      rgba(201,108,120,.24),
-      transparent 28%
-    );
+.heroContent{
+    max-width:900px;
 }
 
-.hero-flower-left,
-.hero-flower-right{
-  position:absolute;
-  top:0;
-  width:180px;
-  height:250px;
-  opacity:.9;
+.save{
+    font-size:18px;
+    letter-spacing:5px;
+    margin-bottom:25px;
 }
 
-.hero-flower-left{
-  left:-28px;
-}
-
-.hero-flower-right{
-  right:-28px;
-  transform:scaleX(-1);
-}
-
-.hero-flower-left .stem,
-.hero-flower-right .stem{
-  height:230px;
-}
-
-.hero-content{
-  width:100%;
-  text-align:center;
-  padding:0 26px 58px;
-  position:relative;
-  z-index:4;
-}
-
-.hero .kicker{
-  color:#7d4a51;
-}
-
-.hero-title{
-  font-family:"Great Vibes",cursive;
-  font-size:78px;
-  line-height:.78;
-  color:#7e303e;
-  margin:12px 0 22px;
+.hero h1{
+    font-size:80px;
+    font-weight:normal;
+    text-shadow:0 4px 20px rgba(0,0,0,.4);
 }
 
 .amp{
-  display:block;
-  font-family:"Cormorant Garamond",serif;
-  font-size:28px;
-  line-height:1;
-  color:var(--gold);
-  margin:10px 0;
+    font-size:45px;
+    font-style:italic;
+    margin:5px 0;
 }
 
-.hero-date{
-  font-family:"Cormorant Garamond",serif;
-  font-size:19px;
-  letter-spacing:5px;
-  color:#65484f;
+.date{
+    margin-top:40px;
+    font-size:24px;
+    letter-spacing:6px;
+    font-weight:600;
 }
 
-.scroll{
-  margin-top:28px;
-  display:inline-flex;
-  flex-direction:column;
-  gap:6px;
-  font-size:9px;
-  letter-spacing:3px;
-  color:#7e6267;
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    padding:80px 20px;
 }
 
-.scroll span{
-  font-size:17px;
-  animation:bounce 1.6s infinite;
+.container{
+    max-width:1100px;
+    margin:auto;
 }
 
-@keyframes bounce{
-  50%{
-    transform:translateY(5px);
-  }
+.sectionTitle{
+    text-align:center;
+    margin-bottom:45px;
 }
 
-/* INTRO */
+.sectionTitle h2{
+    font-size:42px;
+    font-weight:normal;
+    margin-bottom:12px;
+}
+
+.sectionTitle p{
+    color:#8a6557;
+}
+
+/* =========================
+   INTRO
+========================= */
 
 .intro{
-  text-align:center;
-  background:var(--paper);
+    text-align:center;
+    background:#fffaf5;
 }
 
-.quote{
-  font-family:"Cormorant Garamond",serif;
-  font-size:27px;
-  line-height:1.3;
-  color:var(--wine);
-  margin:20px auto;
+.intro p{
+    max-width:750px;
+    margin:auto;
+    line-height:1.9;
+    font-size:18px;
 }
 
-.ornament{
-  width:120px;
-  height:1px;
-  background:var(--gold);
-  margin:20px auto;
-  position:relative;
-}
-
-.ornament:after{
-  content:"✦";
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-55%);
-  background:var(--paper);
-  padding:0 8px;
-  color:var(--gold);
-  font-size:12px;
-}
-
-/* DATE */
-
-.date-card{
-  background:linear-gradient(135deg,#fff,#fff2eb);
-  border:1px solid var(--line);
-  padding:30px 20px;
-  text-align:center;
-  box-shadow:0 20px 45px rgba(112,57,64,.08);
-}
-
-.date-big{
-  font-family:"Cormorant Garamond",serif;
-  font-size:64px;
-  line-height:.85;
-  color:var(--wine);
-}
-
-.date-month{
-  letter-spacing:5px;
-  text-transform:uppercase;
-  font-size:12px;
-  color:var(--rose);
-}
+/* =========================
+   COUNTDOWN
+========================= */
 
 .countdown{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  margin-top:25px;
-  border-top:1px solid var(--line);
-  padding-top:20px;
+    background:#f3e5da;
+    text-align:center;
 }
 
-.time strong{
-  display:block;
-  font-family:"Cormorant Garamond";
-  font-size:30px;
-  color:var(--wine);
+.countBox{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
 }
 
-.time span{
-  font-size:9px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#927b80;
+.timeBox{
+    width:120px;
+    padding:22px 10px;
+    background:white;
+    border-radius:8px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
 }
 
-/* EVENTS */
-
-.events{
-  background:#fff8f3;
+.timeBox span{
+    display:block;
+    font-size:35px;
+    color:#7b4b3d;
 }
 
-.event{
-  display:grid;
-  grid-template-columns:76px 1fr;
-  gap:18px;
-  align-items:center;
-  padding:20px 0;
-  border-bottom:1px solid var(--line);
+.timeBox small{
+    letter-spacing:2px;
+    color:#8b7065;
 }
 
-.event:last-child{
-  border-bottom:0;
-}
-
-.event-date{
-  width:70px;
-  height:70px;
-  border:1px solid #d6b79e;
-  border-radius:50%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background:#fffaf7;
-}
-
-.event-date b{
-  font-family:"Cormorant Garamond";
-  font-size:28px;
-  line-height:.8;
-  color:var(--wine);
-}
-
-.event-date small{
-  font-size:8px;
-  letter-spacing:2px;
-  margin-top:6px;
-  color:var(--rose);
-}
-
-.event h3{
-  margin:0 0 5px;
-  font-family:"Cormorant Garamond";
-  font-size:29px;
-  font-weight:600;
-  color:var(--wine);
-}
-
-.event p{
-  margin:0;
-  color:#826d72;
-  font-size:12px;
-  line-height:1.6;
-}
-
-.tag{
-  display:inline-block;
-  margin-top:8px;
-  font-size:9px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  color:var(--rose);
-}
-
-/* STORY */
+/* =========================
+   STORY
+========================= */
 
 .story{
-  text-align:center;
-  background:var(--paper2);
+    background:white;
 }
 
-.story-card{
-  margin-top:28px;
-  padding:28px 20px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.55);
+.storyText{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    line-height:2;
+    font-size:17px;
 }
 
-.story-card .script{
-  font-size:39px;
+/* =========================
+   EVENTS
+========================= */
+
+.events{
+    background:#fffaf5;
 }
 
-.story-card p{
-  font-size:13px;
-  line-height:1.85;
-  color:#786368;
+.eventGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
-/* WARDROBE */
+.eventCard{
+    background:white;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:8px;
 
-.wardrobe{
-  text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
 
-  background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(201,108,120,.12),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 85% 75%,
-      rgba(181,138,69,.13),
-      transparent 25%
-    ),
-    #fffaf6;
+    transition:transform .3s ease,
+               box-shadow .3s ease;
 }
 
-.style-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:30px;
+.eventCard:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(0,0,0,.1);
 }
 
-.style-card{
-  min-height:150px;
-  padding:24px 12px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  border:1px solid var(--line);
-  background:#fff;
+.eventCard h3{
+    font-size:25px;
+    margin-bottom:15px;
+    font-weight:normal;
 }
 
-.style-card .icon{
-  font-size:38px;
-  margin-bottom:10px;
+.eventCard .eventDate{
+    font-weight:bold;
+    margin-bottom:8px;
 }
 
-.style-card b{
-  font-family:"Cormorant Garamond";
-  font-size:24px;
-  color:var(--wine);
+.eventCard p{
+    line-height:1.7;
+    color:#76594e;
 }
 
-.style-card span{
-  font-size:10px;
-  letter-spacing:1px;
-  color:#8d777b;
-  margin-top:5px;
-}
-
-/* VENUE */
-
-.venue{
-  background:#6f303d;
-  color:white;
-  text-align:center;
-}
-
-.venue h2,
-.venue .kicker{
-  color:#fff;
-}
-
-.venue .small-copy{
-  color:#f3dfe0;
-}
-
-.map-card{
-  margin-top:28px;
-  padding:25px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.25);
-}
-
-.map-icon{
-  font-size:42px;
-}
-
-.map-card h3{
-  font-family:"Cormorant Garamond";
-  font-size:31px;
-  margin:8px 0;
-}
-
-.map-btn{
-  display:inline-block;
-  margin-top:18px;
-  padding:12px 24px;
-  border:1px solid rgba(255,255,255,.5);
-  border-radius:30px;
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-/* GALLERY */
+/* =========================
+   GALLERY
+========================= */
 
 .gallery{
-  text-align:center;
+    background:#f3e5da;
 }
 
-.gallery-grid{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:10px;
-  margin-top:28px;
+.galleryGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
 }
 
-.photo{
-  min-height:190px;
-  position:relative;
-  overflow:hidden;
+.galleryGrid img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:6px;
 
-  background:
-    radial-gradient(
-      circle at 30% 25%,
-      #f7d7cc 0 8%,
-      transparent 9%
-    ),
-    radial-gradient(
-      circle at 70% 35%,
-      #b96a73 0 12%,
-      transparent 13%
-    ),
-    linear-gradient(
-      145deg,
-      #e7c5b8,
-      #f7ebe4 52%,
-      #c68b88
-    );
+    transition:transform .4s ease,
+               box-shadow .4s ease;
 }
 
-.photo:nth-child(2){
-  min-height:135px;
-  background:linear-gradient(145deg,#d5c7ad,#f8eee2,#a98367);
+.galleryGrid img:hover{
+    transform:scale(1.03);
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
-.photo:nth-child(3){
-  min-height:135px;
-  background:linear-gradient(145deg,#e9b8c0,#fff2ec,#b65d6d);
+/* =========================
+   FAMILIES
+========================= */
+
+.families{
+    background:white;
 }
 
-.photo:nth-child(4){
-  min-height:190px;
-  background:linear-gradient(145deg,#c7d0b9,#f4eee3,#8a9273);
+.familyGrid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
 }
 
-.photo:after{
-  content:"A & A";
-  position:absolute;
-  inset:0;
-  display:grid;
-  place-items:center;
-  font-family:"Great Vibes";
-  font-size:42px;
-  color:rgba(255,255,255,.85);
+.familyCard{
+    background:#fffaf5;
+    padding:35px;
+    text-align:center;
+    border-radius:8px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
 }
 
-/* RSVP */
+.familyCard h3{
+    font-size:28px;
+    font-weight:normal;
+    margin-bottom:25px;
+}
+
+.familyCard p{
+    margin:12px 0;
+    line-height:1.6;
+}
+
+.familyCard strong{
+    font-size:17px;
+}
+
+/* =========================
+   VENUE
+========================= */
+
+.venue{
+    text-align:center;
+    background:#f3e5da;
+}
+
+.venueBox{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:45px 25px;
+    border-radius:8px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+}
+
+.venueBox h3{
+    font-size:32px;
+    font-weight:normal;
+    margin-bottom:15px;
+}
+
+.venueBox p{
+    line-height:1.8;
+    color:#76594e;
+}
+
+.mapBtn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 32px;
+
+    background:#7b4b3d;
+    color:white;
+
+    text-decoration:none;
+    border-radius:4px;
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.mapBtn:hover{
+    background:#4b3028;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   RSVP
+========================= */
 
 .rsvp{
-  text-align:center;
-  background:#fff2ed;
+    text-align:center;
+    background:white;
 }
 
-.rsvp-box{
-  padding:34px 22px;
-  background:#fff;
-  border:1px solid var(--line);
-  box-shadow:0 18px 40px rgba(112,57,64,.08);
+.rsvpText{
+    max-width:650px;
+    margin:auto;
+    line-height:1.8;
 }
 
-.rsvp-btn{
-  display:inline-block;
-  margin-top:22px;
-  background:var(--rose);
-  color:#fff;
-  padding:14px 28px;
-  border-radius:30px;
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
+.rsvpBtn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 35px;
+
+    background:#7b4b3d;
+    color:white;
+
+    text-decoration:none;
+    letter-spacing:2px;
+
+    transition:.3s;
 }
 
-.note{
-  font-size:10px;
-  color:#927d81;
-  margin-top:12px;
+.rsvpBtn:hover{
+    background:#4b3028;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
-.footer{
-  text-align:center;
-  padding:70px 20px 90px;
-  background:#fffaf6;
+footer{
+    background:#4b3028;
+    color:white;
+    text-align:center;
+    padding:55px 20px;
 }
 
-.footer .script{
-  font-size:58px;
+footer h2{
+    font-size:38px;
+    font-weight:normal;
+    margin-bottom:15px;
 }
 
-.footer p{
-  font-family:"Cormorant Garamond";
-  font-size:20px;
-  color:#785d63;
+footer p{
+    letter-spacing:3px;
 }
 
-.footer small{
-  font-size:9px;
-  letter-spacing:3px;
-  color:#a0878b;
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    .coverBox{
+        padding:55px 25px;
+    }
+
+    .coverBox h1{
+        font-size:50px;
+    }
+
+    .coverSmall{
+        font-size:13px;
+        letter-spacing:4px;
+    }
+
+    .coverDate{
+        font-size:16px;
+        letter-spacing:3px;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .amp{
+        font-size:32px;
+    }
+
+    .date{
+        font-size:18px;
+        letter-spacing:4px;
+        font-weight:600;
+    }
+
+    .sectionTitle h2{
+        font-size:34px;
+    }
+
+    .eventGrid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .galleryGrid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .galleryGrid img{
+        height:220px;
+    }
+
+    .familyGrid{
+        grid-template-columns:1fr;
+    }
+
 }
 
-/* ANIMATION */
+@media(max-width:500px){
 
-.reveal{
-  opacity:0;
-  transform:translateY(28px);
-  transition:
-    opacity .8s ease,
-    transform .8s ease;
+    .coverBox{
+        padding:50px 20px;
+    }
+
+    .coverBox h1{
+        font-size:40px;
+    }
+
+    .coverSmall{
+        font-size:12px;
+        letter-spacing:3px;
+    }
+
+    .coverAnd{
+        font-size:24px;
+    }
+
+    .coverDate{
+        font-size:15px;
+        letter-spacing:2px;
+        margin:25px 0 30px;
+    }
+
+    .enterBtn{
+        padding:14px 25px;
+        font-size:13px;
+        letter-spacing:2px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .date{
+        font-size:17px;
+        letter-spacing:3px;
+    }
+
+    .eventGrid{
+        grid-template-columns:1fr;
+    }
+
+    .galleryGrid{
+        grid-template-columns:1fr;
+    }
+
+    .countBox{
+        gap:10px;
+    }
+
+    .timeBox{
+        width:100px;
+    }
+
 }
 
-.reveal.show{
-  opacity:1;
-  transform:none;
-}
-
-@media(min-width:521px){
-
-  body{
-    padding:25px 0;
-  }
-
-  .page{
-    border-radius:18px;
-  }
-}
 </style>
 </head>
 
 <body>
 
-<main class="page">
+<!-- =========================
+     FIRST ENTER PAGE
+========================= -->
 
-<div class="petals">
-  <i class="petal p1"></i>
-  <i class="petal p2"></i>
-  <i class="petal p3"></i>
-  <i class="petal p4"></i>
-  <i class="petal p5"></i>
+<div id="inviteCover">
+
+    <div class="coverBox">
+
+        <div class="coverSmall">
+            YOU ARE INVITED
+        </div>
+
+        <h1>Srashti</h1>
+
+        <div class="coverAnd">
+            &amp;
+        </div>
+
+        <h1>Tanmay</h1>
+
+        <div class="coverDate">
+            30 · NOVEMBER · 2026
+        </div>
+
+        <button class="enterBtn" onclick="enterInvitation()">
+            ENTER INVITATION
+        </button>
+
+    </div>
+
 </div>
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-<div class="hero-art"></div>
+    <div class="heroContent">
 
-<div class="hero-flower-left">
-  <div class="stem"></div>
-  <i class="leaf l1"></i>
-  <i class="leaf l2"></i>
-  <i class="leaf l3"></i>
-  <i class="leaf l4"></i>
-  <i class="flower f1"></i>
-  <i class="flower f2"></i>
-  <i class="flower f3"></i>
-</div>
+        <div class="save">
+            SAVE THE DATE
+        </div>
 
-<div class="hero-flower-right">
-  <div class="stem"></div>
-  <i class="leaf l1"></i>
-  <i class="leaf l2"></i>
-  <i class="leaf l3"></i>
-  <i class="leaf l4"></i>
-  <i class="flower f1"></i>
-  <i class="flower f2"></i>
-  <i class="flower f3"></i>
-</div>
+        <h1>Srashti</h1>
 
-<div class="hero-content">
+        <div class="amp">
+            &amp;
+        </div>
 
-<div class="kicker">
-Together with their families
-</div>
+        <h1>Tanmay</h1>
 
-<div class="hero-title">
-Aarav
-<span class="amp">&</span>
-Ananya
-</div>
+        <div class="date">
+            30 · NOVEMBER · 2026
+        </div>
 
-<div class="hero-date">
-25 · NOVEMBER · 2026
-</div>
-
-<a class="scroll" href="#invite">
-SCROLL TO OPEN
-<span>↓</span>
-</a>
-
-</div>
+    </div>
 
 </section>
 
-<!-- INVITATION -->
 
-<section class="intro reveal" id="invite">
+<!-- =========================
+     INTRO
+========================= -->
 
-<div class="botanical tl">
-  <div class="stem"></div>
-  <i class="leaf l1"></i>
-  <i class="leaf l2"></i>
-  <i class="leaf l3"></i>
-  <i class="leaf l4"></i>
-  <i class="flower f1"></i>
-  <i class="flower f2"></i>
-</div>
+<section class="intro">
 
-<div class="botanical br">
-  <div class="stem"></div>
-  <i class="leaf l1"></i>
-  <i class="leaf l2"></i>
-  <i class="leaf l3"></i>
-  <i class="leaf l4"></i>
-  <i class="flower f1"></i>
-  <i class="flower f2"></i>
-</div>
+    <div class="container">
 
-<div class="section-inner">
+        <div class="sectionTitle">
+            <h2>We're Getting Married</h2>
+            <p>Two hearts, one beautiful journey</p>
+        </div>
 
-<div class="kicker">
-You are invited
-</div>
+        <p>
+            With the blessings of our families and loved ones,
+            we invite you to celebrate the beginning of our
+            beautiful journey together.
+        </p>
 
-<h2>
-To our wedding
-</h2>
+    </div>
 
-<div class="ornament"></div>
-
-<p class="quote">
-“Two hearts, one beautiful journey, and a lifetime of memories waiting to be made.”
-</p>
-
-<p class="small-copy">
-With the blessings of our families, we invite you to celebrate the beginning of our forever.
-Your presence will make our special day even more beautiful.
-</p>
-
-</div>
 </section>
 
-<!-- SAVE DATE -->
 
-<section class="reveal">
+<!-- =========================
+     COUNTDOWN
+========================= -->
 
-<div class="section-inner">
+<section class="countdown">
 
-<div class="date-card">
+    <div class="container">
 
-<div class="kicker">
-Save the date
-</div>
+        <div class="sectionTitle">
+            <h2>Countdown to Our Big Day</h2>
+            <p>30 November 2026 · 7:00 PM</p>
+        </div>
 
-<div class="date-big">
-25
-</div>
+        <div class="countBox">
 
-<div class="date-month">
-November · 2026
-</div>
+            <div class="timeBox">
+                <span id="days">00</span>
+                <small>DAYS</small>
+            </div>
 
-<div class="ornament"></div>
+            <div class="timeBox">
+                <span id="hours">00</span>
+                <small>HOURS</small>
+            </div>
 
-<div class="countdown">
+            <div class="timeBox">
+                <span id="minutes">00</span>
+                <small>MINUTES</small>
+            </div>
 
-<div class="time">
-<strong id="days">--</strong>
-<span>Days</span>
-</div>
+            <div class="timeBox">
+                <span id="seconds">00</span>
+                <small>SECONDS</small>
+            </div>
 
-<div class="time">
-<strong id="hours">--</strong>
-<span>Hours</span>
-</div>
+        </div>
 
-<div class="time">
-<strong id="mins">--</strong>
-<span>Minutes</span>
-</div>
+    </div>
 
-<div class="time">
-<strong id="secs">--</strong>
-<span>Seconds</span>
-</div>
-
-</div>
-</div>
-
-</div>
 </section>
 
-<!-- EVENTS -->
 
-<section class="events reveal">
+<!-- =========================
+     STORY
+========================= -->
 
-<div class="section-inner">
+<section class="story">
 
-<div class="kicker">
-Celebrate with us
-</div>
+    <div class="container">
 
-<h2>
-Events Schedule
-</h2>
+        <div class="sectionTitle">
+            <h2>Our Story</h2>
+            <p>A journey of love, friendship and togetherness</p>
+        </div>
 
-<p class="small-copy">
-A few beautiful moments before we say “I do”.
-</p>
+        <div class="storyText">
 
-<div class="event">
+            <p>
+                Every love story is beautiful, but ours is
+                truly special to us. Two people, two families
+                and one beautiful beginning.
+            </p>
 
-<div class="event-date">
-<b>23</b>
-<small>NOV</small>
-</div>
+            <br>
 
-<div>
-<h3>Haldi</h3>
-<p>
-11:00 AM · Family Home<br>
-Sunshine, laughter & haldi vibes.
-</p>
-<span class="tag">
-Yellow · Floral · Joy
-</span>
-</div>
+            <p>
+                As we begin this new chapter of our lives,
+                we would be delighted to have you with us
+                to make our special moments even more memorable.
+            </p>
 
-</div>
+        </div>
 
-<div class="event">
+    </div>
 
-<div class="event-date">
-<b>24</b>
-<small>NOV</small>
-</div>
-
-<div>
-<h3>Mehndi</h3>
-<p>
-5:00 PM · Celebration Hall<br>
-Henna, music & beautiful memories.
-</p>
-<span class="tag">
-Mehndi · Music · Love
-</span>
-</div>
-
-</div>
-
-<div class="event">
-
-<div class="event-date">
-<b>25</b>
-<small>NOV</small>
-</div>
-
-<div>
-<h3>Wedding</h3>
-<p>
-7:00 PM · Royal Wedding Venue<br>
-Our forever begins here.
-</p>
-<span class="tag">
-Traditional · Elegant · Forever
-</span>
-</div>
-
-</div>
-
-<div class="event">
-
-<div class="event-date">
-<b>26</b>
-<small>NOV</small>
-</div>
-
-<div>
-<h3>Reception</h3>
-<p>
-7:30 PM · Celebration Hall<br>
-Dinner, smiles & a night to remember.
-</p>
-<span class="tag">
-Dinner · Dance · Celebration
-</span>
-</div>
-
-</div>
-
-</div>
 </section>
 
-<!-- STORY -->
 
-<section class="story reveal">
+<!-- =========================
+     EVENTS
+========================= -->
 
-<div class="section-inner">
+<section class="events">
 
-<div class="kicker">
-Our little story
-</div>
+    <div class="container">
 
-<h2>
-From hello<br>
-to forever
-</h2>
+        <div class="sectionTitle">
+            <h2>Wedding Events</h2>
+            <p>Join us in celebrating every beautiful moment</p>
+        </div>
 
-<div class="story-card">
+        <div class="eventGrid">
 
-<div class="script">
-A beautiful beginning
-</div>
+            <div class="eventCard">
 
-<p>
-Somewhere between two conversations, countless smiles and a thousand little moments,
-Aarav & Ananya found something worth choosing every day — each other.
-</p>
+                <h3>Haldi</h3>
 
-<div class="ornament"></div>
+                <div class="eventDate">
+                    28 November 2026
+                </div>
 
-<p>
-And now, surrounded by the people they love most, they are ready to begin their forever.
-</p>
+                <p>
+                    11:00 AM
+                    <br>
+                    Family Residence
+                </p>
 
-</div>
+            </div>
 
-</div>
+
+            <div class="eventCard">
+
+                <h3>Mehndi</h3>
+
+                <div class="eventDate">
+                    29 November 2026
+                </div>
+
+                <p>
+                    5:00 PM
+                    <br>
+                    Family Residence
+                </p>
+
+            </div>
+
+
+            <div class="eventCard">
+
+                <h3>Wedding</h3>
+
+                <div class="eventDate">
+                    30 November 2026
+                </div>
+
+                <p>
+                    7:00 PM
+                    <br>
+                    Shreeji Farm House
+                </p>
+
+            </div>
+
+
+            <div class="eventCard">
+
+                <h3>Reception</h3>
+
+                <div class="eventDate">
+                    1 December 2026
+                </div>
+
+                <p>
+                    7:30 PM
+                    <br>
+                    Grand Celebration Hall
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<!-- WARDROBE -->
 
-<section class="wardrobe reveal">
+<!-- =========================
+     GALLERY
+========================= -->
 
-<div class="section-inner">
+<section class="gallery">
 
-<div class="kicker">
-Come dressed in love
-</div>
+    <div class="container">
 
-<h2>
-Wardrobe Guide
-</h2>
+        <div class="sectionTitle">
+            <h2>Gallery</h2>
+            <p>Some beautiful moments</p>
+        </div>
 
-<p class="small-copy">
-Bring your festive spirit and your happiest smile.
-</p>
+        <div class="galleryGrid">
 
-<div class="style-grid">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80">
 
-<div class="style-card">
-<div class="icon">🌼</div>
-<b>Haldi</b>
-<span>Yellow · Pastel</span>
-</div>
+            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80">
 
-<div class="style-card">
-<div class="icon">🌸</div>
-<b>Mehndi</b>
-<span>Floral · Festive</span>
-</div>
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80">
 
-<div class="style-card">
-<div class="icon">✨</div>
-<b>Wedding</b>
-<span>Traditional · Elegant</span>
-</div>
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80">
 
-<div class="style-card">
-<div class="icon">🥂</div>
-<b>Reception</b>
-<span>Party · Glam</span>
-</div>
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80">
 
-</div>
+            <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=900&q=80">
 
-</div>
+        </div>
+
+    </div>
+
 </section>
 
-<!-- VENUE -->
 
-<section class="venue reveal">
+<!-- =========================
+     FAMILIES
+========================= -->
 
-<div class="section-inner">
+<section class="families">
 
-<div class="kicker">
-Where we celebrate
-</div>
+    <div class="container">
 
-<h2>
-Royal Wedding Venue
-</h2>
+        <div class="sectionTitle">
+            <h2>Our Families</h2>
+            <p>With the blessings of our beloved families</p>
+        </div>
 
-<p class="small-copy">
-Beautiful Celebration Hall<br>
-Hathras, Uttar Pradesh
-</p>
+        <div class="familyGrid">
 
-<div class="map-card">
+            <div class="familyCard">
 
-<div class="map-icon">
-📍
-</div>
+                <h3>Srashti's Family</h3>
 
-<h3>
-Hathras
-</h3>
+                <p>
+                    <strong>Mr. Vishnu Kumar Bansal</strong>
+                    <br>
+                    Father
+                </p>
 
-<p>
-25 November 2026 · 7:00 PM
-</p>
+                <p>
+                    <strong>Mrs. Shaily Bansal</strong>
+                    <br>
+                    Mother
+                </p>
 
-<a
-class="map-btn"
-href="https://www.google.com/maps/search/?api=1&query=Hathras%2C%20Uttar%20Pradesh"
-target="_blank">
-Open Location
-</a>
+                <p>
+                    <strong>Kushal Agrawal</strong>
+                    <br>
+                    Younger Brother
+                </p>
 
-</div>
+                <p>
+                    <strong>Anushka Agrawal</strong>
+                    <br>
+                    Younger Sister
+                </p>
 
-</div>
+            </div>
+
+
+            <div class="familyCard">
+
+                <h3>Tanmay's Family</h3>
+
+                <p>
+                    <strong>Mr. Pankaj Goyal</strong>
+                    <br>
+                    Father
+                </p>
+
+                <p>
+                    <strong>Mrs. Doly Goyal</strong>
+                    <br>
+                    Mother
+                </p>
+
+                <p>
+                    <strong>Krishna Goyal</strong>
+                    <br>
+                    Younger Brother
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<!-- GALLERY -->
 
-<section class="gallery reveal">
+<!-- =========================
+     VENUE
+========================= -->
 
-<div class="section-inner">
+<section class="venue">
 
-<div class="kicker">
-A few frames of us
-</div>
+    <div class="container">
 
-<h2>
-Our Moments
-</h2>
+        <div class="sectionTitle">
+            <h2>Wedding Venue</h2>
+            <p>We would love to celebrate with you</p>
+        </div>
 
-<p class="small-copy">
-These four blocks are ready for your couple photos.
-</p>
+        <div class="venueBox">
 
-<div class="gallery-grid">
+            <h3>Shreeji Farm House</h3>
 
-<div class="photo"></div>
-<div class="photo"></div>
-<div class="photo"></div>
-<div class="photo"></div>
+            <p>
+                Dayanatpur, Hathras
+            </p>
 
-</div>
+            <p>
+                <strong>30 November 2026</strong>
+                <br>
+                7:00 PM
+            </p>
 
-</div>
+            <a
+                href="https://maps.app.goo.gl/4o7F85QBuyG4CtwS8"
+                target="_blank"
+                class="mapBtn">
+                📍 Get Directions
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 
-<!-- RSVP -->
 
-<section class="rsvp reveal">
+<!-- =========================
+     RSVP
+========================= -->
 
-<div class="section-inner">
+<section class="rsvp">
 
-<div class="rsvp-box">
+    <div class="container">
 
-<div class="kicker">
-Will you join us?
-</div>
+        <div class="sectionTitle">
+            <h2>RSVP</h2>
+            <p>Your presence is our greatest gift</p>
+        </div>
 
-<h2>
-RSVP
-</h2>
+        <div class="rsvpText">
 
-<p class="small-copy">
-We would love to celebrate this beautiful day with you.
-</p>
+            <p>
+                We warmly invite you to join us on our special day
+                and bless Srashti &amp; Tanmay as they begin their
+                journey together.
+            </p>
 
-<a
-class="rsvp-btn"
-href="https://wa.me/?text=Hi%20Aarav%20%26%20Ananya%2C%20I%27ll%20be%20joining%20your%20wedding%20on%2025%20November%202026."
-target="_blank">
-Confirm on WhatsApp
-</a>
+            <a href="#" class="rsvpBtn">
+                RSVP NOW
+            </a>
 
-<div class="note">
-Replace the WhatsApp link with your own number before publishing.
-</div>
+        </div>
 
-</div>
+    </div>
 
-</div>
 </section>
 
-<!-- FOOTER -->
 
-<footer class="footer">
+<!-- =========================
+     FOOTER
+========================= -->
 
-<div class="script">
-With love,
-</div>
+<footer>
 
-<p>
-Aarav & Ananya
-</p>
+    <h2>Srashti &amp; Tanmay</h2>
 
-<small>
-25 · 11 · 2026
-</small>
+    <p>
+        30 · 11 · 2026
+    </p>
+
+    <br>
+
+    <p>
+        With Love ❤️
+    </p>
 
 </footer>
 
-</main>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
+function enterInvitation(){
+
+    const cover = document.getElementById("inviteCover");
+
+    cover.style.transition = "opacity 0.8s ease";
+    cover.style.opacity = "0";
+
+    setTimeout(function(){
+
+        cover.style.display = "none";
+
+    },800);
+
+}
+
+
+/* COUNTDOWN */
+
 const weddingDate =
-new Date("November 25, 2026 19:00:00").getTime();
+new Date("November 30, 2026 19:00:00").getTime();
+
 
 function updateCountdown(){
 
-const now = Date.now();
+    const now = new Date().getTime();
 
-let distance =
-weddingDate - now;
+    const distance = weddingDate - now;
 
-if(distance < 0)
-distance = 0;
+    if(distance <= 0){
 
-const d =
-Math.floor(
-distance /
-(1000*60*60*24)
-);
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
 
-const h =
-Math.floor(
-(distance /
-(1000*60*60)) % 24
-);
+        return;
+    }
 
-const m =
-Math.floor(
-(distance /
-(1000*60)) % 60
-);
+    const days =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
 
-const s =
-Math.floor(
-(distance / 1000) % 60
-);
+    const hours =
+    Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
 
-document.getElementById("days").textContent =
-String(d).padStart(2,"0");
+    const minutes =
+    Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
 
-document.getElementById("hours").textContent =
-String(h).padStart(2,"0");
+    const seconds =
+    Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
 
-document.getElementById("mins").textContent =
-String(m).padStart(2,"0");
 
-document.getElementById("secs").textContent =
-String(s).padStart(2,"0");
+    document.getElementById("days").innerHTML =
+    String(days).padStart(2,"0");
+
+    document.getElementById("hours").innerHTML =
+    String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").innerHTML =
+    String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").innerHTML =
+    String(seconds).padStart(2,"0");
 
 }
+
 
 updateCountdown();
 
 setInterval(updateCountdown,1000);
-
-
-const observer =
-new IntersectionObserver(
-(entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-},
-{
-threshold:.12
-}
-);
-
-document
-.querySelectorAll(".reveal")
-.forEach(el=>observer.observe(el));
 
 </script>
 
