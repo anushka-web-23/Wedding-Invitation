@@ -32,7 +32,7 @@ body{
 #inviteCover{
     position:fixed;
     inset:0;
-    z-index:99999;
+    z-index:9999;
     overflow:hidden;
     background:#f7eadb;
     transition:opacity 1.2s ease;
@@ -42,13 +42,13 @@ body{
     position:relative;
     width:100%;
     height:100%;
+
     background-image:url("wedding-cover.png");
     background-position:center center;
     background-repeat:no-repeat;
     background-size:cover;
 }
 
-/* subtle floating rose petals */
 .royalPetals{
     position:absolute;
     inset:0;
@@ -59,11 +59,16 @@ body{
 .royalPetal{
     position:absolute;
     top:-35px;
+
     width:11px;
     height:17px;
+
     border-radius:100% 0 100% 0;
+
     background:#8f1724;
+
     opacity:.65;
+
     animation:royalFall linear infinite;
 }
 
@@ -119,16 +124,14 @@ body{
 
 }
 
-/* Only the envelope itself is clickable */
-
 .envelopeClickArea{
     position:absolute;
 
     left:50%;
-    top:47%;
+    top:50%;
 
     width:min(82vw,820px);
-    height:min(34vw,560px);
+    height:min(40vw,600px);
 
     transform:translate(-50%,-50%);
 
@@ -143,37 +146,12 @@ body{
     z-index:10;
 }
 
-.envelopeClickArea:focus-visible{
-    outline:2px solid #8f1724;
-    outline-offset:6px;
-}
-
-/* tiny premium glow on hover */
-
-.envelopeClickArea::after{
-    content:"";
-
-    position:absolute;
-
-    inset:8%;
-
-    border-radius:8px;
-
-    box-shadow:
-        0 0 0 rgba(255,255,255,0);
-
-    transition:
-        box-shadow .45s ease;
-
-    pointer-events:none;
-}
-
-.envelopeClickArea:hover::after{
-    box-shadow:
-        0 0 45px rgba(255,255,255,.16);
+.envelopeClickArea:focus{
+    outline:none;
 }
 
 #inviteCover.opening .royalCover{
+
     transform:scale(1.035);
 
     transition:
@@ -181,6 +159,7 @@ body{
 }
 
 #inviteCover.opening{
+
     opacity:0;
 
     pointer-events:none;
@@ -193,10 +172,11 @@ body{
     }
 
     .envelopeClickArea{
-        top:50%;
 
-        width:92vw;
-        height:34vh;
+        width:94vw;
+        height:42vh;
+
+        top:50%;
     }
 
 }
@@ -663,22 +643,6 @@ footer p{
 
 @media(max-width:800px){
 
-    .eventGrid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .galleryGrid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .galleryGrid img{
-        height:220px;
-    }
-
-    .familyGrid{
-        grid-template-columns:1fr;
-    }
-
     .hero h1{
         font-size:52px;
     }
@@ -696,70 +660,26 @@ footer p{
         font-size:34px;
     }
 
+    .eventGrid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .galleryGrid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .galleryGrid img{
+        height:220px;
+    }
+
+    .familyGrid{
+        grid-template-columns:1fr;
+    }
+
 }
 
 
 @media(max-width:500px){
-
-    .envelopeWrap{
-        height:430px;
-    }
-
-    .envelope{
-        width:310px;
-        height:205px;
-    }
-
-    .envelopeFlap{
-        height:130px;
-    }
-
-    .envelopeFront::before{
-        border-left-width:155px;
-        border-top-width:103px;
-    }
-
-    .envelopeFront::after{
-        border-right-width:155px;
-        border-top-width:103px;
-    }
-
-    .invitationCard{
-        width:245px;
-        height:165px;
-
-        padding:20px 10px;
-    }
-
-    .invitationCard h2{
-        font-size:25px;
-    }
-
-    .invitationCard small{
-        font-size:8px;
-        letter-spacing:3px;
-    }
-
-    .envelopeLabel{
-        top:-65px;
-
-        font-size:10px;
-        letter-spacing:4px;
-    }
-
-    .envelopeLabel span{
-        font-size:28px;
-    }
-
-    .envelopeButton{
-        bottom:-82px;
-
-        font-size:10px;
-
-        padding:12px 23px;
-
-        letter-spacing:2px;
-    }
 
     .hero h1{
         font-size:43px;
@@ -1201,7 +1121,6 @@ footer p{
                 </h3>
 
                 <p>
-
                     <strong>
                         Mr. Vishnu Kumar Bansal
                     </strong>
@@ -1209,12 +1128,10 @@ footer p{
                     <br>
 
                     Father
-
                 </p>
 
 
                 <p>
-
                     <strong>
                         Mrs. Shaily Bansal
                     </strong>
@@ -1222,12 +1139,10 @@ footer p{
                     <br>
 
                     Mother
-
                 </p>
 
 
                 <p>
-
                     <strong>
                         Kushal Agrawal
                     </strong>
@@ -1235,12 +1150,10 @@ footer p{
                     <br>
 
                     Younger Brother
-
                 </p>
 
 
                 <p>
-
                     <strong>
                         Anushka Agrawal
                     </strong>
@@ -1248,7 +1161,6 @@ footer p{
                     <br>
 
                     Younger Sister
-
                 </p>
 
             </div>
@@ -1262,7 +1174,6 @@ footer p{
 
 
                 <p>
-
                     <strong>
                         Mr. Pankaj Goyal
                     </strong>
@@ -1270,12 +1181,10 @@ footer p{
                     <br>
 
                     Father
-
                 </p>
 
 
                 <p>
-
                     <strong>
                         Mrs. Doly Goyal
                     </strong>
@@ -1283,12 +1192,10 @@ footer p{
                     <br>
 
                     Mother
-
                 </p>
 
 
                 <p>
-
                     <strong>
                         Krishna Goyal
                     </strong>
@@ -1296,7 +1203,6 @@ footer p{
                     <br>
 
                     Younger Brother
-
                 </p>
 
             </div>
@@ -1454,19 +1360,15 @@ function enterInvitation(){
 
         cover.style.display = "none";
 
-    },1300);
+    },1200);
 
 }
 
 
-/* =========================
-   COUNTDOWN
-========================= */
+/* COUNTDOWN */
 
 const weddingDate =
-    new Date(
-        "November 30, 2026 19:00:00"
-    ).getTime();
+new Date("November 30, 2026 19:00:00").getTime();
 
 
 function updateCountdown(){
@@ -1493,7 +1395,6 @@ function updateCountdown(){
             "00";
 
         return;
-
     }
 
 
@@ -1557,7 +1458,6 @@ setInterval(
 );
 
 </script>
-
 
 </body>
 </html>
