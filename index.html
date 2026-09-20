@@ -24,22 +24,27 @@ body{
     color:#4b3028;
 }
 
+
 /* =========================
-   FIRST INVITATION PAGE — ENVELOPE
+   FIRST INVITATION PAGE
+   ENVELOPE OPENING
 ========================= */
 
 #inviteCover{
     position:fixed;
     inset:0;
     z-index:9999;
+
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+
     background:
-        radial-gradient(circle at 20% 20%,rgba(238,190,174,.30),transparent 28%),
-        radial-gradient(circle at 80% 80%,rgba(221,181,137,.25),transparent 30%),
+        radial-gradient(circle at 15% 20%,rgba(235,188,170,.30),transparent 28%),
+        radial-gradient(circle at 85% 80%,rgba(218,179,135,.25),transparent 30%),
         #fff8f2;
+
     color:#5d3c32;
     overflow:hidden;
 }
@@ -49,200 +54,40 @@ body{
     content:"✦";
     position:absolute;
     color:#c49a68;
-    font-size:22px;
-    opacity:.65;
+    font-size:24px;
+    opacity:.7;
 }
 
-#inviteCover::before{top:12%;left:12%;}
-#inviteCover::after{bottom:12%;right:12%;}
+#inviteCover::before{
+    top:12%;
+    left:12%;
+}
+
+#inviteCover::after{
+    bottom:12%;
+    right:12%;
+}
 
 .envelopeWrap{
     position:relative;
     width:390px;
     max-width:88vw;
     height:470px;
+
     display:flex;
     justify-content:center;
     align-items:flex-end;
 }
 
-.envelope{
-    position:relative;
-    width:360px;
-    height:235px;
-    max-width:100%;
-    background:#f3d9ca;
-    border:1px solid #cda88f;
-    border-radius:5px;
-    box-shadow:0 25px 65px rgba(74,43,30,.20);
-    perspective:1000px;
-}
-
-/* Invitation card inside envelope */
-.invitationCard{
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:275px;
-    height:190px;
-    transform:translate(-50%,-40%);
-    background:#fffdf9;
-    border:1px solid #d6b38e;
-    box-shadow:0 10px 35px rgba(75,45,30,.18);
-    padding:25px 15px;
-    z-index:2;
-    opacity:1;
-    transition:
-        transform 1.2s cubic-bezier(.2,.75,.25,1),
-        opacity .5s ease;
-}
-
-.invitationCard::before{
-    content:"";
-    position:absolute;
-    inset:8px;
-    border:1px solid rgba(191,151,102,.55);
-    pointer-events:none;
-}
-
-.invitationCard small{
-    display:block;
-    font-size:10px;
-    letter-spacing:4px;
-    color:#9b705d;
-    margin-bottom:13px;
-}
-
-.invitationCard h2{
-    font-size:29px;
-    font-weight:normal;
-    color:#6b4032;
-    margin:3px 0;
-}
-
-.invitationCard .cardAnd{
-    font-size:19px;
-    font-style:italic;
-    color:#b28770;
-}
-
-.invitationCard p{
-    margin-top:13px;
-    font-size:11px;
-    letter-spacing:2px;
-    color:#896758;
-}
-
-/* Envelope back/front */
-.envelopeBack{
-    position:absolute;
-    inset:0;
-    background:#efd2c2;
-    border-radius:5px;
-    z-index:1;
-}
-
-/* Front triangular folds */
-.envelopeFront{
-    position:absolute;
-    inset:0;
-    z-index:4;
-    overflow:hidden;
-    border-radius:5px;
-    pointer-events:none;
-}
-
-.envelopeFront::before{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:0;
-    width:0;
-    height:0;
-    border-left:180px solid #f7dfd2;
-    border-top:118px solid transparent;
-}
-
-.envelopeFront::after{
-    content:"";
-    position:absolute;
-    right:0;
-    bottom:0;
-    width:0;
-    height:0;
-    border-right:180px solid #f7dfd2;
-    border-top:118px solid transparent;
-}
-
-/* Top flap */
-.envelopeFlap{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:150px;
-    background:#e8c5b3;
-    clip-path:polygon(0 0,100% 0,50% 100%);
-    transform-origin:top center;
-    transition:transform 1.15s cubic-bezier(.76,0,.18,1);
-    z-index:6;
-    backface-visibility:hidden;
-    filter:drop-shadow(0 4px 4px rgba(75,45,30,.10));
-}
-
-/* Wax/seal */
-.envelopeSeal{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    background:#b97969;
-    color:#fffaf5;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:18px;
-    box-shadow:0 4px 12px rgba(80,45,30,.20);
-    z-index:7;
-    transition:opacity .35s ease,transform .35s ease;
-}
-
-/* Button */
-.envelopeButton{
-    position:absolute;
-    left:50%;
-    bottom:-92px;
-    transform:translateX(-50%);
-    padding:14px 31px;
-    border:1px solid #a47762;
-    background:#fffdf9;
-    color:#6b4032;
-    font-size:12px;
-    font-weight:bold;
-    letter-spacing:3px;
-    cursor:pointer;
-    white-space:nowrap;
-    box-shadow:0 6px 18px rgba(80,45,30,.10);
-    transition:.3s ease;
-    z-index:10;
-}
-
-.envelopeButton:hover{
-    background:#6b4032;
-    color:white;
-    transform:translateX(-50%) translateY(-2px);
-}
-
-/* Decorative line */
 .envelopeLabel{
     position:absolute;
     top:-78px;
     left:50%;
+
     transform:translateX(-50%);
+
     width:100%;
+
     color:#8e6656;
     font-size:12px;
     letter-spacing:5px;
@@ -252,100 +97,328 @@ body{
 .envelopeLabel span{
     display:block;
     margin-top:9px;
+
     font-size:34px;
     letter-spacing:2px;
     color:#6b4032;
-    font-family:Georgia,"Times New Roman",serif;
 }
 
-/* OPEN */
+.envelope{
+    position:relative;
+
+    width:360px;
+    height:235px;
+    max-width:100%;
+
+    background:#f3d9ca;
+
+    border:1px solid #cda88f;
+    border-radius:5px;
+
+    box-shadow:
+        0 25px 65px rgba(74,43,30,.20);
+
+    perspective:1000px;
+}
+
+/* Envelope back */
+
+.envelopeBack{
+    position:absolute;
+    inset:0;
+
+    background:#efd2c2;
+
+    border-radius:5px;
+
+    z-index:1;
+}
+
+
+/* Invitation card */
+
+.invitationCard{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:275px;
+    height:190px;
+
+    transform:translate(-50%,-40%);
+
+    background:#fffdf9;
+
+    border:1px solid #d6b38e;
+
+    box-shadow:
+        0 10px 35px rgba(75,45,30,.18);
+
+    padding:25px 15px;
+
+    z-index:2;
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.75,.25,1),
+        opacity .5s ease;
+}
+
+.invitationCard::before{
+    content:"";
+
+    position:absolute;
+    inset:8px;
+
+    border:1px solid rgba(191,151,102,.55);
+
+    pointer-events:none;
+}
+
+.invitationCard small{
+    display:block;
+
+    font-size:10px;
+    letter-spacing:4px;
+
+    color:#9b705d;
+
+    margin-bottom:13px;
+}
+
+.invitationCard h2{
+    font-size:29px;
+
+    font-weight:normal;
+
+    color:#6b4032;
+
+    margin:3px 0;
+}
+
+.cardAnd{
+    font-size:19px;
+
+    font-style:italic;
+
+    color:#b28770;
+}
+
+.invitationCard p{
+    margin-top:13px;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    color:#896758;
+}
+
+
+/* Envelope front folds */
+
+.envelopeFront{
+    position:absolute;
+
+    inset:0;
+
+    z-index:4;
+
+    overflow:hidden;
+
+    border-radius:5px;
+
+    pointer-events:none;
+}
+
+.envelopeFront::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:0;
+    height:0;
+
+    border-left:180px solid #f7dfd2;
+    border-top:118px solid transparent;
+}
+
+.envelopeFront::after{
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    width:0;
+    height:0;
+
+    border-right:180px solid #f7dfd2;
+    border-top:118px solid transparent;
+}
+
+
+/* Envelope top flap */
+
+.envelopeFlap{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:150px;
+
+    background:#e8c5b3;
+
+    clip-path:
+        polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top center;
+
+    transition:
+        transform 1.15s cubic-bezier(.76,0,.18,1);
+
+    z-index:6;
+
+    backface-visibility:hidden;
+
+    filter:
+        drop-shadow(0 4px 4px rgba(75,45,30,.10));
+}
+
+
+/* Seal */
+
+.envelopeSeal{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:#b97969;
+
+    color:#fffaf5;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:18px;
+
+    box-shadow:
+        0 4px 12px rgba(80,45,30,.20);
+
+    z-index:7;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+}
+
+
+/* Enter button */
+
+.envelopeButton{
+    position:absolute;
+
+    left:50%;
+    bottom:-92px;
+
+    transform:translateX(-50%);
+
+    padding:14px 31px;
+
+    border:1px solid #a47762;
+
+    background:#fffdf9;
+
+    color:#6b4032;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    white-space:nowrap;
+
+    box-shadow:
+        0 6px 18px rgba(80,45,30,.10);
+
+    transition:.3s ease;
+
+    z-index:10;
+}
+
+.envelopeButton:hover{
+    background:#6b4032;
+    color:white;
+
+    transform:
+        translateX(-50%)
+        translateY(-2px);
+}
+
+
+/* OPENING ANIMATION */
+
 #inviteCover.opening .envelopeFlap{
     transform:rotateX(180deg);
 }
 
 #inviteCover.opening .invitationCard{
-    transform:translate(-50%,-145%);
+    transform:
+        translate(-50%,-145%);
 }
 
 #inviteCover.opening .envelopeSeal{
     opacity:0;
-    transform:translate(-50%,-50%) scale(.5);
+
+    transform:
+        translate(-50%,-50%)
+        scale(.5);
 }
 
 #inviteCover.opening .envelopeButton{
     opacity:0;
+
     pointer-events:none;
 }
 
 #inviteCover.opening{
-    animation:hideInvitation 1s ease forwards;
+    animation:
+        hideInvitation 1s ease forwards;
+
     animation-delay:2.25s;
 }
 
 @keyframes hideInvitation{
-    from{opacity:1;}
+
+    from{
+        opacity:1;
+    }
+
     to{
         opacity:0;
         visibility:hidden;
     }
+
 }
 
-@media(max-width:500px){
-    .envelopeWrap{
-        height:430px;
-    }
-
-    .envelope{
-        width:310px;
-        height:205px;
-    }
-
-    .envelopeFlap{
-        height:130px;
-    }
-
-    .envelopeFront::before{
-        border-left-width:155px;
-        border-top-width:103px;
-    }
-
-    .envelopeFront::after{
-        border-right-width:155px;
-        border-top-width:103px;
-    }
-
-    .invitationCard{
-        width:245px;
-        height:165px;
-        padding:20px 10px;
-    }
-
-    .invitationCard h2{
-        font-size:25px;
-    }
-
-    .invitationCard small{
-        font-size:8px;
-        letter-spacing:3px;
-    }
-
-    .envelopeLabel{
-        top:-65px;
-        font-size:10px;
-        letter-spacing:4px;
-    }
-
-    .envelopeLabel span{
-        font-size:28px;
-    }
-
-    .envelopeButton{
-        bottom:-82px;
-        font-size:10px;
-        padding:12px 23px;
-        letter-spacing:2px;
-    }
-}
 
 /* =========================
    HERO
@@ -362,7 +435,10 @@ body{
     padding:50px 20px;
 
     background:
-        linear-gradient(rgba(80,35,20,.28),rgba(80,35,20,.38)),
+        linear-gradient(
+            rgba(80,35,20,.28),
+            rgba(80,35,20,.38)
+        ),
         url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=90")
         center/cover no-repeat;
 
@@ -382,7 +458,9 @@ body{
 .hero h1{
     font-size:80px;
     font-weight:normal;
-    text-shadow:0 4px 20px rgba(0,0,0,.4);
+
+    text-shadow:
+        0 4px 20px rgba(0,0,0,.4);
 }
 
 .amp{
@@ -393,10 +471,12 @@ body{
 
 .date{
     margin-top:40px;
+
     font-size:24px;
     letter-spacing:6px;
     font-weight:600;
 }
+
 
 /* =========================
    GENERAL
@@ -426,6 +506,7 @@ section{
     color:#8a6557;
 }
 
+
 /* =========================
    INTRO
 ========================= */
@@ -438,9 +519,11 @@ section{
 .intro p{
     max-width:750px;
     margin:auto;
+
     line-height:1.9;
     font-size:18px;
 }
+
 
 /* =========================
    COUNTDOWN
@@ -453,23 +536,32 @@ section{
 
 .countBox{
     display:flex;
+
     justify-content:center;
+
     gap:30px;
+
     flex-wrap:wrap;
 }
 
 .timeBox{
     width:120px;
+
     padding:22px 10px;
+
     background:white;
+
     border-radius:8px;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.06);
 }
 
 .timeBox span{
     display:block;
+
     font-size:35px;
+
     color:#7b4b3d;
 }
 
@@ -477,6 +569,7 @@ section{
     letter-spacing:2px;
     color:#8b7065;
 }
+
 
 /* =========================
    STORY
@@ -488,11 +581,16 @@ section{
 
 .storyText{
     max-width:800px;
+
     margin:auto;
+
     text-align:center;
+
     line-height:2;
+
     font-size:17px;
 }
+
 
 /* =========================
    EVENTS
@@ -504,42 +602,57 @@ section{
 
 .eventGrid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:20px;
 }
 
 .eventCard{
     background:white;
+
     padding:30px 20px;
+
     text-align:center;
+
     border-radius:8px;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.06);
 
-    transition:transform .3s ease,
-               box-shadow .3s ease;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .eventCard:hover{
     transform:translateY(-6px);
-    box-shadow:0 12px 30px rgba(0,0,0,.1);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.1);
 }
 
 .eventCard h3{
     font-size:25px;
+
     margin-bottom:15px;
+
     font-weight:normal;
 }
 
 .eventCard .eventDate{
     font-weight:bold;
+
     margin-bottom:8px;
 }
 
 .eventCard p{
     line-height:1.7;
+
     color:#76594e;
 }
+
 
 /* =========================
    GALLERY
@@ -551,24 +664,34 @@ section{
 
 .galleryGrid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:15px;
 }
 
 .galleryGrid img{
     width:100%;
+
     height:300px;
+
     object-fit:cover;
+
     border-radius:6px;
 
-    transition:transform .4s ease,
-               box-shadow .4s ease;
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
 }
 
 .galleryGrid img:hover{
     transform:scale(1.03);
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
 }
+
 
 /* =========================
    FAMILIES
@@ -580,27 +703,36 @@ section{
 
 .familyGrid{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:30px;
 }
 
 .familyCard{
     background:#fffaf5;
+
     padding:35px;
+
     text-align:center;
+
     border-radius:8px;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.04);
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.04);
 }
 
 .familyCard h3{
     font-size:28px;
+
     font-weight:normal;
+
     margin-bottom:25px;
 }
 
 .familyCard p{
     margin:12px 0;
+
     line-height:1.6;
 }
 
@@ -608,46 +740,61 @@ section{
     font-size:17px;
 }
 
+
 /* =========================
    VENUE
 ========================= */
 
 .venue{
     text-align:center;
+
     background:#f3e5da;
 }
 
 .venueBox{
     max-width:700px;
+
     margin:auto;
+
     background:white;
+
     padding:45px 25px;
+
     border-radius:8px;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.07);
 }
 
 .venueBox h3{
     font-size:32px;
+
     font-weight:normal;
+
     margin-bottom:15px;
 }
 
 .venueBox p{
     line-height:1.8;
+
     color:#76594e;
 }
 
 .mapBtn{
     display:inline-block;
+
     margin-top:25px;
+
     padding:14px 32px;
 
     background:#7b4b3d;
+
     color:white;
 
     text-decoration:none;
+
     border-radius:4px;
+
     letter-spacing:1px;
 
     transition:.3s;
@@ -655,8 +802,10 @@ section{
 
 .mapBtn:hover{
     background:#4b3028;
+
     transform:translateY(-2px);
 }
+
 
 /* =========================
    RSVP
@@ -664,24 +813,31 @@ section{
 
 .rsvp{
     text-align:center;
+
     background:white;
 }
 
 .rsvpText{
     max-width:650px;
+
     margin:auto;
+
     line-height:1.8;
 }
 
 .rsvpBtn{
     display:inline-block;
+
     margin-top:25px;
+
     padding:14px 35px;
 
     background:#7b4b3d;
+
     color:white;
 
     text-decoration:none;
+
     letter-spacing:2px;
 
     transition:.3s;
@@ -691,20 +847,26 @@ section{
     background:#4b3028;
 }
 
+
 /* =========================
    FOOTER
 ========================= */
 
 footer{
     background:#4b3028;
+
     color:white;
+
     text-align:center;
+
     padding:55px 20px;
 }
 
 footer h2{
     font-size:38px;
+
     font-weight:normal;
+
     margin-bottom:15px;
 }
 
@@ -712,47 +874,12 @@ footer p{
     letter-spacing:3px;
 }
 
+
 /* =========================
    MOBILE
 ========================= */
 
 @media(max-width:800px){
-
-    .coverBox{
-        padding:55px 25px;
-    }
-
-    .coverBox h1{
-        font-size:50px;
-    }
-
-    .coverSmall{
-        font-size:13px;
-        letter-spacing:4px;
-    }
-
-    .coverDate{
-        font-size:16px;
-        letter-spacing:3px;
-    }
-
-    .hero h1{
-        font-size:52px;
-    }
-
-    .amp{
-        font-size:32px;
-    }
-
-    .date{
-        font-size:18px;
-        letter-spacing:4px;
-        font-weight:600;
-    }
-
-    .sectionTitle h2{
-        font-size:34px;
-    }
 
     .eventGrid{
         grid-template-columns:1fr 1fr;
@@ -770,36 +897,85 @@ footer p{
         grid-template-columns:1fr;
     }
 
+    .hero h1{
+        font-size:52px;
+    }
+
+    .amp{
+        font-size:32px;
+    }
+
+    .date{
+        font-size:18px;
+        letter-spacing:4px;
+    }
+
+    .sectionTitle h2{
+        font-size:34px;
+    }
+
 }
+
 
 @media(max-width:500px){
 
-    .coverBox{
-        padding:50px 20px;
+    .envelopeWrap{
+        height:430px;
     }
 
-    .coverBox h1{
-        font-size:40px;
+    .envelope{
+        width:310px;
+        height:205px;
     }
 
-    .coverSmall{
-        font-size:12px;
+    .envelopeFlap{
+        height:130px;
+    }
+
+    .envelopeFront::before{
+        border-left-width:155px;
+        border-top-width:103px;
+    }
+
+    .envelopeFront::after{
+        border-right-width:155px;
+        border-top-width:103px;
+    }
+
+    .invitationCard{
+        width:245px;
+        height:165px;
+
+        padding:20px 10px;
+    }
+
+    .invitationCard h2{
+        font-size:25px;
+    }
+
+    .invitationCard small{
+        font-size:8px;
         letter-spacing:3px;
     }
 
-    .coverAnd{
-        font-size:24px;
+    .envelopeLabel{
+        top:-65px;
+
+        font-size:10px;
+        letter-spacing:4px;
     }
 
-    .coverDate{
-        font-size:15px;
-        letter-spacing:2px;
-        margin:25px 0 30px;
+    .envelopeLabel span{
+        font-size:28px;
     }
 
-    .enterBtn{
-        padding:14px 25px;
-        font-size:13px;
+    .envelopeButton{
+        bottom:-82px;
+
+        font-size:10px;
+
+        padding:12px 23px;
+
         letter-spacing:2px;
     }
 
@@ -833,7 +1009,9 @@ footer p{
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      FIRST ENTER PAGE
@@ -845,46 +1023,63 @@ footer p{
 
         <div class="envelopeLabel">
             WEDDING INVITATION
-            <span>Srashti &amp; Tanmay</span>
+
+            <span>
+                Srashti &amp; Tanmay
+            </span>
         </div>
+
 
         <div class="envelope">
 
             <div class="envelopeBack"></div>
 
+
             <div class="invitationCard">
-                <small>YOU ARE INVITED</small>
-                <h2>Srashti</h2>
-                <div class="cardAnd">&amp;</div>
-                <h2>Tanmay</h2>
-                <p>30 · NOVEMBER · 2026</p>
+
+                <small>
+                    YOU ARE INVITED
+                </small>
+
+                <h2>
+                    Srashti
+                </h2>
+
+                <div class="cardAnd">
+                    &amp;
+                </div>
+
+                <h2>
+                    Tanmay
+                </h2>
+
+                <p>
+                    30 · NOVEMBER · 2026
+                </p>
+
             </div>
+
 
             <div class="envelopeFront"></div>
 
+
             <div class="envelopeFlap"></div>
 
-            <div class="envelopeSeal">✦</div>
 
-            <button class="envelopeButton" onclick="enterInvitation()">
+            <div class="envelopeSeal">
+                ✦
+            </div>
+
+
+            <button
+                class="envelopeButton"
+                onclick="enterInvitation()">
+
                 ENTER INVITATION
+
             </button>
 
         </div>
-
-    </div>
-
-</div>
-
-        <h1>Tanmay</h1>
-
-        <div class="coverDate">
-            30 · NOVEMBER · 2026
-        </div>
-
-        <button class="enterBtn" onclick="enterInvitation()">
-            ENTER INVITATION
-        </button>
 
     </div>
 
@@ -903,13 +1098,17 @@ footer p{
             SAVE THE DATE
         </div>
 
-        <h1>Srashti</h1>
+        <h1>
+            Srashti
+        </h1>
 
         <div class="amp">
             &amp;
         </div>
 
-        <h1>Tanmay</h1>
+        <h1>
+            Tanmay
+        </h1>
 
         <div class="date">
             30 · NOVEMBER · 2026
@@ -929,14 +1128,24 @@ footer p{
     <div class="container">
 
         <div class="sectionTitle">
-            <h2>We're Getting Married</h2>
-            <p>Two hearts, one beautiful journey</p>
+
+            <h2>
+                We're Getting Married
+            </h2>
+
+            <p>
+                Two hearts, one beautiful journey
+            </p>
+
         </div>
 
+
         <p>
+
             With the blessings of our families and loved ones,
             we invite you to celebrate the beginning of our
             beautiful journey together.
+
         </p>
 
     </div>
@@ -953,30 +1162,69 @@ footer p{
     <div class="container">
 
         <div class="sectionTitle">
-            <h2>Countdown to Our Big Day</h2>
-            <p>30 November 2026 · 7:00 PM</p>
+
+            <h2>
+                Countdown to Our Big Day
+            </h2>
+
+            <p>
+                30 November 2026 · 7:00 PM
+            </p>
+
         </div>
+
 
         <div class="countBox">
 
             <div class="timeBox">
-                <span id="days">00</span>
-                <small>DAYS</small>
+
+                <span id="days">
+                    00
+                </span>
+
+                <small>
+                    DAYS
+                </small>
+
             </div>
 
-            <div class="timeBox">
-                <span id="hours">00</span>
-                <small>HOURS</small>
-            </div>
 
             <div class="timeBox">
-                <span id="minutes">00</span>
-                <small>MINUTES</small>
+
+                <span id="hours">
+                    00
+                </span>
+
+                <small>
+                    HOURS
+                </small>
+
             </div>
 
+
             <div class="timeBox">
-                <span id="seconds">00</span>
-                <small>SECONDS</small>
+
+                <span id="minutes">
+                    00
+                </span>
+
+                <small>
+                    MINUTES
+                </small>
+
+            </div>
+
+
+            <div class="timeBox">
+
+                <span id="seconds">
+                    00
+                </span>
+
+                <small>
+                    SECONDS
+                </small>
+
             </div>
 
         </div>
@@ -995,24 +1243,36 @@ footer p{
     <div class="container">
 
         <div class="sectionTitle">
-            <h2>Our Story</h2>
-            <p>A journey of love, friendship and togetherness</p>
+
+            <h2>
+                Our Story
+            </h2>
+
+            <p>
+                A journey of love, friendship and togetherness
+            </p>
+
         </div>
+
 
         <div class="storyText">
 
             <p>
+
                 Every love story is beautiful, but ours is
                 truly special to us. Two people, two families
                 and one beautiful beginning.
+
             </p>
 
             <br>
 
             <p>
+
                 As we begin this new chapter of our lives,
                 we would be delighted to have you with us
                 to make our special moments even more memorable.
+
             </p>
 
         </div>
@@ -1031,15 +1291,26 @@ footer p{
     <div class="container">
 
         <div class="sectionTitle">
-            <h2>Wedding Events</h2>
-            <p>Join us in celebrating every beautiful moment</p>
+
+            <h2>
+                Wedding Events
+            </h2>
+
+            <p>
+                Join us in celebrating every beautiful moment
+            </p>
+
         </div>
+
 
         <div class="eventGrid">
 
+
             <div class="eventCard">
 
-                <h3>Haldi</h3>
+                <h3>
+                    Haldi
+                </h3>
 
                 <div class="eventDate">
                     28 November 2026
@@ -1056,7 +1327,9 @@ footer p{
 
             <div class="eventCard">
 
-                <h3>Mehndi</h3>
+                <h3>
+                    Mehndi
+                </h3>
 
                 <div class="eventDate">
                     29 November 2026
@@ -1073,7 +1346,9 @@ footer p{
 
             <div class="eventCard">
 
-                <h3>Wedding</h3>
+                <h3>
+                    Wedding
+                </h3>
 
                 <div class="eventDate">
                     30 November 2026
@@ -1090,7 +1365,9 @@ footer p{
 
             <div class="eventCard">
 
-                <h3>Reception</h3>
+                <h3>
+                    Reception
+                </h3>
 
                 <div class="eventDate">
                     1 December 2026
@@ -1103,6 +1380,7 @@ footer p{
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1120,9 +1398,17 @@ footer p{
     <div class="container">
 
         <div class="sectionTitle">
-            <h2>Gallery</h2>
-            <p>Some beautiful moments</p>
+
+            <h2>
+                Gallery
+            </h2>
+
+            <p>
+                Some beautiful moments
+            </p>
+
         </div>
+
 
         <div class="galleryGrid">
 
@@ -1154,37 +1440,67 @@ footer p{
     <div class="container">
 
         <div class="sectionTitle">
-            <h2>Our Families</h2>
-            <p>With the blessings of our beloved families</p>
+
+            <h2>
+                Our Families
+            </h2>
+
+            <p>
+                With the blessings of our beloved families
+            </p>
+
         </div>
+
 
         <div class="familyGrid">
 
+
             <div class="familyCard">
 
-                <h3>Srashti's Family</h3>
+                <h3>
+                    Srashti's Family
+                </h3>
 
                 <p>
-                    <strong>Mr. Vishnu Kumar Bansal</strong>
+                    <strong>
+                        Mr. Vishnu Kumar Bansal
+                    </strong>
+
                     <br>
+
                     Father
                 </p>
 
+
                 <p>
-                    <strong>Mrs. Shaily Bansal</strong>
+                    <strong>
+                        Mrs. Shaily Bansal
+                    </strong>
+
                     <br>
+
                     Mother
                 </p>
 
+
                 <p>
-                    <strong>Kushal Agrawal</strong>
+                    <strong>
+                        Kushal Agrawal
+                    </strong>
+
                     <br>
+
                     Younger Brother
                 </p>
 
+
                 <p>
-                    <strong>Anushka Agrawal</strong>
+                    <strong>
+                        Anushka Agrawal
+                    </strong>
+
                     <br>
+
                     Younger Sister
                 </p>
 
@@ -1193,27 +1509,45 @@ footer p{
 
             <div class="familyCard">
 
-                <h3>Tanmay's Family</h3>
+                <h3>
+                    Tanmay's Family
+                </h3>
+
 
                 <p>
-                    <strong>Mr. Pankaj Goyal</strong>
+                    <strong>
+                        Mr. Pankaj Goyal
+                    </strong>
+
                     <br>
+
                     Father
                 </p>
 
+
                 <p>
-                    <strong>Mrs. Doly Goyal</strong>
+                    <strong>
+                        Mrs. Doly Goyal
+                    </strong>
+
                     <br>
+
                     Mother
                 </p>
 
+
                 <p>
-                    <strong>Krishna Goyal</strong>
+                    <strong>
+                        Krishna Goyal
+                    </strong>
+
                     <br>
+
                     Younger Brother
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1231,29 +1565,50 @@ footer p{
     <div class="container">
 
         <div class="sectionTitle">
-            <h2>Wedding Venue</h2>
-            <p>We would love to celebrate with you</p>
+
+            <h2>
+                Wedding Venue
+            </h2>
+
+            <p>
+                We would love to celebrate with you
+            </p>
+
         </div>
+
 
         <div class="venueBox">
 
-            <h3>Shreeji Farm House</h3>
+            <h3>
+                Shreeji Farm House
+            </h3>
+
 
             <p>
                 Dayanatpur, Hathras
             </p>
 
+
             <p>
-                <strong>30 November 2026</strong>
+
+                <strong>
+                    30 November 2026
+                </strong>
+
                 <br>
+
                 7:00 PM
+
             </p>
+
 
             <a
                 href="https://maps.app.goo.gl/4o7F85QBuyG4CtwS8"
                 target="_blank"
                 class="mapBtn">
+
                 📍 Get Directions
+
             </a>
 
         </div>
@@ -1272,17 +1627,28 @@ footer p{
     <div class="container">
 
         <div class="sectionTitle">
-            <h2>RSVP</h2>
-            <p>Your presence is our greatest gift</p>
+
+            <h2>
+                RSVP
+            </h2>
+
+            <p>
+                Your presence is our greatest gift
+            </p>
+
         </div>
+
 
         <div class="rsvpText">
 
             <p>
+
                 We warmly invite you to join us on our special day
                 and bless Srashti &amp; Tanmay as they begin their
                 journey together.
+
             </p>
+
 
             <a href="#" class="rsvpBtn">
                 RSVP NOW
@@ -1301,7 +1667,9 @@ footer p{
 
 <footer>
 
-    <h2>Srashti &amp; Tanmay</h2>
+    <h2>
+        Srashti &amp; Tanmay
+    </h2>
 
     <p>
         30 · 11 · 2026
@@ -1322,11 +1690,14 @@ footer p{
 
 <script>
 
+
 function enterInvitation(){
 
-    const cover = document.getElementById("inviteCover");
+    const cover =
+        document.getElementById("inviteCover");
 
     cover.classList.add("opening");
+
 
     setTimeout(function(){
 
@@ -1334,75 +1705,104 @@ function enterInvitation(){
 
     },3300);
 
-},800);
-
 }
 
 
-/* COUNTDOWN */
+/* =========================
+   COUNTDOWN
+========================= */
 
 const weddingDate =
-new Date("November 30, 2026 19:00:00").getTime();
+    new Date(
+        "November 30, 2026 19:00:00"
+    ).getTime();
 
 
 function updateCountdown(){
 
-    const now = new Date().getTime();
+    const now =
+        new Date().getTime();
 
-    const distance = weddingDate - now;
+    const distance =
+        weddingDate - now;
+
 
     if(distance <= 0){
 
         document.getElementById("days").innerHTML = "00";
+
         document.getElementById("hours").innerHTML = "00";
+
         document.getElementById("minutes").innerHTML = "00";
+
         document.getElementById("seconds").innerHTML = "00";
 
         return;
+
     }
 
+
     const days =
-    Math.floor(distance / (1000 * 60 * 60 * 24));
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
+
 
     const hours =
-    Math.floor(
-        (distance % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
-    );
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
+
 
     const minutes =
-    Math.floor(
-        (distance % (1000 * 60 * 60))
-        / (1000 * 60)
-    );
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
+
 
     const seconds =
-    Math.floor(
-        (distance % (1000 * 60))
-        / 1000
-    );
+        Math.floor(
+            (distance %
+            (1000 * 60))
+            /
+            1000
+        );
 
 
     document.getElementById("days").innerHTML =
-    String(days).padStart(2,"0");
+        String(days).padStart(2,"0");
+
 
     document.getElementById("hours").innerHTML =
-    String(hours).padStart(2,"0");
+        String(hours).padStart(2,"0");
+
 
     document.getElementById("minutes").innerHTML =
-    String(minutes).padStart(2,"0");
+        String(minutes).padStart(2,"0");
+
 
     document.getElementById("seconds").innerHTML =
-    String(seconds).padStart(2,"0");
+        String(seconds).padStart(2,"0");
 
 }
 
 
 updateCountdown();
 
-setInterval(updateCountdown,1000);
+setInterval(
+    updateCountdown,
+    1000
+);
 
 </script>
+
 
 </body>
 </html>
