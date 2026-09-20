@@ -1,1695 +1,226 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Srashti & Tanmay | Wedding Invitation</title>
+<!-- =========================
+     FIRST INVITATION PAGE — ROYAL ENVELOPE
+========================= -->
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Georgia, "Times New Roman", serif;
-    background:#fffaf5;
-    color:#4b3028;
-}
-
-
-/* =========================
-   FIRST INVITATION PAGE
-   ENVELOPE OPENING
-========================= */
 
 #inviteCover{
     position:fixed;
     inset:0;
-    z-index:9999;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-
-    background:
-        radial-gradient(circle at 15% 20%,rgba(235,188,170,.30),transparent 28%),
-        radial-gradient(circle at 85% 80%,rgba(218,179,135,.25),transparent 30%),
-        #fff8f2;
-
-    color:#5d3c32;
+    z-index:99999;
     overflow:hidden;
+    background:#f7eadb;
+    transition:opacity 1.2s ease;
 }
 
-#inviteCover::before,
-#inviteCover::after{
-    content:"✦";
-    position:absolute;
-    color:#c49a68;
-    font-size:24px;
-    opacity:.7;
-}
-
-#inviteCover::before{
-    top:12%;
-    left:12%;
-}
-
-#inviteCover::after{
-    bottom:12%;
-    right:12%;
-}
-
-.envelopeWrap{
+.royalCover{
     position:relative;
-    width:390px;
-    max-width:88vw;
-    height:470px;
-
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
-}
-
-.envelopeLabel{
-    position:absolute;
-    top:-78px;
-    left:50%;
-
-    transform:translateX(-50%);
-
     width:100%;
+    height:100%;
 
-    color:#8e6656;
-    font-size:12px;
-    letter-spacing:5px;
-    white-space:nowrap;
+    background-image:url("wedding-cover.png");
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 
-.envelopeLabel span{
-    display:block;
-    margin-top:9px;
+/* Floating rose petals */
 
-    font-size:34px;
-    letter-spacing:2px;
-    color:#6b4032;
-}
-
-.envelope{
-    position:relative;
-
-    width:360px;
-    height:235px;
-    max-width:100%;
-
-    background:#f3d9ca;
-
-    border:1px solid #cda88f;
-    border-radius:5px;
-
-    box-shadow:
-        0 25px 65px rgba(74,43,30,.20);
-
-    perspective:1000px;
-}
-
-/* Envelope back */
-
-.envelopeBack{
+.royalPetals{
     position:absolute;
     inset:0;
-
-    background:#efd2c2;
-
-    border-radius:5px;
-
-    z-index:1;
-}
-
-
-/* Invitation card */
-
-.invitationCard{
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    width:275px;
-    height:190px;
-
-    transform:translate(-50%,-40%);
-
-    background:#fffdf9;
-
-    border:1px solid #d6b38e;
-
-    box-shadow:
-        0 10px 35px rgba(75,45,30,.18);
-
-    padding:25px 15px;
-
-    z-index:2;
-
-    transition:
-        transform 1.2s cubic-bezier(.2,.75,.25,1),
-        opacity .5s ease;
-}
-
-.invitationCard::before{
-    content:"";
-
-    position:absolute;
-    inset:8px;
-
-    border:1px solid rgba(191,151,102,.55);
-
+    overflow:hidden;
     pointer-events:none;
 }
 
-.invitationCard small{
-    display:block;
-
-    font-size:10px;
-    letter-spacing:4px;
-
-    color:#9b705d;
-
-    margin-bottom:13px;
-}
-
-.invitationCard h2{
-    font-size:29px;
-
-    font-weight:normal;
-
-    color:#6b4032;
-
-    margin:3px 0;
-}
-
-.cardAnd{
-    font-size:19px;
-
-    font-style:italic;
-
-    color:#b28770;
-}
-
-.invitationCard p{
-    margin-top:13px;
-
-    font-size:11px;
-
-    letter-spacing:2px;
-
-    color:#896758;
-}
-
-
-/* Envelope front folds */
-
-.envelopeFront{
+.royalPetal{
     position:absolute;
+    top:-35px;
 
-    inset:0;
+    width:11px;
+    height:17px;
 
-    z-index:4;
+    border-radius:100% 0 100% 0;
 
-    overflow:hidden;
+    background:#8f1724;
 
-    border-radius:5px;
+    opacity:.65;
 
-    pointer-events:none;
+    animation:royalFall linear infinite;
 }
 
-.envelopeFront::before{
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    bottom:0;
-
-    width:0;
-    height:0;
-
-    border-left:180px solid #f7dfd2;
-    border-top:118px solid transparent;
+.royalPetal:nth-child(1){
+    left:8%;
+    animation-duration:9s;
+    animation-delay:1s;
 }
 
-.envelopeFront::after{
-    content:"";
-
-    position:absolute;
-
-    right:0;
-    bottom:0;
-
-    width:0;
-    height:0;
-
-    border-right:180px solid #f7dfd2;
-    border-top:118px solid transparent;
+.royalPetal:nth-child(2){
+    left:24%;
+    animation-duration:12s;
+    animation-delay:3s;
 }
 
+.royalPetal:nth-child(3){
+    left:47%;
+    animation-duration:10s;
+    animation-delay:0s;
+}
 
-/* Envelope top flap */
+.royalPetal:nth-child(4){
+    left:71%;
+    animation-duration:13s;
+    animation-delay:2s;
+}
 
-.envelopeFlap{
-    position:absolute;
+.royalPetal:nth-child(5){
+    left:89%;
+    animation-duration:11s;
+    animation-delay:4s;
+}
 
-    top:0;
-    left:0;
+@keyframes royalFall{
 
-    width:100%;
-    height:150px;
+    0%{
+        transform:
+            translate3d(0,-40px,0)
+            rotate(0deg);
+    }
 
-    background:#e8c5b3;
+    50%{
+        transform:
+            translate3d(35px,50vh,0)
+            rotate(180deg);
+    }
 
-    clip-path:
-        polygon(0 0,100% 0,50% 100%);
+    100%{
+        transform:
+            translate3d(-25px,110vh,0)
+            rotate(360deg);
+    }
 
-    transform-origin:top center;
-
-    transition:
-        transform 1.15s cubic-bezier(.76,0,.18,1);
-
-    z-index:6;
-
-    backface-visibility:hidden;
-
-    filter:
-        drop-shadow(0 4px 4px rgba(75,45,30,.10));
 }
 
 
-/* Seal */
+/* Envelope clickable area */
 
-.envelopeSeal{
+.envelopeClickArea{
     position:absolute;
 
     left:50%;
-    top:50%;
+    top:47%;
+
+    width:min(82vw,820px);
+    height:min(34vw,560px);
 
     transform:translate(-50%,-50%);
 
-    width:48px;
-    height:48px;
+    border:0;
+    padding:0;
+    margin:0;
 
-    border-radius:50%;
-
-    background:#b97969;
-
-    color:#fffaf5;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:18px;
-
-    box-shadow:
-        0 4px 12px rgba(80,45,30,.20);
-
-    z-index:7;
-
-    transition:
-        opacity .35s ease,
-        transform .35s ease;
-}
-
-
-/* Enter button */
-
-.envelopeButton{
-    position:absolute;
-
-    left:50%;
-    bottom:-92px;
-
-    transform:translateX(-50%);
-
-    padding:14px 31px;
-
-    border:1px solid #a47762;
-
-    background:#fffdf9;
-
-    color:#6b4032;
-
-    font-size:12px;
-
-    font-weight:bold;
-
-    letter-spacing:3px;
+    background:transparent;
 
     cursor:pointer;
-
-    white-space:nowrap;
-
-    box-shadow:
-        0 6px 18px rgba(80,45,30,.10);
-
-    transition:.3s ease;
 
     z-index:10;
 }
 
-.envelopeButton:hover{
-    background:#6b4032;
-    color:white;
+.envelopeClickArea:focus-visible{
+    outline:2px solid #8f1724;
+    outline-offset:6px;
+}
 
-    transform:
-        translateX(-50%)
-        translateY(-2px);
+.envelopeClickArea::after{
+    content:"";
+
+    position:absolute;
+
+    inset:8%;
+
+    border-radius:8px;
+
+    box-shadow:
+        0 0 0 rgba(255,255,255,0);
+
+    transition:
+        box-shadow .45s ease;
+
+    pointer-events:none;
+}
+
+.envelopeClickArea:hover::after{
+    box-shadow:
+        0 0 45px rgba(255,255,255,.16);
 }
 
 
-/* OPENING ANIMATION */
+/* Opening */
 
-#inviteCover.opening .envelopeFlap{
-    transform:rotateX(180deg);
+#inviteCover.opening .royalCover{
+
+    transform:scale(1.035);
+
+    transition:
+        transform 1.15s ease;
 }
 
-#inviteCover.opening .invitationCard{
-    transform:
-        translate(-50%,-145%);
-}
+#inviteCover.opening{
 
-#inviteCover.opening .envelopeSeal{
-    opacity:0;
-
-    transform:
-        translate(-50%,-50%)
-        scale(.5);
-}
-
-#inviteCover.opening .envelopeButton{
     opacity:0;
 
     pointer-events:none;
 }
 
-#inviteCover.opening{
-    animation:
-        hideInvitation 1s ease forwards;
 
-    animation-delay:2.25s;
-}
+@media(max-width:600px){
 
-@keyframes hideInvitation{
-
-    from{
-        opacity:1;
+    .royalCover{
+        background-position:center center;
     }
 
-    to{
-        opacity:0;
-        visibility:hidden;
-    }
+    .envelopeClickArea{
 
-}
+        top:50%;
 
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-
-    padding:50px 20px;
-
-    background:
-        linear-gradient(
-            rgba(80,35,20,.28),
-            rgba(80,35,20,.38)
-        ),
-        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=90")
-        center/cover no-repeat;
-
-    color:white;
-}
-
-.heroContent{
-    max-width:900px;
-}
-
-.save{
-    font-size:18px;
-    letter-spacing:5px;
-    margin-bottom:25px;
-}
-
-.hero h1{
-    font-size:80px;
-    font-weight:normal;
-
-    text-shadow:
-        0 4px 20px rgba(0,0,0,.4);
-}
-
-.amp{
-    font-size:45px;
-    font-style:italic;
-    margin:5px 0;
-}
-
-.date{
-    margin-top:40px;
-
-    font-size:24px;
-    letter-spacing:6px;
-    font-weight:600;
-}
-
-
-/* =========================
-   GENERAL
-========================= */
-
-section{
-    padding:80px 20px;
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-}
-
-.sectionTitle{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.sectionTitle h2{
-    font-size:42px;
-    font-weight:normal;
-    margin-bottom:12px;
-}
-
-.sectionTitle p{
-    color:#8a6557;
-}
-
-
-/* =========================
-   INTRO
-========================= */
-
-.intro{
-    text-align:center;
-    background:#fffaf5;
-}
-
-.intro p{
-    max-width:750px;
-    margin:auto;
-
-    line-height:1.9;
-    font-size:18px;
-}
-
-
-/* =========================
-   COUNTDOWN
-========================= */
-
-.countdown{
-    background:#f3e5da;
-    text-align:center;
-}
-
-.countBox{
-    display:flex;
-
-    justify-content:center;
-
-    gap:30px;
-
-    flex-wrap:wrap;
-}
-
-.timeBox{
-    width:120px;
-
-    padding:22px 10px;
-
-    background:white;
-
-    border-radius:8px;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,.06);
-}
-
-.timeBox span{
-    display:block;
-
-    font-size:35px;
-
-    color:#7b4b3d;
-}
-
-.timeBox small{
-    letter-spacing:2px;
-    color:#8b7065;
-}
-
-
-/* =========================
-   STORY
-========================= */
-
-.story{
-    background:white;
-}
-
-.storyText{
-    max-width:800px;
-
-    margin:auto;
-
-    text-align:center;
-
-    line-height:2;
-
-    font-size:17px;
-}
-
-
-/* =========================
-   EVENTS
-========================= */
-
-.events{
-    background:#fffaf5;
-}
-
-.eventGrid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:20px;
-}
-
-.eventCard{
-    background:white;
-
-    padding:30px 20px;
-
-    text-align:center;
-
-    border-radius:8px;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,.06);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.eventCard:hover{
-    transform:translateY(-6px);
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,.1);
-}
-
-.eventCard h3{
-    font-size:25px;
-
-    margin-bottom:15px;
-
-    font-weight:normal;
-}
-
-.eventCard .eventDate{
-    font-weight:bold;
-
-    margin-bottom:8px;
-}
-
-.eventCard p{
-    line-height:1.7;
-
-    color:#76594e;
-}
-
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallery{
-    background:#f3e5da;
-}
-
-.galleryGrid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:15px;
-}
-
-.galleryGrid img{
-    width:100%;
-
-    height:300px;
-
-    object-fit:cover;
-
-    border-radius:6px;
-
-    transition:
-        transform .4s ease,
-        box-shadow .4s ease;
-}
-
-.galleryGrid img:hover{
-    transform:scale(1.03);
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.15);
-}
-
-
-/* =========================
-   FAMILIES
-========================= */
-
-.families{
-    background:white;
-}
-
-.familyGrid{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:30px;
-}
-
-.familyCard{
-    background:#fffaf5;
-
-    padding:35px;
-
-    text-align:center;
-
-    border-radius:8px;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,.04);
-}
-
-.familyCard h3{
-    font-size:28px;
-
-    font-weight:normal;
-
-    margin-bottom:25px;
-}
-
-.familyCard p{
-    margin:12px 0;
-
-    line-height:1.6;
-}
-
-.familyCard strong{
-    font-size:17px;
-}
-
-
-/* =========================
-   VENUE
-========================= */
-
-.venue{
-    text-align:center;
-
-    background:#f3e5da;
-}
-
-.venueBox{
-    max-width:700px;
-
-    margin:auto;
-
-    background:white;
-
-    padding:45px 25px;
-
-    border-radius:8px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.07);
-}
-
-.venueBox h3{
-    font-size:32px;
-
-    font-weight:normal;
-
-    margin-bottom:15px;
-}
-
-.venueBox p{
-    line-height:1.8;
-
-    color:#76594e;
-}
-
-.mapBtn{
-    display:inline-block;
-
-    margin-top:25px;
-
-    padding:14px 32px;
-
-    background:#7b4b3d;
-
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:4px;
-
-    letter-spacing:1px;
-
-    transition:.3s;
-}
-
-.mapBtn:hover{
-    background:#4b3028;
-
-    transform:translateY(-2px);
-}
-
-
-/* =========================
-   RSVP
-========================= */
-
-.rsvp{
-    text-align:center;
-
-    background:white;
-}
-
-.rsvpText{
-    max-width:650px;
-
-    margin:auto;
-
-    line-height:1.8;
-}
-
-.rsvpBtn{
-    display:inline-block;
-
-    margin-top:25px;
-
-    padding:14px 35px;
-
-    background:#7b4b3d;
-
-    color:white;
-
-    text-decoration:none;
-
-    letter-spacing:2px;
-
-    transition:.3s;
-}
-
-.rsvpBtn:hover{
-    background:#4b3028;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    background:#4b3028;
-
-    color:white;
-
-    text-align:center;
-
-    padding:55px 20px;
-}
-
-footer h2{
-    font-size:38px;
-
-    font-weight:normal;
-
-    margin-bottom:15px;
-}
-
-footer p{
-    letter-spacing:3px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:800px){
-
-    .eventGrid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .galleryGrid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .galleryGrid img{
-        height:220px;
-    }
-
-    .familyGrid{
-        grid-template-columns:1fr;
-    }
-
-    .hero h1{
-        font-size:52px;
-    }
-
-    .amp{
-        font-size:32px;
-    }
-
-    .date{
-        font-size:18px;
-        letter-spacing:4px;
-    }
-
-    .sectionTitle h2{
-        font-size:34px;
-    }
-
-}
-
-
-@media(max-width:500px){
-
-    .envelopeWrap{
-        height:430px;
-    }
-
-    .envelope{
-        width:310px;
-        height:205px;
-    }
-
-    .envelopeFlap{
-        height:130px;
-    }
-
-    .envelopeFront::before{
-        border-left-width:155px;
-        border-top-width:103px;
-    }
-
-    .envelopeFront::after{
-        border-right-width:155px;
-        border-top-width:103px;
-    }
-
-    .invitationCard{
-        width:245px;
-        height:165px;
-
-        padding:20px 10px;
-    }
-
-    .invitationCard h2{
-        font-size:25px;
-    }
-
-    .invitationCard small{
-        font-size:8px;
-        letter-spacing:3px;
-    }
-
-    .envelopeLabel{
-        top:-65px;
-
-        font-size:10px;
-        letter-spacing:4px;
-    }
-
-    .envelopeLabel span{
-        font-size:28px;
-    }
-
-    .envelopeButton{
-        bottom:-82px;
-
-        font-size:10px;
-
-        padding:12px 23px;
-
-        letter-spacing:2px;
-    }
-
-    .hero h1{
-        font-size:43px;
-    }
-
-    .date{
-        font-size:17px;
-        letter-spacing:3px;
-    }
-
-    .eventGrid{
-        grid-template-columns:1fr;
-    }
-
-    .galleryGrid{
-        grid-template-columns:1fr;
-    }
-
-    .countBox{
-        gap:10px;
-    }
-
-    .timeBox{
-        width:100px;
+        width:92vw;
+        height:34vh;
     }
 
 }
 
 </style>
-</head>
 
-
-<body>
-
-
-<!-- =========================
-     FIRST ENTER PAGE
-========================= -->
 
 <div id="inviteCover">
 
-    <div class="envelopeWrap">
+    <div class="royalCover">
 
-        <div class="envelopeLabel">
-            WEDDING INVITATION
+        <div class="royalPetals">
 
-            <span>
-                Srashti &amp; Tanmay
-            </span>
-        </div>
-
-
-        <div class="envelope">
-
-            <div class="envelopeBack"></div>
-
-
-            <div class="invitationCard">
-
-                <small>
-                    YOU ARE INVITED
-                </small>
-
-                <h2>
-                    Srashti
-                </h2>
-
-                <div class="cardAnd">
-                    &amp;
-                </div>
-
-                <h2>
-                    Tanmay
-                </h2>
-
-                <p>
-                    30 · NOVEMBER · 2026
-                </p>
-
-            </div>
-
-
-            <div class="envelopeFront"></div>
-
-
-            <div class="envelopeFlap"></div>
-
-
-            <div class="envelopeSeal">
-                ✦
-            </div>
-
-
-            <button
-                class="envelopeButton"
-                onclick="enterInvitation()">
-
-                ENTER INVITATION
-
-            </button>
+            <span class="royalPetal"></span>
+            <span class="royalPetal"></span>
+            <span class="royalPetal"></span>
+            <span class="royalPetal"></span>
+            <span class="royalPetal"></span>
 
         </div>
+
+
+        <!-- Envelope par click -->
+
+        <button
+            class="envelopeClickArea"
+            onclick="enterInvitation()"
+            aria-label="Open Wedding Invitation">
+        </button>
 
     </div>
 
 </div>
 
 
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-    <div class="heroContent">
-
-        <div class="save">
-            SAVE THE DATE
-        </div>
-
-        <h1>
-            Srashti
-        </h1>
-
-        <div class="amp">
-            &amp;
-        </div>
-
-        <h1>
-            Tanmay
-        </h1>
-
-        <div class="date">
-            30 · NOVEMBER · 2026
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     INTRO
-========================= -->
-
-<section class="intro">
-
-    <div class="container">
-
-        <div class="sectionTitle">
-
-            <h2>
-                We're Getting Married
-            </h2>
-
-            <p>
-                Two hearts, one beautiful journey
-            </p>
-
-        </div>
-
-
-        <p>
-
-            With the blessings of our families and loved ones,
-            we invite you to celebrate the beginning of our
-            beautiful journey together.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     COUNTDOWN
-========================= -->
-
-<section class="countdown">
-
-    <div class="container">
-
-        <div class="sectionTitle">
-
-            <h2>
-                Countdown to Our Big Day
-            </h2>
-
-            <p>
-                30 November 2026 · 7:00 PM
-            </p>
-
-        </div>
-
-
-        <div class="countBox">
-
-            <div class="timeBox">
-
-                <span id="days">
-                    00
-                </span>
-
-                <small>
-                    DAYS
-                </small>
-
-            </div>
-
-
-            <div class="timeBox">
-
-                <span id="hours">
-                    00
-                </span>
-
-                <small>
-                    HOURS
-                </small>
-
-            </div>
-
-
-            <div class="timeBox">
-
-                <span id="minutes">
-                    00
-                </span>
-
-                <small>
-                    MINUTES
-                </small>
-
-            </div>
-
-
-            <div class="timeBox">
-
-                <span id="seconds">
-                    00
-                </span>
-
-                <small>
-                    SECONDS
-                </small>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     STORY
-========================= -->
-
-<section class="story">
-
-    <div class="container">
-
-        <div class="sectionTitle">
-
-            <h2>
-                Our Story
-            </h2>
-
-            <p>
-                A journey of love, friendship and togetherness
-            </p>
-
-        </div>
-
-
-        <div class="storyText">
-
-            <p>
-
-                Every love story is beautiful, but ours is
-                truly special to us. Two people, two families
-                and one beautiful beginning.
-
-            </p>
-
-            <br>
-
-            <p>
-
-                As we begin this new chapter of our lives,
-                we would be delighted to have you with us
-                to make our special moments even more memorable.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     EVENTS
-========================= -->
-
-<section class="events">
-
-    <div class="container">
-
-        <div class="sectionTitle">
-
-            <h2>
-                Wedding Events
-            </h2>
-
-            <p>
-                Join us in celebrating every beautiful moment
-            </p>
-
-        </div>
-
-
-        <div class="eventGrid">
-
-
-            <div class="eventCard">
-
-                <h3>
-                    Haldi
-                </h3>
-
-                <div class="eventDate">
-                    28 November 2026
-                </div>
-
-                <p>
-                    11:00 AM
-                    <br>
-                    Family Residence
-                </p>
-
-            </div>
-
-
-            <div class="eventCard">
-
-                <h3>
-                    Mehndi
-                </h3>
-
-                <div class="eventDate">
-                    29 November 2026
-                </div>
-
-                <p>
-                    5:00 PM
-                    <br>
-                    Family Residence
-                </p>
-
-            </div>
-
-
-            <div class="eventCard">
-
-                <h3>
-                    Wedding
-                </h3>
-
-                <div class="eventDate">
-                    30 November 2026
-                </div>
-
-                <p>
-                    7:00 PM
-                    <br>
-                    Shreeji Farm House
-                </p>
-
-            </div>
-
-
-            <div class="eventCard">
-
-                <h3>
-                    Reception
-                </h3>
-
-                <div class="eventDate">
-                    1 December 2026
-                </div>
-
-                <p>
-                    7:30 PM
-                    <br>
-                    Grand Celebration Hall
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     GALLERY
-========================= -->
-
-<section class="gallery">
-
-    <div class="container">
-
-        <div class="sectionTitle">
-
-            <h2>
-                Gallery
-            </h2>
-
-            <p>
-                Some beautiful moments
-            </p>
-
-        </div>
-
-
-        <div class="galleryGrid">
-
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80">
-
-            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80">
-
-            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80">
-
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80">
-
-            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80">
-
-            <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=900&q=80">
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FAMILIES
-========================= -->
-
-<section class="families">
-
-    <div class="container">
-
-        <div class="sectionTitle">
-
-            <h2>
-                Our Families
-            </h2>
-
-            <p>
-                With the blessings of our beloved families
-            </p>
-
-        </div>
-
-
-        <div class="familyGrid">
-
-
-            <div class="familyCard">
-
-                <h3>
-                    Srashti's Family
-                </h3>
-
-                <p>
-                    <strong>
-                        Mr. Vishnu Kumar Bansal
-                    </strong>
-
-                    <br>
-
-                    Father
-                </p>
-
-
-                <p>
-                    <strong>
-                        Mrs. Shaily Bansal
-                    </strong>
-
-                    <br>
-
-                    Mother
-                </p>
-
-
-                <p>
-                    <strong>
-                        Kushal Agrawal
-                    </strong>
-
-                    <br>
-
-                    Younger Brother
-                </p>
-
-
-                <p>
-                    <strong>
-                        Anushka Agrawal
-                    </strong>
-
-                    <br>
-
-                    Younger Sister
-                </p>
-
-            </div>
-
-
-            <div class="familyCard">
-
-                <h3>
-                    Tanmay's Family
-                </h3>
-
-
-                <p>
-                    <strong>
-                        Mr. Pankaj Goyal
-                    </strong>
-
-                    <br>
-
-                    Father
-                </p>
-
-
-                <p>
-                    <strong>
-                        Mrs. Doly Goyal
-                    </strong>
-
-                    <br>
-
-                    Mother
-                </p>
-
-
-                <p>
-                    <strong>
-                        Krishna Goyal
-                    </strong>
-
-                    <br>
-
-                    Younger Brother
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     VENUE
-========================= -->
-
-<section class="venue">
-
-    <div class="container">
-
-        <div class="sectionTitle">
-
-            <h2>
-                Wedding Venue
-            </h2>
-
-            <p>
-                We would love to celebrate with you
-            </p>
-
-        </div>
-
-
-        <div class="venueBox">
-
-            <h3>
-                Shreeji Farm House
-            </h3>
-
-
-            <p>
-                Dayanatpur, Hathras
-            </p>
-
-
-            <p>
-
-                <strong>
-                    30 November 2026
-                </strong>
-
-                <br>
-
-                7:00 PM
-
-            </p>
-
-
-            <a
-                href="https://maps.app.goo.gl/4o7F85QBuyG4CtwS8"
-                target="_blank"
-                class="mapBtn">
-
-                📍 Get Directions
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     RSVP
-========================= -->
-
-<section class="rsvp">
-
-    <div class="container">
-
-        <div class="sectionTitle">
-
-            <h2>
-                RSVP
-            </h2>
-
-            <p>
-                Your presence is our greatest gift
-            </p>
-
-        </div>
-
-
-        <div class="rsvpText">
-
-            <p>
-
-                We warmly invite you to join us on our special day
-                and bless Srashti &amp; Tanmay as they begin their
-                journey together.
-
-            </p>
-
-
-            <a href="#" class="rsvpBtn">
-                RSVP NOW
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <h2>
-        Srashti &amp; Tanmay
-    </h2>
-
-    <p>
-        30 · 11 · 2026
-    </p>
-
-    <br>
-
-    <p>
-        With Love ❤️
-    </p>
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
-
 
 function enterInvitation(){
 
@@ -1698,111 +229,12 @@ function enterInvitation(){
 
     cover.classList.add("opening");
 
-
     setTimeout(function(){
 
-        cover.style.display = "none";
+        cover.style.display="none";
 
-    },3300);
-
-}
-
-
-/* =========================
-   COUNTDOWN
-========================= */
-
-const weddingDate =
-    new Date(
-        "November 30, 2026 19:00:00"
-    ).getTime();
-
-
-function updateCountdown(){
-
-    const now =
-        new Date().getTime();
-
-    const distance =
-        weddingDate - now;
-
-
-    if(distance <= 0){
-
-        document.getElementById("days").innerHTML = "00";
-
-        document.getElementById("hours").innerHTML = "00";
-
-        document.getElementById("minutes").innerHTML = "00";
-
-        document.getElementById("seconds").innerHTML = "00";
-
-        return;
-
-    }
-
-
-    const days =
-        Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
-        );
-
-
-    const hours =
-        Math.floor(
-            (distance %
-            (1000 * 60 * 60 * 24))
-            /
-            (1000 * 60 * 60)
-        );
-
-
-    const minutes =
-        Math.floor(
-            (distance %
-            (1000 * 60 * 60))
-            /
-            (1000 * 60)
-        );
-
-
-    const seconds =
-        Math.floor(
-            (distance %
-            (1000 * 60))
-            /
-            1000
-        );
-
-
-    document.getElementById("days").innerHTML =
-        String(days).padStart(2,"0");
-
-
-    document.getElementById("hours").innerHTML =
-        String(hours).padStart(2,"0");
-
-
-    document.getElementById("minutes").innerHTML =
-        String(minutes).padStart(2,"0");
-
-
-    document.getElementById("seconds").innerHTML =
-        String(seconds).padStart(2,"0");
+    },1200);
 
 }
-
-
-updateCountdown();
-
-setInterval(
-    updateCountdown,
-    1000
-);
 
 </script>
-
-
-</body>
-</html>
