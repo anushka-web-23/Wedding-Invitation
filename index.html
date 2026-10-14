@@ -48,7 +48,7 @@ section{padding:85px 20px;scroll-margin-top:20px}
   margin-top:12px;color:#dfc69a;
 }
 
-/* OPENING COVER */
+/* ROYAL OPENING COVER */
 #inviteCover{
   position:fixed;inset:0;z-index:9999;
   background:var(--deep);
@@ -126,13 +126,19 @@ section{padding:85px 20px;scroll-margin-top:20px}
   border-bottom:1px solid var(--gold);
 }
 .heroContent{max-width:900px}
-.save{font:12px Montserrat,sans-serif;letter-spacing:7px;color:var(--gold)}
+.save{
+  font:12px Montserrat,sans-serif;
+  letter-spacing:7px;color:var(--gold)
+}
 .hero h1{
   font-size:clamp(60px,10vw,105px);
   line-height:1.05;font-weight:400;color:var(--light-gold);
   text-shadow:0 4px 25px #0009;
 }
-.amp{font-size:48px;color:var(--gold);font-style:italic;margin:12px}
+.amp{
+  font-size:48px;color:var(--gold);
+  font-style:italic;margin:12px
+}
 .date{
   margin-top:30px;font:13px Montserrat,sans-serif;
   letter-spacing:4px;color:var(--light-gold);
@@ -165,9 +171,11 @@ section{padding:85px 20px;scroll-margin-top:20px}
   letter-spacing:2px;color:var(--gold);
 }
 
-/* EVENTS */
+/* WEDDING EVENTS */
 .eventGrid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
 }
 .eventCard{
   padding:32px 17px;text-align:center;
@@ -175,10 +183,20 @@ section{padding:85px 20px;scroll-margin-top:20px}
   background:linear-gradient(145deg,#570e1c,#30040b);
   transition:transform .3s,border-color .3s;
 }
-.eventCard:hover{transform:translateY(-5px);border-color:var(--light-gold)}
-.eventCard h3{font-size:30px;color:var(--light-gold);font-weight:500}
-.eventDate{margin:18px 0;color:var(--gold);font-size:17px;font-weight:600}
-.eventCard p{line-height:1.8;font-size:17px;color:#ead7b4}
+.eventCard:hover{
+  transform:translateY(-5px);
+  border-color:var(--light-gold)
+}
+.eventCard h3{
+  font-size:30px;color:var(--light-gold);font-weight:500;
+}
+.eventDate{
+  margin:18px 0;color:var(--gold);
+  font-size:17px;font-weight:600;
+}
+.eventCard p{
+  line-height:1.8;font-size:17px;color:#ead7b4;
+}
 
 /* GALLERY */
 .galleryGrid{
@@ -192,7 +210,9 @@ section{padding:85px 20px;scroll-margin-top:20px}
 .galleryGrid img:hover{transform:scale(1.025)}
 
 /* FAMILIES */
-.familyGrid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.familyGrid{
+  display:grid;grid-template-columns:1fr 1fr;gap:25px;
+}
 .familyCard{
   text-align:center;padding:38px 25px;
   border:1px solid var(--gold);
@@ -202,8 +222,13 @@ section{padding:85px 20px;scroll-margin-top:20px}
   font-size:31px;font-weight:500;
   color:var(--light-gold);margin-bottom:25px;
 }
-.familyCard p{font-size:19px;line-height:1.7;margin:15px 0;color:#ead7b4}
-.familyCard strong{font-size:21px;color:var(--gold);font-weight:600}
+.familyCard p{
+  font-size:19px;line-height:1.7;
+  margin:15px 0;color:#ead7b4;
+}
+.familyCard strong{
+  font-size:21px;color:var(--gold);font-weight:600;
+}
 
 /* VENUE */
 .venueBox{
@@ -211,8 +236,12 @@ section{padding:85px 20px;scroll-margin-top:20px}
   padding:45px 25px;border:1px solid var(--gold);
   background:linear-gradient(145deg,#4d0c19,#280309);
 }
-.venueBox h3{font-size:36px;color:var(--light-gold);font-weight:500}
-.venueBox p{font-size:20px;line-height:1.9;margin-top:15px}
+.venueBox h3{
+  font-size:36px;color:var(--light-gold);font-weight:500;
+}
+.venueBox p{
+  font-size:20px;line-height:1.9;margin-top:15px;
+}
 .goldBtn{
   display:inline-block;margin-top:25px;padding:14px 27px;
   background:var(--gold);color:var(--deep);
@@ -220,7 +249,10 @@ section{padding:85px 20px;scroll-margin-top:20px}
   letter-spacing:2px;border:1px solid var(--light-gold);
   transition:.3s;
 }
-.goldBtn:hover{background:var(--light-gold);transform:translateY(-2px)}
+.goldBtn:hover{
+  background:var(--light-gold);
+  transform:translateY(-2px)
+}
 
 /* RSVP */
 .rsvpText{
@@ -234,15 +266,22 @@ footer{
   text-align:center;padding:55px 20px;
   background:#190207;border-top:1px solid var(--gold);
 }
-footer h2{font-size:42px;color:var(--light-gold);font-weight:500}
-footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
+footer h2{
+  font-size:42px;color:var(--light-gold);font-weight:500;
+}
+footer p{
+  margin-top:15px;color:var(--gold);
+  letter-spacing:3px;font-size:14px;
+}
 
-/* MOBILE */
-@media(max-width:800px){
-  .eventGrid{grid-template-columns:1fr 1fr}
-  .galleryGrid{grid-template-columns:1fr 1fr}
+/* TABLET */
+@media(max-width:900px){
+  .eventGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .galleryGrid{grid-template-columns:repeat(2,1fr)}
   .galleryGrid img{height:230px}
 }
+
+/* MOBILE */
 @media(max-width:550px){
   section{padding:65px 17px}
   .eventGrid,.galleryGrid,.familyGrid{grid-template-columns:1fr}
@@ -252,6 +291,7 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
   .coverDate{letter-spacing:2px}
   .save{letter-spacing:4px}
   .date{letter-spacing:2px;line-height:1.8}
+  .eventCard{padding:28px 15px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
@@ -274,6 +314,7 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
       <span class="petal"></span>
       <span class="petal"></span>
     </div>
+
     <div class="coverFrame">
       <div class="coverTop">A ROYAL WEDDING INVITATION</div>
       <div class="coverNames">Srashti</div>
@@ -298,7 +339,9 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
     <h1>Tanmay</h1>
     <div class="date">30 · NOVEMBER · 2026</div>
     <div class="gold-line"></div>
-    <p style="font-size:20px">Together with our families, we invite you to celebrate our special day.</p>
+    <p style="font-size:20px">
+      Together with our families, we invite you to celebrate our special day.
+    </p>
   </div>
 </section>
 
@@ -310,7 +353,11 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
       <div class="gold-line"></div>
       <p>TWO FAMILIES, ONE BEAUTIFUL BEGINNING</p>
     </div>
-    <p>With the blessings of our families and loved ones, we invite you to celebrate the beginning of our beautiful journey together. Your presence will make our special day unforgettable.</p>
+    <p>
+      With the blessings of our families and loved ones, we invite you to
+      celebrate the beginning of our beautiful journey together. Your
+      presence will make our special day unforgettable.
+    </p>
   </div>
 </section>
 
@@ -341,22 +388,29 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
     </div>
 
     <div class="eventGrid">
+
       <div class="eventCard">
         <h3>Lagan</h3>
         <div class="eventDate">28 November 2026</div>
-        <p>Time to be announced<br>Family Residence</p>
+        <p>10:00 AM<br>Family Residence</p>
       </div>
 
       <div class="eventCard">
         <h3>Mehndi</h3>
         <div class="eventDate">28 November 2026</div>
-        <p>Time to be announced<br>Family Residence</p>
+        <p>6:00 PM<br>Family Residence</p>
       </div>
 
       <div class="eventCard">
         <h3>Haldi</h3>
         <div class="eventDate">29 November 2026</div>
-        <p>Time to be announced<br>Family Residence</p>
+        <p>10:00 AM<br>Family Residence</p>
+      </div>
+
+      <div class="eventCard">
+        <h3>Bhat Badana</h3>
+        <div class="eventDate">29 November 2026</div>
+        <p>Evening<br>Family Residence</p>
       </div>
 
       <div class="eventCard">
@@ -364,6 +418,7 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
         <div class="eventDate">30 November 2026</div>
         <p>7:00 PM<br>Shreeji Farm House</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -376,6 +431,7 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
       <div class="gold-line"></div>
       <p>SOME BEAUTIFUL MOMENTS</p>
     </div>
+
     <div class="galleryGrid">
       <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="Wedding celebration" loading="lazy">
       <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80" alt="Wedding decor" loading="lazy">
@@ -427,8 +483,16 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
     <div class="venueBox">
       <h3>Shreeji Farm House</h3>
       <p>Dayanatpur, Hathras</p>
-      <p><strong style="color:var(--gold)">30 November 2026</strong><br>7:00 PM</p>
-      <a class="goldBtn" href="https://maps.app.goo.gl/4o7F85QBuyG4CtwS8" target="_blank" rel="noopener noreferrer">📍 GET DIRECTIONS</a>
+      <p>
+        <strong style="color:var(--gold)">30 November 2026</strong><br>
+        7:00 PM
+      </p>
+      <a class="goldBtn"
+         href="https://maps.app.goo.gl/4o7F85QBuyG4CtwS8"
+         target="_blank"
+         rel="noopener noreferrer">
+        📍 GET DIRECTIONS
+      </a>
     </div>
   </div>
 </section>
@@ -443,12 +507,20 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
     </div>
 
     <div class="rsvpText">
-      <p>We warmly invite you to join us on our special day and bless Srashti &amp; Tanmay as they begin their journey together.</p>
-      <a href="javascript:void(0)" class="goldBtn rsvpBtn" onclick="alert('Please contact the family to confirm your attendance.')">RSVP NOW</a>
+      <p>
+        We warmly invite you to join us on our special day and bless
+        Srashti &amp; Tanmay as they begin their journey together.
+      </p>
+      <a href="javascript:void(0)"
+         class="goldBtn rsvpBtn"
+         onclick="alert('Please contact the family to confirm your attendance.')">
+        RSVP NOW
+      </a>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <h2>Srashti &amp; Tanmay</h2>
   <div class="gold-line"></div>
