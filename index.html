@@ -32,92 +32,119 @@ section{padding:85px 20px;scroll-margin-top:20px}
 .container{max-width:1100px;margin:auto}
 
 .gold-line{
-  width:90px;height:2px;
+  width:70px;
+  height:1px;
   background:var(--gold);
   margin:20px auto;
 }
 .sectionTitle{text-align:center;margin-bottom:45px}
 .sectionTitle h2{
   font-size:clamp(34px,5vw,48px);
-  font-weight:500;color:var(--light-gold);
+  font-weight:500;
+  color:var(--light-gold);
 }
 .sectionTitle p{
   font-family:Montserrat,sans-serif;
-  font-size:12px;letter-spacing:2px;
-  margin-top:12px;color:#dfc69a;
+  font-size:12px;
+  letter-spacing:2px;
+  margin-top:12px;
+  color:#dfc69a;
 }
 
 /* OPENING COVER */
 #inviteCover{
-  position:fixed;inset:0;z-index:9999;
+  position:fixed;
+  inset:0;
+  z-index:9999;
   background:var(--deep);
   transition:opacity 1s,visibility 1s;
 }
 #inviteCover.opening{
-  opacity:0;visibility:hidden;pointer-events:none;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
 }
 .royalCover{
-  height:100%;width:100%;
-  position:relative;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:25px;
-  background:radial-gradient(ellipse at center,#681326 0%,#390710 55%,#210309 100%);
+  min-height:100%;
+  width:100%;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:22px 15px;
+  background:
+    radial-gradient(ellipse at center,#681326 0%,#390710 55%,#210309 100%);
 }
 .coverFrame{
-  width:min(540px,90%);
-  min-height:70%;
-  border:2px solid var(--gold);
+  width:min(500px,88%);
+  min-height:auto;
+  border:1px solid var(--gold);
   outline:1px solid #9c7539;
-  outline-offset:8px;
-  padding:35px 20px;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  box-shadow:0 0 55px #0008,inset 0 0 45px #1b0005;
-  background:linear-gradient(145deg,#ffffff08,#00000020);
+  outline-offset:6px;
+  padding:32px 12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 40px #0008,inset 0 0 35px #1b0005;
+  background:linear-gradient(145deg,#ffffff05,#00000020);
 }
 .coverTop{
-  color:var(--light-gold);
-  letter-spacing:4px;
-  font:11px Montserrat,sans-serif;
-}
-.invitationFrom{
-  margin-top:18px;
   color:var(--gold);
-  font:11px Montserrat,sans-serif;
   letter-spacing:2px;
-}
-.firmName{
-  margin-top:8px;
-  color:var(--light-gold);
-  font-size:25px;
-  font-weight:600;
-  letter-spacing:1px;
+  font:9px Montserrat,sans-serif;
+  line-height:1.8;
 }
 .coverNames{
-  font-size:clamp(38px,8vw,65px);
+  font-size:clamp(27px,6.5vw,43px);
   color:var(--light-gold);
-  line-height:1.05;
-  margin:25px 0 8px;
+  line-height:1.2;
+  margin:20px 0 6px;
   text-shadow:0 3px 20px #0008;
+  letter-spacing:0;
+  white-space:nowrap;
 }
-.coverAmp{font-size:34px;font-style:italic;color:var(--gold)}
+.coverAmp{
+  font-size:30px;
+  font-style:italic;
+  color:var(--gold);
+  margin:3px 0;
+}
 .coverDate{
-  margin-top:20px;color:var(--light-gold);
-  font:12px Montserrat,sans-serif;letter-spacing:3px;
-}
-.coverOpen{
-  margin-top:30px;padding:15px 28px;
-  background:var(--gold);color:var(--deep);
-  border:1px solid var(--light-gold);
-  cursor:pointer;font:11px Montserrat,sans-serif;
+  margin-top:16px;
+  color:var(--light-gold);
+  font:10px Montserrat,sans-serif;
   letter-spacing:2px;
 }
+.coverOpen{
+  margin-top:23px;
+  padding:13px 22px;
+  background:var(--gold);
+  color:var(--deep);
+  border:1px solid var(--light-gold);
+  cursor:pointer;
+  font:10px Montserrat,sans-serif;
+  letter-spacing:2px;
+  transition:background .3s;
+}
 .coverOpen:hover{background:var(--light-gold)}
-.petals{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+
+.petals{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
 .petal{
-  position:absolute;top:-30px;width:12px;height:19px;
+  position:absolute;
+  top:-30px;
+  width:12px;
+  height:19px;
   border-radius:100% 0 100% 0;
-  background:var(--gold);opacity:.65;
+  background:var(--gold);
+  opacity:.45;
   animation:fall 12s linear infinite;
 }
 .petal:nth-child(1){left:10%;animation-delay:0s}
@@ -131,8 +158,12 @@ section{padding:85px 20px;scroll-margin-top:20px}
 
 /* HERO */
 .hero{
-  min-height:100vh;display:flex;align-items:center;
-  justify-content:center;text-align:center;padding:80px 20px;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 20px;
   background:
     linear-gradient(#210309bd,#390710df),
     url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=85")
@@ -142,47 +173,66 @@ section{padding:85px 20px;scroll-margin-top:20px}
 .heroContent{max-width:900px}
 .save{
   font:12px Montserrat,sans-serif;
-  letter-spacing:7px;color:var(--gold)
+  letter-spacing:7px;
+  color:var(--gold);
 }
 .hero h1{
-  font-size:clamp(52px,9vw,95px);
-  line-height:1.05;font-weight:400;color:var(--light-gold);
+  font-size:clamp(45px,9vw,85px);
+  line-height:1.1;
+  font-weight:400;
+  color:var(--light-gold);
   text-shadow:0 4px 25px #0009;
 }
 .amp{
-  font-size:48px;color:var(--gold);
-  font-style:italic;margin:12px
+  font-size:48px;
+  color:var(--gold);
+  font-style:italic;
+  margin:12px;
 }
 .date{
-  margin-top:30px;font:13px Montserrat,sans-serif;
-  letter-spacing:4px;color:var(--light-gold);
+  margin-top:30px;
+  font:13px Montserrat,sans-serif;
+  letter-spacing:4px;
+  color:var(--light-gold);
 }
 .hero .gold-line{margin-top:35px}
 
-/* SECTIONS */
+/* GENERAL SECTIONS */
 .intro,.families,.rsvp{background:var(--maroon)}
 .countdown,.gallery,.venue{background:var(--deep)}
 .events{background:#450a17}
 .intro p{
-  max-width:780px;margin:auto;text-align:center;
-  font-size:21px;line-height:1.9;color:#ead7b4;
+  max-width:780px;
+  margin:auto;
+  text-align:center;
+  font-size:21px;
+  line-height:1.9;
+  color:#ead7b4;
 }
 
 /* COUNTDOWN */
 .countBox{
-  display:flex;justify-content:center;gap:18px;flex-wrap:wrap;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
 }
 .timeBox{
-  min-width:115px;padding:24px 12px;text-align:center;
+  min-width:115px;
+  padding:24px 12px;
+  text-align:center;
   border:1px solid var(--gold);
   background:linear-gradient(145deg,#50101d,#2b050b);
 }
 .timeBox span{
-  display:block;font-size:43px;color:var(--light-gold);
+  display:block;
+  font-size:43px;
+  color:var(--light-gold);
 }
 .timeBox small{
   font:10px Montserrat,sans-serif;
-  letter-spacing:2px;color:var(--gold);
+  letter-spacing:2px;
+  color:var(--gold);
 }
 
 /* EVENTS */
@@ -192,106 +242,162 @@ section{padding:85px 20px;scroll-margin-top:20px}
   gap:18px;
 }
 .eventCard{
-  padding:32px 17px;text-align:center;
+  padding:32px 17px;
+  text-align:center;
   border:1px solid #b18a49;
   background:linear-gradient(145deg,#570e1c,#30040b);
   transition:transform .3s,border-color .3s;
 }
 .eventCard:hover{
   transform:translateY(-5px);
-  border-color:var(--light-gold)
+  border-color:var(--light-gold);
 }
 .eventCard h3{
-  font-size:30px;color:var(--light-gold);font-weight:500;
+  font-size:30px;
+  color:var(--light-gold);
+  font-weight:500;
 }
 .eventDate{
-  margin:18px 0;color:var(--gold);
-  font-size:17px;font-weight:600;
+  margin:18px 0;
+  color:var(--gold);
+  font-size:17px;
+  font-weight:600;
 }
 .eventCard p{
-  line-height:1.8;font-size:17px;color:#ead7b4;
+  line-height:1.8;
+  font-size:17px;
+  color:#ead7b4;
 }
 
 /* GALLERY */
 .galleryGrid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
 }
 .galleryGrid img{
-  width:100%;height:290px;object-fit:cover;
-  border:1px solid var(--gold);padding:4px;
-  background:var(--maroon);transition:transform .3s;
+  width:100%;
+  height:290px;
+  object-fit:cover;
+  border:1px solid var(--gold);
+  padding:4px;
+  background:var(--maroon);
+  transition:transform .3s;
 }
 .galleryGrid img:hover{transform:scale(1.025)}
 
 /* FAMILIES */
 .familyGrid{
-  display:grid;grid-template-columns:1fr 1fr;gap:25px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
 }
 .familyCard{
-  text-align:center;padding:38px 25px;
+  text-align:center;
+  padding:38px 25px;
   border:1px solid var(--gold);
   background:linear-gradient(145deg,#4a0b17,#2b040a);
 }
 .familyCard h3{
-  font-size:31px;font-weight:500;
-  color:var(--light-gold);margin-bottom:25px;
+  font-size:31px;
+  font-weight:500;
+  color:var(--light-gold);
+  margin-bottom:25px;
 }
 .familyCard p{
-  font-size:19px;line-height:1.7;
-  margin:15px 0;color:#ead7b4;
+  font-size:19px;
+  line-height:1.7;
+  margin:15px 0;
+  color:#ead7b4;
 }
 .familyCard strong{
-  font-size:21px;color:var(--gold);font-weight:600;
+  font-size:21px;
+  color:var(--gold);
+  font-weight:600;
 }
 
 /* VENUE */
 .venueBox{
-  max-width:720px;margin:auto;text-align:center;
-  padding:45px 25px;border:1px solid var(--gold);
+  max-width:720px;
+  margin:auto;
+  text-align:center;
+  padding:45px 25px;
+  border:1px solid var(--gold);
   background:linear-gradient(145deg,#4d0c19,#280309);
 }
 .venueBox h3{
-  font-size:36px;color:var(--light-gold);font-weight:500;
+  font-size:36px;
+  color:var(--light-gold);
+  font-weight:500;
 }
 .venueBox p{
-  font-size:20px;line-height:1.9;margin-top:15px;
+  font-size:20px;
+  line-height:1.9;
+  margin-top:15px;
 }
 .goldBtn{
-  display:inline-block;margin-top:25px;padding:14px 27px;
-  background:#a77b32;color:#210309;
-  text-decoration:none;font:11px Montserrat,sans-serif;
-  letter-spacing:2px;border:1px solid #c9a052;
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 27px;
+  background:#a77b32;
+  color:#210309;
+  text-decoration:none;
+  font:11px Montserrat,sans-serif;
+  letter-spacing:2px;
+  border:1px solid #c9a052;
   transition:.3s;
 }
 .goldBtn:hover{
   background:#bd9146;
   color:#210309;
-  transform:translateY(-2px)
+  transform:translateY(-2px);
 }
 
 /* RSVP */
 .rsvpText{
-  max-width:680px;margin:auto;text-align:center;
-  font-size:21px;line-height:1.9;color:#ead7b4;
+  max-width:680px;
+  margin:auto;
+  text-align:center;
+  font-size:21px;
+  line-height:1.9;
+  color:#ead7b4;
 }
-.rsvpBtn{background:transparent;color:var(--light-gold)}
+.rsvpBtn{
+  background:transparent;
+  color:var(--light-gold);
+}
 
 /* FOOTER */
 footer{
-  text-align:center;padding:55px 20px;
-  background:#190207;border-top:1px solid var(--gold);
+  text-align:center;
+  padding:55px 20px;
+  background:#190207;
+  border-top:1px solid var(--gold);
 }
 footer h2{
-  font-size:42px;color:var(--light-gold);font-weight:500;
+  font-size:42px;
+  color:var(--light-gold);
+  font-weight:500;
 }
 footer p{
-  margin-top:15px;color:var(--gold);
-  letter-spacing:3px;font-size:14px;
+  margin-top:15px;
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:14px;
 }
 .footerFirm{
-  margin-top:22px;
+  margin-top:25px;
+  padding-top:18px;
+  border-top:1px solid #8d6b38;
+  color:var(--gold);
+  font:10px Montserrat,sans-serif;
+  letter-spacing:2px;
+  line-height:2.2;
+}
+.footerFirm strong{
   color:var(--light-gold);
-  font:11px Montserrat,sans-serif;
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;
   letter-spacing:2px;
 }
 
@@ -308,19 +414,22 @@ footer p{
   .eventGrid,.galleryGrid,.familyGrid{grid-template-columns:1fr}
   .galleryGrid img{height:270px}
   .timeBox{min-width:calc(50% - 10px);max-width:135px}
-  .coverFrame{min-height:62%;padding:30px 15px}
-  .coverDate{letter-spacing:2px}
+  .coverFrame{width:90%;padding:27px 8px}
+  .coverTop{font-size:8px;letter-spacing:1.5px}
+  .coverNames{font-size:clamp(24px,6.5vw,36px);margin:17px 0 5px}
+  .coverDate{letter-spacing:1.5px}
+  .coverOpen{margin-top:20px;padding:12px 18px}
   .save{letter-spacing:4px}
   .date{letter-spacing:2px;line-height:1.8}
   .eventCard{padding:28px 15px}
-  .firmName{font-size:22px}
 }
 
 /* REDUCED MOTION */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
     scroll-behavior:auto!important;
-    animation:none!important;transition:none!important;
+    animation:none!important;
+    transition:none!important;
   }
 }
 </style>
@@ -331,6 +440,7 @@ footer p{
 <!-- OPENING COVER -->
 <div id="inviteCover">
   <div class="royalCover">
+
     <div class="petals" aria-hidden="true">
       <span class="petal"></span>
       <span class="petal"></span>
@@ -340,21 +450,23 @@ footer p{
     </div>
 
     <div class="coverFrame">
-      <div class="coverTop">A ROYAL WEDDING INVITATION</div>
+      <div class="coverTop">TOGETHER WITH OUR FAMILIES</div>
 
-      <div class="invitationFrom">INVITATION FROM</div>
-      <div class="firmName">TILAKDHARI ENTERPRISES</div>
+      <div class="gold-line"></div>
 
       <div class="coverNames">SRASHTI AGRAWAL</div>
       <div class="coverAmp">&amp;</div>
       <div class="coverNames" style="margin-top:8px">TANMAY GOYAL</div>
+
       <div class="gold-line"></div>
+
       <div class="coverDate">30 NOVEMBER 2026</div>
 
       <button class="coverOpen" onclick="enterInvitation()">
         OPEN INVITATION ✦
       </button>
     </div>
+
   </div>
 </div>
 
@@ -398,6 +510,7 @@ footer p{
       <div class="gold-line"></div>
       <p>30 NOVEMBER 2026 · 7:00 PM</p>
     </div>
+
     <div class="countBox">
       <div class="timeBox"><span id="days">00</span><small>DAYS</small></div>
       <div class="timeBox"><span id="hours">00</span><small>HOURS</small></div>
@@ -558,7 +671,11 @@ footer p{
   <div class="gold-line"></div>
   <p>30 · 11 · 2026</p>
   <p>WITH LOVE ♡</p>
-  <div class="footerFirm">INVITATION FROM · TILAKDHARI ENTERPRISES</div>
+
+  <div class="footerFirm">
+    CRAFTED &amp; PRESENTED BY<br>
+    <strong>TILAKDHARI ENTERPRISES</strong>
+  </div>
 </footer>
 
 <script>
@@ -566,13 +683,14 @@ function enterInvitation(){
   document.getElementById("inviteCover").classList.add("opening");
 }
 
-const weddingDate = new Date("November 30, 2026 19:00:00").getTime();
+const weddingDate =
+  new Date("November 30, 2026 19:00:00").getTime();
 
 function updateCountdown(){
   const distance = weddingDate - Date.now();
 
   if(distance <= 0){
-    ["days","hours","minutes","seconds"].forEach(id => {
+    ["days","hours","minutes","seconds"].forEach(id=>{
       document.getElementById(id).textContent = "00";
     });
     return;
