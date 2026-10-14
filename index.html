@@ -19,48 +19,28 @@
   --cream:#f9efd9;
   --text:#f8e8c5;
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  background:var(--maroon);
-  color:var(--text);
-}
+body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--maroon);color:var(--text)}
 a{color:inherit}
 section{padding:85px 20px;scroll-margin-top:20px}
 .container{max-width:1100px;margin:auto}
-
-.gold-line{
-  width:90px;height:2px;
-  background:var(--gold);
-  margin:20px auto;
-}
+.gold-line{width:90px;height:2px;background:var(--gold);margin:20px auto}
 .sectionTitle{text-align:center;margin-bottom:45px}
-.sectionTitle h2{
-  font-size:clamp(34px,5vw,48px);
-  font-weight:500;color:var(--light-gold);
-}
-.sectionTitle p{
-  font-family:Montserrat,sans-serif;
-  font-size:12px;letter-spacing:2px;
-  margin-top:12px;color:#dfc69a;
-}
+.sectionTitle h2{font-size:clamp(34px,5vw,48px);font-weight:500;color:var(--light-gold)}
+.sectionTitle p{font-family:Montserrat,sans-serif;font-size:12px;letter-spacing:2px;margin-top:12px;color:#dfc69a}
 
 /* OPENING COVER */
 #inviteCover{
   position:fixed;inset:0;z-index:9999;
   background:var(--deep);
-  transition:opacity 1s,visibility 1s;
+  transition:opacity .9s,visibility .9s;
 }
-#inviteCover.opening{
-  opacity:0;visibility:hidden;pointer-events:none;
-}
+#inviteCover.opening{opacity:0;visibility:hidden;pointer-events:none}
 .royalCover{
-  height:100%;width:100%;
-  position:relative;overflow:hidden;
+  height:100%;width:100%;position:relative;overflow:hidden;
   display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:25px;
+  text-align:center;padding:22px;
   background:radial-gradient(ellipse at center,#681326 0%,#390710 55%,#210309 100%);
 }
 .coverFrame{
@@ -68,293 +48,149 @@ section{padding:85px 20px;scroll-margin-top:20px}
   min-height:70%;
   border:2px solid var(--gold);
   outline:1px solid #9c7539;
-  outline-offset:8px;
-  padding:35px 20px;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
+  outline-offset:6px;
+  padding:28px 16px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
   box-shadow:0 0 55px #0008,inset 0 0 45px #1b0005;
   background:linear-gradient(145deg,#ffffff08,#00000020);
-  position:relative;
-  z-index:1;
+  position:relative;z-index:1;
 }
-.coverTop{
-  color:var(--light-gold);
-  letter-spacing:4px;
-  font:11px Montserrat,sans-serif;
-}
+.coverTop{color:var(--light-gold);letter-spacing:3px;font:10px Montserrat,sans-serif}
 .coverNames{
-  font-size:clamp(34px,7vw,55px);
-  color:var(--light-gold);
-  line-height:1.05;
-  margin:22px 0 8px;
-  text-shadow:0 3px 20px #0008;
+  font-size:clamp(28px,7vw,48px);
+  color:var(--light-gold);line-height:1.05;
+  margin:15px 0 5px;text-shadow:0 3px 20px #0008;
   white-space:nowrap;
 }
-.coverAmp{font-size:34px;font-style:italic;color:var(--gold)}
-.coverNameSecond{margin-top:8px}
-.coverDate{
-  margin-top:20px;color:var(--light-gold);
-  font:12px Montserrat,sans-serif;letter-spacing:3px;
-}
+.coverAmp{font-size:32px;font-style:italic;color:var(--gold)}
+.coverNameSecond{margin-top:5px}
+.coverDate{margin-top:16px;color:var(--light-gold);font:11px Montserrat,sans-serif;letter-spacing:2px}
 .coverOpen{
-  margin-top:30px;padding:15px 28px;
+  margin-top:24px;padding:14px 24px;
   background:var(--gold);color:var(--deep);
-  border:1px solid var(--light-gold);
-  cursor:pointer;font:11px Montserrat,sans-serif;
-  letter-spacing:2px;
+  border:1px solid var(--light-gold);cursor:pointer;
+  font:11px Montserrat,sans-serif;letter-spacing:2px;
   transition:background .3s,transform .3s;
 }
-.coverOpen:hover{
-  background:var(--light-gold);
-  transform:translateY(-2px);
-}
+.coverOpen:hover{background:var(--light-gold);transform:translateY(-2px)}
 .petals{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.petal{
-  position:absolute;top:-30px;width:12px;height:19px;
-  border-radius:100% 0 100% 0;
-  background:var(--gold);opacity:.65;
-  animation:fall 12s linear infinite;
-}
+.petal{position:absolute;top:-30px;width:12px;height:19px;border-radius:100% 0 100% 0;background:var(--gold);opacity:.65;animation:fall 12s linear infinite}
 .petal:nth-child(1){left:10%;animation-delay:0s}
 .petal:nth-child(2){left:28%;animation-delay:3s}
 .petal:nth-child(3){left:48%;animation-delay:1s}
 .petal:nth-child(4){left:70%;animation-delay:5s}
 .petal:nth-child(5){left:88%;animation-delay:2s}
-@keyframes fall{
-  to{transform:translate(35px,110vh) rotate(500deg)}
-}
+@keyframes fall{to{transform:translate(35px,110vh) rotate(500deg)}}
 
-/* ENVELOPE OPENING */
+/* FIXED ENVELOPE */
 .royalEnvelope{
-  position:relative;
-  width:min(260px,72vw);
-  height:155px;
-  margin:25px auto 12px;
-  perspective:800px;
-  cursor:pointer;
+  position:relative;width:min(250px,68vw);height:145px;
+  margin:22px auto 10px;perspective:1000px;
+  cursor:pointer;isolation:isolate;
+  -webkit-tap-highlight-color:transparent;
 }
 .envelopeBack{
-  position:absolute;inset:0;
-  background:#ead8b0;
-  border:1px solid var(--gold);
-  box-shadow:0 10px 25px #0005;
+  position:absolute;inset:0;background:#ead8b0;
+  border:1px solid var(--gold);z-index:0;
 }
 .envelopeLetter{
-  position:absolute;
-  left:9%;top:8%;
-  width:82%;height:80%;
-  background:var(--cream);
-  color:var(--maroon);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
+  position:absolute;left:8%;top:8%;width:84%;height:84%;
+  background:var(--cream);color:var(--maroon);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:8px;text-align:center;z-index:1;
+  transform:translateY(0);
   transition:transform .8s ease;
 }
-.letterText{
-  font-family:'Cormorant Garamond',serif;
-  font-size:23px;font-weight:600;
-}
-.letterSub{
-  margin-top:7px;
-  font:9px Montserrat,sans-serif;
-  letter-spacing:1.5px;
-}
+.letterText{font-family:'Cormorant Garamond',serif;font-size:clamp(17px,5vw,23px);font-weight:600}
+.letterSub{margin-top:7px;font:8px Montserrat,sans-serif;letter-spacing:1px}
 .envelopeFlap{
-  position:absolute;inset:0;
-  background:#c6a46c;
+  position:absolute;inset:0;background:#c6a46c;
   clip-path:polygon(0 0,100% 0,50% 58%);
-  transform-origin:top center;
-  transition:transform .7s ease;
-  z-index:3;
+  transform-origin:top center;transform:rotateX(0deg);
+  transition:transform .7s ease;z-index:4;
 }
 .envelopeFront{
-  position:absolute;inset:0;
-  background:#d9bd85;
+  position:absolute;inset:0;background:#d9bd85;
   clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);
-  z-index:2;
+  z-index:3;pointer-events:none;
 }
 .envelopeSeal{
-  position:absolute;z-index:4;
-  top:53%;left:50%;
+  position:absolute;z-index:5;top:53%;left:50%;
   transform:translate(-50%,-50%);
-  width:53px;height:53px;
-  border-radius:50%;
-  background:var(--maroon);
-  color:var(--light-gold);
+  width:48px;height:48px;border-radius:50%;
+  background:var(--maroon);color:var(--light-gold);
   border:2px solid var(--gold);
-  outline:1px solid var(--maroon);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;
-  font-size:20px;
-  transition:opacity .3s ease;
+  font-family:'Cormorant Garamond',serif;font-size:19px;
+  transition:opacity .3s ease;pointer-events:none;
 }
 .royalEnvelope.opened .envelopeFlap{transform:rotateX(180deg)}
-.royalEnvelope.opened .envelopeLetter{transform:translateY(-48px)}
+.royalEnvelope.opened .envelopeLetter{transform:translateY(-42px);z-index:2}
 .royalEnvelope.opened .envelopeSeal{opacity:0}
 
 /* HERO */
 .hero{
-  min-height:100vh;display:flex;align-items:center;
-  justify-content:center;text-align:center;padding:80px 20px;
-  background:
-    linear-gradient(#210309bd,#390710df),
-    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=85")
-    center/cover;
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:80px 20px;
+  background:linear-gradient(#210309bd,#390710df),
+  url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=85") center/cover;
   border-bottom:1px solid var(--gold);
 }
 .heroContent{max-width:900px}
-.save{
-  font:12px Montserrat,sans-serif;
-  letter-spacing:7px;color:var(--gold)
-}
-.hero h1{
-  font-size:clamp(52px,9vw,95px);
-  line-height:1.05;font-weight:400;color:var(--light-gold);
-  text-shadow:0 4px 25px #0009;
-}
-.amp{
-  font-size:48px;color:var(--gold);
-  font-style:italic;margin:12px
-}
-.date{
-  margin-top:30px;font:13px Montserrat,sans-serif;
-  letter-spacing:4px;color:var(--light-gold);
-}
+.save{font:12px Montserrat,sans-serif;letter-spacing:7px;color:var(--gold)}
+.hero h1{font-size:clamp(52px,9vw,95px);line-height:1.05;font-weight:400;color:var(--light-gold);text-shadow:0 4px 25px #0009}
+.amp{font-size:48px;color:var(--gold);font-style:italic;margin:12px}
+.date{margin-top:30px;font:13px Montserrat,sans-serif;letter-spacing:4px;color:var(--light-gold)}
 .hero .gold-line{margin-top:35px}
 
 /* SECTIONS */
 .intro,.families,.rsvp{background:var(--maroon)}
 .countdown,.gallery,.venue{background:var(--deep)}
 .events{background:#450a17}
-.intro p{
-  max-width:780px;margin:auto;text-align:center;
-  font-size:21px;line-height:1.9;color:#ead7b4;
-}
+.intro p{max-width:780px;margin:auto;text-align:center;font-size:21px;line-height:1.9;color:#ead7b4}
 
 /* COUNTDOWN */
-.countBox{
-  display:flex;justify-content:center;gap:18px;flex-wrap:wrap;
-}
-.timeBox{
-  min-width:115px;padding:24px 12px;text-align:center;
-  border:1px solid var(--gold);
-  background:linear-gradient(145deg,#50101d,#2b050b);
-}
-.timeBox span{
-  display:block;font-size:43px;color:var(--light-gold);
-}
-.timeBox small{
-  font:10px Montserrat,sans-serif;
-  letter-spacing:2px;color:var(--gold);
-}
+.countBox{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+.timeBox{min-width:115px;padding:24px 12px;text-align:center;border:1px solid var(--gold);background:linear-gradient(145deg,#50101d,#2b050b)}
+.timeBox span{display:block;font-size:43px;color:var(--light-gold)}
+.timeBox small{font:10px Montserrat,sans-serif;letter-spacing:2px;color:var(--gold)}
 
 /* EVENTS */
-.eventGrid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:18px;
-}
-.eventCard{
-  padding:32px 17px;text-align:center;
-  border:1px solid #b18a49;
-  background:linear-gradient(145deg,#570e1c,#30040b);
-  transition:transform .3s,border-color .3s;
-}
-.eventCard:hover{
-  transform:translateY(-5px);
-  border-color:var(--light-gold)
-}
-.eventCard h3{
-  font-size:30px;color:var(--light-gold);font-weight:500;
-}
-.eventDate{
-  margin:18px 0;color:var(--gold);
-  font-size:17px;font-weight:600;
-}
-.eventCard p{
-  line-height:1.8;font-size:17px;color:#ead7b4;
-}
+.eventGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.eventCard{padding:32px 17px;text-align:center;border:1px solid #b18a49;background:linear-gradient(145deg,#570e1c,#30040b);transition:transform .3s,border-color .3s}
+.eventCard:hover{transform:translateY(-5px);border-color:var(--light-gold)}
+.eventCard h3{font-size:30px;color:var(--light-gold);font-weight:500}
+.eventDate{margin:18px 0;color:var(--gold);font-size:17px;font-weight:600}
+.eventCard p{line-height:1.8;font-size:17px;color:#ead7b4}
 
 /* GALLERY */
-.galleryGrid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
-}
-.galleryGrid img{
-  width:100%;height:290px;object-fit:cover;
-  border:1px solid var(--gold);padding:4px;
-  background:var(--maroon);transition:transform .3s;
-}
+.galleryGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.galleryGrid img{width:100%;height:290px;object-fit:cover;border:1px solid var(--gold);padding:4px;background:var(--maroon);transition:transform .3s}
 .galleryGrid img:hover{transform:scale(1.025)}
 
 /* FAMILIES */
-.familyGrid{
-  display:grid;grid-template-columns:1fr 1fr;gap:25px;
-}
-.familyCard{
-  text-align:center;padding:38px 25px;
-  border:1px solid var(--gold);
-  background:linear-gradient(145deg,#4a0b17,#2b040a);
-}
-.familyCard h3{
-  font-size:31px;font-weight:500;
-  color:var(--light-gold);margin-bottom:25px;
-}
-.familyCard p{
-  font-size:19px;line-height:1.7;
-  margin:15px 0;color:#ead7b4;
-}
-.familyCard strong{
-  font-size:21px;color:var(--gold);font-weight:600;
-}
+.familyGrid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.familyCard{text-align:center;padding:38px 25px;border:1px solid var(--gold);background:linear-gradient(145deg,#4a0b17,#2b040a)}
+.familyCard h3{font-size:31px;font-weight:500;color:var(--light-gold);margin-bottom:25px}
+.familyCard p{font-size:19px;line-height:1.7;margin:15px 0;color:#ead7b4}
+.familyCard strong{font-size:21px;color:var(--gold);font-weight:600}
 
 /* VENUE */
-.venueBox{
-  max-width:720px;margin:auto;text-align:center;
-  padding:45px 25px;border:1px solid var(--gold);
-  background:linear-gradient(145deg,#4d0c19,#280309);
-}
-.venueBox h3{
-  font-size:36px;color:var(--light-gold);font-weight:500;
-}
-.venueBox p{
-  font-size:20px;line-height:1.9;margin-top:15px;
-}
-.goldBtn{
-  display:inline-block;margin-top:25px;padding:14px 27px;
-  background:#a77b32;color:#210309;
-  text-decoration:none;font:11px Montserrat,sans-serif;
-  letter-spacing:2px;border:1px solid #c9a052;
-  transition:.3s;
-}
-.goldBtn:hover{
-  background:#bd9146;color:#210309;
-  transform:translateY(-2px)
-}
+.venueBox{max-width:720px;margin:auto;text-align:center;padding:45px 25px;border:1px solid var(--gold);background:linear-gradient(145deg,#4d0c19,#280309)}
+.venueBox h3{font-size:36px;color:var(--light-gold);font-weight:500}
+.venueBox p{font-size:20px;line-height:1.9;margin-top:15px}
+.goldBtn{display:inline-block;margin-top:25px;padding:14px 27px;background:#a77b32;color:#210309;text-decoration:none;font:11px Montserrat,sans-serif;letter-spacing:2px;border:1px solid #c9a052;transition:.3s}
+.goldBtn:hover{background:#bd9146;color:#210309;transform:translateY(-2px)}
 
 /* RSVP */
-.rsvpText{
-  max-width:680px;margin:auto;text-align:center;
-  font-size:21px;line-height:1.9;color:#ead7b4;
-}
+.rsvpText{max-width:680px;margin:auto;text-align:center;font-size:21px;line-height:1.9;color:#ead7b4}
 .rsvpBtn{background:transparent;color:var(--light-gold)}
 
 /* FOOTER */
-footer{
-  text-align:center;padding:55px 20px;
-  background:#190207;border-top:1px solid var(--gold);
-}
-footer h2{
-  font-size:42px;color:var(--light-gold);font-weight:500;
-}
-footer p{
-  margin-top:15px;color:var(--gold);
-  letter-spacing:3px;font-size:14px;
-}
-.footerFirm{
-  margin-top:22px;
-  color:var(--light-gold);
-  font:11px Montserrat,sans-serif;
-  letter-spacing:2px;
-}
+footer{text-align:center;padding:55px 20px;background:#190207;border-top:1px solid var(--gold)}
+footer h2{font-size:42px;color:var(--light-gold);font-weight:500}
+footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
+.footerFirm{margin-top:22px;color:var(--light-gold);font:11px Montserrat,sans-serif;letter-spacing:2px}
 
 /* TABLET */
 @media(max-width:900px){
@@ -362,37 +198,23 @@ footer p{
   .galleryGrid{grid-template-columns:repeat(2,1fr)}
   .galleryGrid img{height:230px}
 }
-
 /* MOBILE */
 @media(max-width:550px){
   section{padding:65px 17px}
   .eventGrid,.galleryGrid,.familyGrid{grid-template-columns:1fr}
   .galleryGrid img{height:270px}
   .timeBox{min-width:calc(50% - 10px);max-width:135px}
-  .coverFrame{min-height:62%;padding:24px 12px}
-  .coverDate{letter-spacing:2px}
+  .coverFrame{min-height:62%;padding:22px 10px}
+  .coverDate{letter-spacing:1.5px}
   .save{letter-spacing:4px}
   .date{letter-spacing:2px;line-height:1.8}
   .eventCard{padding:28px 15px}
-  .coverNames{
-    font-size:clamp(27px,7.2vw,40px);
-    margin-top:16px;
-    white-space:nowrap;
-  }
-  .coverNameSecond{margin-top:8px}
-  .royalEnvelope{
-    width:min(230px,68vw);
-    height:140px;
-    margin:20px auto 10px;
-  }
+  .coverNames{font-size:clamp(26px,7vw,38px);margin-top:13px;white-space:nowrap}
+  .coverNameSecond{margin-top:5px}
+  .royalEnvelope{width:min(225px,68vw);height:135px;margin:18px auto 8px}
 }
-
-/* REDUCED MOTION */
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    scroll-behavior:auto!important;
-    animation:none!important;transition:none!important;
-  }
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
 }
 </style>
 </head>
@@ -402,12 +224,9 @@ footer p{
 <!-- OPENING COVER -->
 <div id="inviteCover">
   <div class="royalCover">
-
     <div class="petals" aria-hidden="true">
-      <span class="petal"></span>
-      <span class="petal"></span>
-      <span class="petal"></span>
-      <span class="petal"></span>
+      <span class="petal"></span><span class="petal"></span>
+      <span class="petal"></span><span class="petal"></span>
       <span class="petal"></span>
     </div>
 
@@ -418,14 +237,11 @@ footer p{
            role="button" tabindex="0"
            aria-label="Open the wedding envelope"
            onclick="animateEnvelope()">
-
         <div class="envelopeBack"></div>
-
         <div class="envelopeLetter">
           <div class="letterText">WEDDING INVITATION</div>
           <div class="letterSub">WITH LOVE &amp; BLESSINGS</div>
         </div>
-
         <div class="envelopeFlap"></div>
         <div class="envelopeFront"></div>
         <div class="envelopeSeal">S&amp;T</div>
@@ -442,7 +258,6 @@ footer p{
         OPEN INVITATION ✦
       </button>
     </div>
-
   </div>
 </div>
 
@@ -456,9 +271,7 @@ footer p{
     <h1>Tanmay Goyal</h1>
     <div class="date">30 · NOVEMBER · 2026</div>
     <div class="gold-line"></div>
-    <p style="font-size:20px">
-      Together with our families, we invite you to celebrate our special day.
-    </p>
+    <p style="font-size:20px">Together with our families, we invite you to celebrate our special day.</p>
   </div>
 </section>
 
@@ -470,11 +283,7 @@ footer p{
       <div class="gold-line"></div>
       <p>TWO FAMILIES, ONE BEAUTIFUL BEGINNING</p>
     </div>
-    <p>
-      With the blessings of our families and loved ones, we invite you to
-      celebrate the beginning of our beautiful journey together. Your
-      presence will make our special day unforgettable.
-    </p>
+    <p>With the blessings of our families and loved ones, we invite you to celebrate the beginning of our beautiful journey together. Your presence will make our special day unforgettable.</p>
   </div>
 </section>
 
@@ -503,37 +312,12 @@ footer p{
       <div class="gold-line"></div>
       <p>CELEBRATE EVERY BEAUTIFUL MOMENT</p>
     </div>
-
     <div class="eventGrid">
-      <div class="eventCard">
-        <h3>LAGAN</h3>
-        <div class="eventDate">28 November 2026</div>
-        <p>10:00 AM<br>Family Residence</p>
-      </div>
-
-      <div class="eventCard">
-        <h3>MEHANDI</h3>
-        <div class="eventDate">28 November 2026</div>
-        <p>6:00 PM<br>Family Residence</p>
-      </div>
-
-      <div class="eventCard">
-        <h3>HALDI</h3>
-        <div class="eventDate">29 November 2026</div>
-        <p>10:00 AM<br>Family Residence</p>
-      </div>
-
-      <div class="eventCard">
-        <h3>BHAT</h3>
-        <div class="eventDate">29 November 2026</div>
-        <p>Evening<br>Family Residence</p>
-      </div>
-
-      <div class="eventCard">
-        <h3>WEDDING</h3>
-        <div class="eventDate">30 November 2026</div>
-        <p>7:00 PM<br>Shreeji Farm House</p>
-      </div>
+      <div class="eventCard"><h3>LAGAN</h3><div class="eventDate">28 November 2026</div><p>10:00 AM<br>Family Residence</p></div>
+      <div class="eventCard"><h3>MEHANDI</h3><div class="eventDate">28 November 2026</div><p>6:00 PM<br>Family Residence</p></div>
+      <div class="eventCard"><h3>HALDI</h3><div class="eventDate">29 November 2026</div><p>10:00 AM<br>Family Residence</p></div>
+      <div class="eventCard"><h3>BHAT</h3><div class="eventDate">29 November 2026</div><p>Evening<br>Family Residence</p></div>
+      <div class="eventCard"><h3>WEDDING</h3><div class="eventDate">30 November 2026</div><p>7:00 PM<br>Shreeji Farm House</p></div>
     </div>
   </div>
 </section>
@@ -546,7 +330,6 @@ footer p{
       <div class="gold-line"></div>
       <p>SOME BEAUTIFUL MOMENTS</p>
     </div>
-
     <div class="galleryGrid">
       <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="Wedding celebration" loading="lazy">
       <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80" alt="Wedding decor" loading="lazy">
@@ -566,7 +349,6 @@ footer p{
       <div class="gold-line"></div>
       <p>WITH THE BLESSINGS OF OUR BELOVED FAMILIES</p>
     </div>
-
     <div class="familyGrid">
       <div class="familyCard">
         <h3>Srashti's Family</h3>
@@ -577,7 +359,6 @@ footer p{
         <p><strong>Anushka Agrawal</strong><br>Younger Sister</p>
         <p><strong>Kushal Agrawal</strong><br>Younger Brother</p>
       </div>
-
       <div class="familyCard">
         <h3>Tanmay's Family</h3>
         <p><strong>Late Mr. Banwari Lal Goyal</strong><br>Grand Father</p>
@@ -598,21 +379,11 @@ footer p{
       <div class="gold-line"></div>
       <p>WE WOULD LOVE TO CELEBRATE WITH YOU</p>
     </div>
-
     <div class="venueBox">
       <h3>Shreeji Farm House</h3>
       <p>Dayanatpur, Hathras</p>
-      <p>
-        <strong style="color:var(--gold)">30 November 2026</strong><br>
-        7:00 PM
-      </p>
-
-      <a class="goldBtn"
-         href="https://www.google.com/maps/dir/?api=1&destination=Shreeji+Farm+House%2C+J3H6%2BGCQ%2C+Nagla+Ummed%2C+Hathras%2C+Uttar+Pradesh+204101"
-         target="_blank"
-         rel="noopener noreferrer">
-        📍 GET DIRECTIONS
-      </a>
+      <p><strong style="color:var(--gold)">30 November 2026</strong><br>7:00 PM</p>
+      <a class="goldBtn" href="https://www.google.com/maps/dir/?api=1&destination=Shreeji+Farm+House%2C+J3H6%2BGCQ%2C+Nagla+Ummed%2C+Hathras%2C+Uttar+Pradesh+204101" target="_blank" rel="noopener noreferrer">📍 GET DIRECTIONS</a>
     </div>
   </div>
 </section>
@@ -625,17 +396,9 @@ footer p{
       <div class="gold-line"></div>
       <p>YOUR PRESENCE IS OUR GREATEST GIFT</p>
     </div>
-
     <div class="rsvpText">
-      <p>
-        We warmly invite you to join us on our special day and bless
-        Srashti &amp; Tanmay as they begin their journey together.
-      </p>
-      <a href="javascript:void(0)"
-         class="goldBtn rsvpBtn"
-         onclick="alert('Please contact the family to confirm your attendance.')">
-        RSVP NOW
-      </a>
+      <p>We warmly invite you to join us on our special day and bless Srashti &amp; Tanmay as they begin their journey together.</p>
+      <a href="javascript:void(0)" class="goldBtn rsvpBtn" onclick="alert('Please contact the family to confirm your attendance.')">RSVP NOW</a>
     </div>
   </div>
 </section>
@@ -672,7 +435,7 @@ function enterInvitation(){
 
   setTimeout(function(){
     cover.classList.add("opening");
-  }, 650);
+  }, 900);
 }
 
 document.getElementById("royalEnvelope").addEventListener("keydown",function(event){
@@ -696,13 +459,10 @@ function updateCountdown(){
 
   document.getElementById("days").textContent =
     String(Math.floor(distance / 86400000)).padStart(2,"0");
-
   document.getElementById("hours").textContent =
     String(Math.floor((distance % 86400000) / 3600000)).padStart(2,"0");
-
   document.getElementById("minutes").textContent =
     String(Math.floor((distance % 3600000) / 60000)).padStart(2,"0");
-
   document.getElementById("seconds").textContent =
     String(Math.floor((distance % 60000) / 1000)).padStart(2,"0");
 }
