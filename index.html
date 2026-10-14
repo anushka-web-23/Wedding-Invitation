@@ -3,433 +3,587 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#390710">
 <title>Srashti & Tanmay | Wedding Invitation</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --maroon:#390710;
-  --deep:#210309;
-  --wine:#570e1c;
-  --gold:#d8b56b;
-  --light-gold:#f4df9c;
-  --cream:#f9efd9;
-  --text:#f8e8c5;
+:root {
+  --maroon: #570d20;
+  --deep: #310611;
+  --gold: #d7b46a;
+  --cream: #fff8ed;
+  --text: #44242b;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  background:var(--maroon);
-  color:var(--text);
-}
-a{color:inherit}
-section{padding:85px 20px;scroll-margin-top:20px}
-.container{max-width:1100px;margin:auto}
-
-.gold-line{
-  width:70px;
-  height:1px;
-  background:var(--gold);
-  margin:20px auto;
-}
-.sectionTitle{text-align:center;margin-bottom:45px}
-.sectionTitle h2{
-  font-size:clamp(34px,5vw,48px);
-  font-weight:500;
-  color:var(--light-gold);
-}
-.sectionTitle p{
-  font-family:Montserrat,sans-serif;
-  font-size:12px;
-  letter-spacing:2px;
-  margin-top:12px;
-  color:#dfc69a;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* OPENING COVER */
-#inviteCover{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  background:var(--deep);
-  transition:opacity 1s,visibility 1s;
+html {
+  scroll-behavior: smooth;
 }
-#inviteCover.opening{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
-.royalCover{
-  min-height:100%;
-  width:100%;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:22px 15px;
+
+h1, h2, h3, .script {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+section {
+  padding: 75px 20px;
+}
+
+.section-title {
+  color: var(--maroon);
+  font-size: clamp(35px, 7vw, 52px);
+  margin-bottom: 12px;
+}
+
+.gold-line {
+  width: 85px;
+  height: 2px;
+  background: var(--gold);
+  margin: 18px auto 30px;
+}
+
+.eyebrow {
+  letter-spacing: 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ROYAL ENVELOPE COVER */
+
+#inviteCover {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
   background:
-    radial-gradient(ellipse at center,#681326 0%,#390710 55%,#210309 100%);
+    radial-gradient(ellipse at center, #7c2636 0%, #4c0a1b 55%, #21040c 100%);
+  transition: opacity 1s ease, visibility 1s ease;
 }
-.coverFrame{
-  width:min(500px,88%);
-  min-height:auto;
-  border:1px solid var(--gold);
-  outline:1px solid #9c7539;
-  outline-offset:6px;
-  padding:32px 12px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 0 40px #0008,inset 0 0 35px #1b0005;
-  background:linear-gradient(145deg,#ffffff05,#00000020);
-}
-.coverTop{
-  color:var(--gold);
-  letter-spacing:2px;
-  font:9px Montserrat,sans-serif;
-  line-height:1.8;
-}
-.coverNames{
-  font-size:clamp(27px,6.5vw,43px);
-  color:var(--light-gold);
-  line-height:1.2;
-  margin:20px 0 6px;
-  text-shadow:0 3px 20px #0008;
-  letter-spacing:0;
-  white-space:nowrap;
-}
-.coverAmp{
-  font-size:30px;
-  font-style:italic;
-  color:var(--gold);
-  margin:3px 0;
-}
-.coverDate{
-  margin-top:16px;
-  color:var(--light-gold);
-  font:10px Montserrat,sans-serif;
-  letter-spacing:2px;
-}
-.coverOpen{
-  margin-top:23px;
-  padding:13px 22px;
-  background:var(--gold);
-  color:var(--deep);
-  border:1px solid var(--light-gold);
-  cursor:pointer;
-  font:10px Montserrat,sans-serif;
-  letter-spacing:2px;
-  transition:background .3s;
-}
-.coverOpen:hover{background:var(--light-gold)}
 
-.petals{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  overflow:hidden;
+#inviteCover.opening {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
-.petal{
-  position:absolute;
-  top:-30px;
-  width:12px;
-  height:19px;
-  border-radius:100% 0 100% 0;
-  background:var(--gold);
-  opacity:.45;
-  animation:fall 12s linear infinite;
+
+.cover-frame {
+  width: min(100%, 470px);
+  min-height: 88vh;
+  padding: 35px 22px;
+  border: 1px solid var(--gold);
+  outline: 1px solid rgba(215,180,106,.35);
+  outline-offset: -9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--cream);
+  position: relative;
 }
-.petal:nth-child(1){left:10%;animation-delay:0s}
-.petal:nth-child(2){left:28%;animation-delay:3s}
-.petal:nth-child(3){left:48%;animation-delay:1s}
-.petal:nth-child(4){left:70%;animation-delay:5s}
-.petal:nth-child(5){left:88%;animation-delay:2s}
-@keyframes fall{
-  to{transform:translate(35px,110vh) rotate(500deg)}
+
+.cover-top {
+  font-size: 10px;
+  line-height: 2;
+  letter-spacing: 3px;
+}
+
+.cover-names {
+  font-size: clamp(45px, 11vw, 66px);
+  font-weight: 500;
+  line-height: .95;
+  color: var(--gold);
+  margin: 18px 0;
+}
+
+.cover-names span {
+  display: block;
+  font-size: 26px;
+  margin: 8px;
+  font-style: italic;
+}
+
+.cover-date {
+  letter-spacing: 3px;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.envelope {
+  position: relative;
+  width: min(80vw, 300px);
+  height: 185px;
+  margin: 15px auto;
+  cursor: pointer;
+  perspective: 800px;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #ead8b0;
+  border: 1px solid var(--gold);
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+.envelope-letter {
+  position: absolute;
+  left: 9%;
+  width: 82%;
+  height: 80%;
+  top: 8%;
+  background: #fff9ed;
+  color: var(--maroon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: transform .9s ease;
+  z-index: 1;
+  padding: 10px;
+}
+
+.envelope-letter strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+}
+
+.envelope-letter small {
+  letter-spacing: 2px;
+  margin-top: 8px;
+  font-size: 9px;
+}
+
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  background: #c6a46c;
+  clip-path: polygon(0 0, 100% 0, 50% 57%);
+  transform-origin: top center;
+  transition: transform .7s ease;
+  z-index: 3;
+  border-top: 1px solid #f3d89e;
+}
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  background: #d9bd85;
+  clip-path: polygon(0 100%, 0 0, 50% 57%, 100% 0, 100% 100%);
+  z-index: 2;
+}
+
+.seal {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  outline: 2px solid var(--maroon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  box-shadow: 0 3px 12px #50101c;
+  transition: opacity .4s ease;
+}
+
+.envelope.opened .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.opened .envelope-letter {
+  transform: translateY(-65px);
+}
+
+.envelope.opened .seal {
+  opacity: 0;
+}
+
+.open-button {
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  padding: 14px 25px;
+  letter-spacing: 3px;
+  font-size: 10px;
+  transition: .3s;
+}
+
+.open-button:hover {
+  background: var(--gold);
+  color: var(--deep);
+}
+
+.cover-bottom {
+  font-size: 10px;
+  letter-spacing: 2px;
+  line-height: 2;
+  color: #f2dfba;
 }
 
 /* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:80px 20px;
-  background:
-    linear-gradient(#210309bd,#390710df),
-    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=85")
-    center/cover;
-  border-bottom:1px solid var(--gold);
-}
-.heroContent{max-width:900px}
-.save{
-  font:12px Montserrat,sans-serif;
-  letter-spacing:7px;
-  color:var(--gold);
-}
-.hero h1{
-  font-size:clamp(45px,9vw,85px);
-  line-height:1.1;
-  font-weight:400;
-  color:var(--light-gold);
-  text-shadow:0 4px 25px #0009;
-}
-.amp{
-  font-size:48px;
-  color:var(--gold);
-  font-style:italic;
-  margin:12px;
-}
-.date{
-  margin-top:30px;
-  font:13px Montserrat,sans-serif;
-  letter-spacing:4px;
-  color:var(--light-gold);
-}
-.hero .gold-line{margin-top:35px}
 
-/* GENERAL SECTIONS */
-.intro,.families,.rsvp{background:var(--maroon)}
-.countdown,.gallery,.venue{background:var(--deep)}
-.events{background:#450a17}
-.intro p{
-  max-width:780px;
-  margin:auto;
-  text-align:center;
-  font-size:21px;
-  line-height:1.9;
-  color:#ead7b4;
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background:
+    linear-gradient(rgba(38,4,13,.55), rgba(38,4,13,.72)),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+  padding: 70px 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  border: 1px solid rgba(215,180,106,.85);
+  padding: 45px 25px;
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 11vw, 85px);
+  line-height: .98;
+  color: #f5d998;
+  margin: 25px 0;
+}
+
+.hero .ampersand {
+  font-size: 35px;
+  font-style: italic;
+  color: white;
+}
+
+.hero p {
+  font-size: 11px;
+  letter-spacing: 3px;
+  line-height: 2.2;
+}
+
+.gold-button {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 25px;
+  color: var(--maroon);
+  background: var(--gold);
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 10px;
+  border: 1px solid var(--gold);
+}
+
+/* INTRO */
+
+.intro {
+  background: #fffaf2;
+}
+
+.intro-text {
+  max-width: 680px;
+  margin: auto;
+  line-height: 2;
+  font-size: 14px;
+}
+
+.intro-names {
+  font-size: 43px;
+  color: var(--maroon);
+  margin: 22px 0;
 }
 
 /* COUNTDOWN */
-.countBox{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
+
+.countdown {
+  background: var(--maroon);
+  color: white;
 }
-.timeBox{
-  min-width:115px;
-  padding:24px 12px;
-  text-align:center;
-  border:1px solid var(--gold);
-  background:linear-gradient(145deg,#50101d,#2b050b);
+
+.countdown .section-title {
+  color: var(--gold);
 }
-.timeBox span{
-  display:block;
-  font-size:43px;
-  color:var(--light-gold);
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
-.timeBox small{
-  font:10px Montserrat,sans-serif;
-  letter-spacing:2px;
-  color:var(--gold);
+
+.time-box {
+  min-width: 75px;
+  padding: 18px 12px;
+  border: 1px solid rgba(215,180,106,.65);
+}
+
+.time-box strong {
+  display: block;
+  color: var(--gold);
+  font-size: 30px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.time-box span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 7px;
 }
 
 /* EVENTS */
-.eventGrid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:18px;
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 1000px;
+  margin: 35px auto 0;
 }
-.eventCard{
-  padding:32px 17px;
-  text-align:center;
-  border:1px solid #b18a49;
-  background:linear-gradient(145deg,#570e1c,#30040b);
-  transition:transform .3s,border-color .3s;
+
+.event-card {
+  padding: 30px 18px;
+  background: white;
+  border: 1px solid #e8d7b6;
+  box-shadow: 0 8px 24px rgba(60,20,25,.05);
 }
-.eventCard:hover{
-  transform:translateY(-5px);
-  border-color:var(--light-gold);
+
+.event-card .event-icon {
+  font-size: 29px;
+  margin-bottom: 12px;
 }
-.eventCard h3{
-  font-size:30px;
-  color:var(--light-gold);
-  font-weight:500;
+
+.event-card h3 {
+  font-size: 30px;
+  color: var(--maroon);
+  margin-bottom: 12px;
 }
-.eventDate{
-  margin:18px 0;
-  color:var(--gold);
-  font-size:17px;
-  font-weight:600;
-}
-.eventCard p{
-  line-height:1.8;
-  font-size:17px;
-  color:#ead7b4;
+
+.event-card p {
+  font-size: 12px;
+  line-height: 2;
 }
 
 /* GALLERY */
-.galleryGrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-.galleryGrid img{
-  width:100%;
-  height:290px;
-  object-fit:cover;
-  border:1px solid var(--gold);
-  padding:4px;
-  background:var(--maroon);
-  transition:transform .3s;
-}
-.galleryGrid img:hover{transform:scale(1.025)}
 
-/* FAMILIES */
-.familyGrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
+.gallery {
+  background: #f7eddf;
 }
-.familyCard{
-  text-align:center;
-  padding:38px 25px;
-  border:1px solid var(--gold);
-  background:linear-gradient(145deg,#4a0b17,#2b040a);
+
+.gallery-grid {
+  max-width: 1000px;
+  margin: 35px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 }
-.familyCard h3{
-  font-size:31px;
-  font-weight:500;
-  color:var(--light-gold);
-  margin-bottom:25px;
+
+.gallery-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  border: 4px solid white;
 }
-.familyCard p{
-  font-size:19px;
-  line-height:1.7;
-  margin:15px 0;
-  color:#ead7b4;
+
+.gallery-grid img:nth-child(2),
+.gallery-grid img:nth-child(5) {
+  transform: translateY(18px);
 }
-.familyCard strong{
-  font-size:21px;
-  color:var(--gold);
-  font-weight:600;
+
+/* FAMILY */
+
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1000px;
+  margin: 35px auto 0;
+  text-align: left;
+}
+
+.family-card {
+  background: white;
+  border: 1px solid #e6d1a9;
+  padding: 30px 24px;
+}
+
+.family-card h3 {
+  text-align: center;
+  font-size: 34px;
+  color: var(--maroon);
+  margin-bottom: 20px;
+}
+
+.family-card ul {
+  list-style: none;
+}
+
+.family-card li {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee2d0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.family-card li:last-child {
+  border-bottom: 0;
+}
+
+.family-card strong {
+  color: var(--maroon);
 }
 
 /* VENUE */
-.venueBox{
-  max-width:720px;
-  margin:auto;
-  text-align:center;
-  padding:45px 25px;
-  border:1px solid var(--gold);
-  background:linear-gradient(145deg,#4d0c19,#280309);
+
+.venue {
+  color: white;
+  background:
+    linear-gradient(rgba(49,6,17,.9), rgba(49,6,17,.94)),
+    url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80')
+    center/cover;
 }
-.venueBox h3{
-  font-size:36px;
-  color:var(--light-gold);
-  font-weight:500;
+
+.venue .section-title {
+  color: var(--gold);
 }
-.venueBox p{
-  font-size:20px;
-  line-height:1.9;
-  margin-top:15px;
+
+.venue-name {
+  font-size: clamp(32px, 7vw, 48px);
+  color: var(--gold);
+  margin: 20px 0;
 }
-.goldBtn{
-  display:inline-block;
-  margin-top:25px;
-  padding:14px 27px;
-  background:#a77b32;
-  color:#210309;
-  text-decoration:none;
-  font:11px Montserrat,sans-serif;
-  letter-spacing:2px;
-  border:1px solid #c9a052;
-  transition:.3s;
+
+.venue p {
+  line-height: 2.1;
+  font-size: 13px;
 }
-.goldBtn:hover{
-  background:#bd9146;
-  color:#210309;
-  transform:translateY(-2px);
+
+.venue .gold-button {
+  margin: 12px;
 }
 
 /* RSVP */
-.rsvpText{
-  max-width:680px;
-  margin:auto;
-  text-align:center;
-  font-size:21px;
-  line-height:1.9;
-  color:#ead7b4;
+
+.rsvp {
+  background: #fffaf2;
 }
-.rsvpBtn{
-  background:transparent;
-  color:var(--light-gold);
+
+.rsvp p {
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 2;
+  font-size: 13px;
+}
+
+.rsvp-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 28px;
+  background: var(--maroon);
+  color: white;
+  border: 1px solid var(--gold);
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 11px;
 }
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:55px 20px;
-  background:#190207;
-  border-top:1px solid var(--gold);
-}
-footer h2{
-  font-size:42px;
-  color:var(--light-gold);
-  font-weight:500;
-}
-footer p{
-  margin-top:15px;
-  color:var(--gold);
-  letter-spacing:3px;
-  font-size:14px;
-}
-.footerFirm{
-  margin-top:25px;
-  padding-top:18px;
-  border-top:1px solid #8d6b38;
-  color:var(--gold);
-  font:10px Montserrat,sans-serif;
-  letter-spacing:2px;
-  line-height:2.2;
-}
-.footerFirm strong{
-  color:var(--light-gold);
-  font-family:'Cormorant Garamond',serif;
-  font-size:19px;
-  letter-spacing:2px;
+
+footer {
+  background: #21040c;
+  color: #f5e5c5;
+  padding: 35px 18px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  line-height: 2.2;
 }
 
-/* TABLET */
-@media(max-width:900px){
-  .eventGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .galleryGrid{grid-template-columns:repeat(2,1fr)}
-  .galleryGrid img{height:230px}
+footer strong {
+  color: var(--gold);
 }
 
 /* MOBILE */
-@media(max-width:550px){
-  section{padding:65px 17px}
-  .eventGrid,.galleryGrid,.familyGrid{grid-template-columns:1fr}
-  .galleryGrid img{height:270px}
-  .timeBox{min-width:calc(50% - 10px);max-width:135px}
-  .coverFrame{width:90%;padding:27px 8px}
-  .coverTop{font-size:8px;letter-spacing:1.5px}
-  .coverNames{font-size:clamp(24px,6.5vw,36px);margin:17px 0 5px}
-  .coverDate{letter-spacing:1.5px}
-  .coverOpen{margin-top:20px;padding:12px 18px}
-  .save{letter-spacing:4px}
-  .date{letter-spacing:2px;line-height:1.8}
-  .eventCard{padding:28px 15px}
+
+@media (max-width: 600px) {
+  section {
+    padding: 58px 16px;
+  }
+
+  .cover-frame {
+    min-height: 84vh;
+    padding: 28px 17px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .gallery-grid img {
+    height: 180px;
+  }
+
+  .gallery-grid img:nth-child(2),
+  .gallery-grid img:nth-child(5) {
+    transform: none;
+  }
+
+  .family-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .family-card {
+    padding: 25px 20px;
+  }
+
+  .hero-content {
+    padding: 35px 17px;
+  }
+
+  .time-box {
+    min-width: 65px;
+    padding: 14px 8px;
+  }
 }
 
-/* REDUCED MOTION */
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    scroll-behavior:auto!important;
-    animation:none!important;
-    transition:none!important;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
   }
 }
 </style>
@@ -437,280 +591,429 @@ footer p{
 
 <body>
 
-<!-- OPENING COVER -->
-<div id="inviteCover">
-  <div class="royalCover">
+<!-- ROYAL ENVELOPE OPENING -->
 
-    <div class="petals" aria-hidden="true">
-      <span class="petal"></span>
-      <span class="petal"></span>
-      <span class="petal"></span>
-      <span class="petal"></span>
-      <span class="petal"></span>
+<div id="inviteCover">
+  <div class="cover-frame">
+
+    <div class="cover-top">
+      <div class="eyebrow">Tilakdhari Enterprises Presents</div>
+      <p style="margin-top:10px">A CELEBRATION OF LOVE & FOREVER</p>
     </div>
 
-    <div class="coverFrame">
-      <div class="coverTop">TOGETHER WITH OUR FAMILIES</div>
+    <div>
+      <p class="eyebrow">Together With Their Families</p>
+      <h1 class="cover-names">
+        Srashti
+        <span>&</span>
+        Tanmay
+      </h1>
+      <p class="cover-date">30 NOVEMBER 2026</p>
+    </div>
 
-      <div class="gold-line"></div>
+    <div class="envelope" id="royalEnvelope"
+         role="button" tabindex="0"
+         aria-label="Open wedding invitation"
+         onclick="enterInvitation()">
 
-      <div class="coverNames">SRASHTI AGRAWAL</div>
-      <div class="coverAmp">&amp;</div>
-      <div class="coverNames" style="margin-top:8px">TANMAY GOYAL</div>
+      <div class="envelope-back"></div>
 
-      <div class="gold-line"></div>
+      <div class="envelope-letter">
+        <strong>Wedding Invitation</strong>
+        <small>WITH LOVE & BLESSINGS</small>
+      </div>
 
-      <div class="coverDate">30 NOVEMBER 2026</div>
+      <div class="envelope-flap"></div>
+      <div class="envelope-front"></div>
+      <div class="seal">S&T</div>
+    </div>
 
-      <button class="coverOpen" onclick="enterInvitation()">
-        OPEN INVITATION ✦
-      </button>
+    <button class="open-button" onclick="enterInvitation()">
+      OPEN INVITATION
+    </button>
+
+    <div class="cover-bottom">
+      WITH THE BLESSINGS OF OUR FAMILIES
+      <br>
+      YOU ARE CORDIALLY INVITED
     </div>
 
   </div>
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="heroContent">
-    <div class="save">SAVE THE DATE</div>
-    <div class="gold-line"></div>
-    <h1>Srashti Agrawal</h1>
-    <div class="amp">&amp;</div>
-    <h1>Tanmay Goyal</h1>
-    <div class="date">30 · NOVEMBER · 2026</div>
-    <div class="gold-line"></div>
-    <p style="font-size:20px">
-      Together with our families, we invite you to celebrate our special day.
-    </p>
-  </div>
-</section>
 
-<!-- INTRO -->
-<section class="intro">
-  <div class="container">
-    <div class="sectionTitle">
-      <h2>We're Getting Married</h2>
-      <div class="gold-line"></div>
-      <p>TWO FAMILIES, ONE BEAUTIFUL BEGINNING</p>
-    </div>
+<header class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">Together With Our Families</p>
+
+    <h1>
+      Srashti
+      <span class="ampersand">&</span>
+      Tanmay
+    </h1>
+
+    <p>WE INVITE YOU TO CELEBRATE OUR WEDDING</p>
+    <p>30 NOVEMBER 2026 · 7:00 PM</p>
+
+    <a href="#events" class="gold-button">VIEW CELEBRATION</a>
+  </div>
+</header>
+
+<!-- INTRODUCTION -->
+
+<section class="intro" id="story">
+  <p class="eyebrow">A New Beginning</p>
+  <h2 class="section-title">Two Hearts, One Journey</h2>
+  <div class="gold-line"></div>
+
+  <div class="intro-text">
     <p>
-      With the blessings of our families and loved ones, we invite you to
-      celebrate the beginning of our beautiful journey together. Your
-      presence will make our special day unforgettable.
+      With the blessings of our elders and the love of our families,
+      we joyfully invite you to be a part of our beautiful beginning.
+    </p>
+
+    <h3 class="intro-names">Srashti & Tanmay</h3>
+
+    <p>
+      Your presence and blessings will make our special moments
+      even more memorable as we begin a new chapter of love,
+      togetherness and lifelong companionship.
+    </p>
+
+    <p style="margin-top:22px">
+      We look forward to celebrating this precious occasion with you.
     </p>
   </div>
 </section>
 
 <!-- COUNTDOWN -->
-<section class="countdown">
-  <div class="container">
-    <div class="sectionTitle">
-      <h2>Countdown to Our Big Day</h2>
-      <div class="gold-line"></div>
-      <p>30 NOVEMBER 2026 · 7:00 PM</p>
+
+<section class="countdown" id="countdown">
+  <p class="eyebrow">The Big Day</p>
+  <h2 class="section-title">Counting Every Moment</h2>
+  <div class="gold-line"></div>
+
+  <p>30 November 2026 · 7:00 PM</p>
+
+  <div class="countdown-grid">
+    <div class="time-box">
+      <strong id="days">00</strong>
+      <span>DAYS</span>
     </div>
 
-    <div class="countBox">
-      <div class="timeBox"><span id="days">00</span><small>DAYS</small></div>
-      <div class="timeBox"><span id="hours">00</span><small>HOURS</small></div>
-      <div class="timeBox"><span id="minutes">00</span><small>MINUTES</small></div>
-      <div class="timeBox"><span id="seconds">00</span><small>SECONDS</small></div>
+    <div class="time-box">
+      <strong id="hours">00</strong>
+      <span>HOURS</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="minutes">00</strong>
+      <span>MINUTES</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="seconds">00</strong>
+      <span>SECONDS</span>
     </div>
   </div>
 </section>
 
 <!-- WEDDING EVENTS -->
-<section class="events">
-  <div class="container">
-    <div class="sectionTitle">
-      <h2>Wedding Events</h2>
-      <div class="gold-line"></div>
-      <p>CELEBRATE EVERY BEAUTIFUL MOMENT</p>
-    </div>
 
-    <div class="eventGrid">
-      <div class="eventCard">
-        <h3>LAGAN</h3>
-        <div class="eventDate">28 November 2026</div>
-        <p>10:00 AM<br>Family Residence</p>
-      </div>
+<section id="events">
+  <p class="eyebrow">Save The Dates</p>
+  <h2 class="section-title">Wedding Celebrations</h2>
+  <div class="gold-line"></div>
 
-      <div class="eventCard">
-        <h3>MEHANDI</h3>
-        <div class="eventDate">28 November 2026</div>
-        <p>6:00 PM<br>Family Residence</p>
-      </div>
+  <div class="events-grid">
 
-      <div class="eventCard">
-        <h3>HALDI</h3>
-        <div class="eventDate">29 November 2026</div>
-        <p>10:00 AM<br>Family Residence</p>
-      </div>
+    <article class="event-card">
+      <div class="event-icon">🌸</div>
+      <h3>Lagan</h3>
+      <p><strong>28 November 2026</strong></p>
+      <p>10:00 AM</p>
+      <p>Family Residence</p>
+    </article>
 
-      <div class="eventCard">
-        <h3>BHAT</h3>
-        <div class="eventDate">29 November 2026</div>
-        <p>Evening<br>Family Residence</p>
-      </div>
+    <article class="event-card">
+      <div class="event-icon">✨</div>
+      <h3>Mehandi</h3>
+      <p><strong>28 November 2026</strong></p>
+      <p>6:00 PM</p>
+      <p>Family Residence</p>
+    </article>
 
-      <div class="eventCard">
-        <h3>WEDDING</h3>
-        <div class="eventDate">30 November 2026</div>
-        <p>7:00 PM<br>Shreeji Farm House</p>
-      </div>
-    </div>
+    <article class="event-card">
+      <div class="event-icon">🌼</div>
+      <h3>Haldi</h3>
+      <p><strong>29 November 2026</strong></p>
+      <p>10:00 AM</p>
+      <p>Family Residence</p>
+    </article>
+
+    <article class="event-card">
+      <div class="event-icon">💛</div>
+      <h3>Bhat</h3>
+      <p><strong>29 November 2026</strong></p>
+      <p>Evening</p>
+      <p>Family Residence</p>
+    </article>
+
+    <article class="event-card">
+      <div class="event-icon">💍</div>
+      <h3>Wedding</h3>
+      <p><strong>30 November 2026</strong></p>
+      <p>7:00 PM</p>
+      <p>Shreeji Farm House</p>
+    </article>
+
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery">
-  <div class="container">
-    <div class="sectionTitle">
-      <h2>Gallery</h2>
-      <div class="gold-line"></div>
-      <p>SOME BEAUTIFUL MOMENTS</p>
-    </div>
+<!-- PHOTO GALLERY -->
 
-    <div class="galleryGrid">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="Wedding celebration" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80" alt="Wedding decor" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80" alt="Wedding ceremony" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80" alt="Wedding moments" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80" alt="Wedding venue decor" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=900&q=80" alt="Wedding celebration decor" loading="lazy">
-    </div>
+<section class="gallery" id="gallery">
+  <p class="eyebrow">Beautiful Memories</p>
+  <h2 class="section-title">Our Wedding Gallery</h2>
+  <div class="gold-line"></div>
+
+  <div class="gallery-grid">
+    <img
+      src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80"
+      alt="Wedding ceremony">
+
+    <img
+      src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80"
+      alt="Wedding celebration">
+
+    <img
+      src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=700&q=80"
+      alt="Wedding couple">
+
+    <img
+      src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=700&q=80"
+      alt="Wedding decorations">
+
+    <img
+      src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=700&q=80"
+      alt="Wedding flowers">
+
+    <img
+      src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=700&q=80"
+      alt="Wedding celebration details">
   </div>
+
+  <p style="margin-top:35px;font-size:12px;line-height:2">
+    A day to remember, a love to cherish, a lifetime to share.
+  </p>
 </section>
 
-<!-- FAMILIES -->
-<section class="families">
-  <div class="container">
-    <div class="sectionTitle">
-      <h2>Our Families</h2>
-      <div class="gold-line"></div>
-      <p>WITH THE BLESSINGS OF OUR BELOVED FAMILIES</p>
+<!-- FAMILY DETAILS -->
+
+<section id="family">
+  <p class="eyebrow">Our Families</p>
+  <h2 class="section-title">With Love & Blessings</h2>
+  <div class="gold-line"></div>
+
+  <div class="family-grid">
+
+    <div class="family-card">
+      <h3>Bride's Family</h3>
+
+      <ul>
+        <li>
+          <strong>Grand Father</strong><br>
+          Late Mr. Rajkishor Bansal
+        </li>
+
+        <li>
+          <strong>Grand Mother</strong><br>
+          Late Mrs. Pushpa Devi
+        </li>
+
+        <li>
+          <strong>Father</strong><br>
+          Mr. Vishnu Kumar Bansal
+        </li>
+
+        <li>
+          <strong>Mother</strong><br>
+          Mrs. Shaily Bansal
+        </li>
+
+        <li>
+          <strong>Younger Sister</strong><br>
+          Anushka Agrawal
+        </li>
+
+        <li>
+          <strong>Younger Brother</strong><br>
+          Kushal Agrawal
+        </li>
+      </ul>
     </div>
 
-    <div class="familyGrid">
-      <div class="familyCard">
-        <h3>Srashti's Family</h3>
-        <p><strong>Late Mr. Rajkishor Bansal</strong><br>Grand Father</p>
-        <p><strong>Late Mrs. Pushpa Devi</strong><br>Grand Mother</p>
-        <p><strong>Mr. Vishnu Kumar Bansal</strong><br>Father</p>
-        <p><strong>Mrs. Shaily Bansal</strong><br>Mother</p>
-        <p><strong>Anushka Agrawal</strong><br>Younger Sister</p>
-        <p><strong>Kushal Agrawal</strong><br>Younger Brother</p>
-      </div>
+    <div class="family-card">
+      <h3>Groom's Family</h3>
 
-      <div class="familyCard">
-        <h3>Tanmay's Family</h3>
-        <p><strong>Late Mr. Banwari Lal Goyal</strong><br>Grand Father</p>
-        <p><strong>Late Mrs. Premvati Goyal</strong><br>Grand Mother</p>
-        <p><strong>Mr. Pankaj Goyal</strong><br>Father</p>
-        <p><strong>Mrs. Dolly Goyal</strong><br>Mother</p>
-        <p><strong>Krishna Goyal</strong><br>Younger Brother</p>
-      </div>
+      <ul>
+        <li>
+          <strong>Grand Father</strong><br>
+          Late Mr. Banwari Lal Goyal
+        </li>
+
+        <li>
+          <strong>Grand Mother</strong><br>
+          Late Mrs. Premvati Goyal
+        </li>
+
+        <li>
+          <strong>Father</strong><br>
+          Mr. Pankaj Goyal
+        </li>
+
+        <li>
+          <strong>Mother</strong><br>
+          Mrs. Dolly Goyal
+        </li>
+
+        <li>
+          <strong>Younger Brother</strong><br>
+          Krishna Goyal
+        </li>
+      </ul>
     </div>
+
   </div>
 </section>
 
 <!-- VENUE -->
-<section class="venue">
-  <div class="container">
-    <div class="sectionTitle">
-      <h2>Wedding Venue</h2>
-      <div class="gold-line"></div>
-      <p>WE WOULD LOVE TO CELEBRATE WITH YOU</p>
-    </div>
 
-    <div class="venueBox">
-      <h3>Shreeji Farm House</h3>
-      <p>Dayanatpur, Hathras</p>
-      <p>
-        <strong style="color:var(--gold)">30 November 2026</strong><br>
-        7:00 PM
-      </p>
+<section class="venue" id="venue">
+  <p class="eyebrow">Join Us For The Celebration</p>
+  <h2 class="section-title">The Wedding Venue</h2>
+  <div class="gold-line"></div>
 
-      <a class="goldBtn"
-         href="https://www.google.com/maps/dir/?api=1&amp;destination=Shreeji+Farm+House%2C+J3H6%2BGCQ%2C+Nagla+Ummed%2C+Hathras%2C+Uttar+Pradesh+204101"
-         target="_blank"
-         rel="noopener noreferrer">
-        📍 GET DIRECTIONS
-      </a>
-    </div>
-  </div>
+  <h3 class="venue-name">Shreeji Farm House</h3>
+
+  <p>
+    J3H6+GCQ, Nagla Ummed<br>
+    Hathras, Uttar Pradesh 204101
+  </p>
+
+  <p style="margin-top:15px">
+    30 November 2026 · 7:00 PM
+  </p>
+
+  <a
+    class="gold-button"
+    href="https://www.google.com/maps/dir/?api=1&destination=Shreeji+Farm+House%2C+J3H6%2BGCQ%2C+Nagla+Ummed%2C+Hathras%2C+Uttar+Pradesh+204101"
+    target="_blank"
+    rel="noopener noreferrer">
+    GET DIRECTIONS
+  </a>
 </section>
 
 <!-- RSVP -->
-<section class="rsvp">
-  <div class="container">
-    <div class="sectionTitle">
-      <h2>RSVP</h2>
-      <div class="gold-line"></div>
-      <p>YOUR PRESENCE IS OUR GREATEST GIFT</p>
-    </div>
 
-    <div class="rsvpText">
-      <p>
-        We warmly invite you to join us on our special day and bless
-        Srashti &amp; Tanmay as they begin their journey together.
-      </p>
-      <a href="javascript:void(0)"
-         class="goldBtn rsvpBtn"
-         onclick="alert('Please contact the family to confirm your attendance.')">
-        RSVP NOW
-      </a>
-    </div>
-  </div>
+<section class="rsvp" id="rsvp">
+  <p class="eyebrow">Your Presence Matters</p>
+  <h2 class="section-title">Join Our Celebration</h2>
+  <div class="gold-line"></div>
+
+  <p>
+    We would be delighted to celebrate this beautiful occasion
+    with you. Your presence and blessings mean the world to us.
+  </p>
+
+  <a href="#family" class="rsvp-button"
+     onclick="showRSVPMessage(event)">
+    WITH LOVE, Srashti & Tanmay
+  </a>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <h2>Srashti &amp; Tanmay</h2>
-  <div class="gold-line"></div>
-  <p>30 · 11 · 2026</p>
-  <p>WITH LOVE ♡</p>
 
-  <div class="footerFirm">
-    CRAFTED &amp; PRESENTED BY<br>
-    <strong>TILAKDHARI ENTERPRISES</strong>
-  </div>
+<footer>
+  <p>MADE WITH LOVE FOR OUR SPECIAL DAY</p>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:27px">
+    Srashti & Tanmay
+  </p>
+  <p>30 NOVEMBER 2026</p>
+  <p style="margin-top:15px">
+    Presented by <strong>Tilakdhari Enterprises</strong>
+  </p>
+  <p>Hathras, Uttar Pradesh</p>
 </footer>
 
 <script>
-function enterInvitation(){
-  document.getElementById("inviteCover").classList.add("opening");
+let invitationOpened = false;
+
+function enterInvitation() {
+  if (invitationOpened) return;
+
+  invitationOpened = true;
+
+  const envelope = document.getElementById('royalEnvelope');
+  const cover = document.getElementById('inviteCover');
+
+  if (envelope) {
+    envelope.classList.add('opened');
+  }
+
+  setTimeout(function () {
+    cover.classList.add('opening');
+
+    setTimeout(function () {
+      cover.style.display = 'none';
+    }, 1000);
+  }, 850);
 }
 
-const weddingDate =
-  new Date("November 30, 2026 19:00:00").getTime();
+document.getElementById('royalEnvelope').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    enterInvitation();
+  }
+});
 
-function updateCountdown(){
-  const distance = weddingDate - Date.now();
+function updateCountdown() {
+  const weddingDate = new Date('November 30, 2026 19:00:00').getTime();
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
 
-  if(distance <= 0){
-    ["days","hours","minutes","seconds"].forEach(id=>{
-      document.getElementById(id).textContent = "00";
-    });
+  const days = document.getElementById('days');
+  const hours = document.getElementById('hours');
+  const minutes = document.getElementById('minutes');
+  const seconds = document.getElementById('seconds');
+
+  if (distance <= 0) {
+    days.textContent = '00';
+    hours.textContent = '00';
+    minutes.textContent = '00';
+    seconds.textContent = '00';
     return;
   }
 
-  document.getElementById("days").textContent =
-    String(Math.floor(distance / 86400000)).padStart(2,"0");
+  days.textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
+  hours.textContent = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  minutes.textContent = Math.floor((distance / (1000 * 60)) % 60);
+  seconds.textContent = Math.floor((distance / 1000) % 60);
+}
 
-  document.getElementById("hours").textContent =
-    String(Math.floor((distance % 86400000) / 3600000)).padStart(2,"0");
+function showRSVPMessage(event) {
+  event.preventDefault();
 
-  document.getElementById("minutes").textContent =
-    String(Math.floor((distance % 3600000) / 60000)).padStart(2,"0");
-
-  document.getElementById("seconds").textContent =
-    String(Math.floor((distance % 60000) / 1000)).padStart(2,"0");
+  alert(
+    'Thank you for being part of our happiness! ' +
+    'We look forward to celebrating with you. ' +
+    'With love, Srashti & Tanmay.'
+  );
 }
 
 updateCountdown();
-setInterval(updateCountdown,1000);
+setInterval(updateCountdown, 1000);
 </script>
 
 </body>
