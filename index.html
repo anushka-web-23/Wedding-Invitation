@@ -62,8 +62,7 @@ section{padding:85px 20px;scroll-margin-top:20px}
   position:relative;overflow:hidden;
   display:flex;align-items:center;justify-content:center;
   text-align:center;padding:25px;
-  background:
-    radial-gradient(ellipse at center,#681326 0%,#390710 55%,#210309 100%);
+  background:radial-gradient(ellipse at center,#681326 0%,#390710 55%,#210309 100%);
 }
 .coverFrame{
   width:min(540px,90%);
@@ -168,7 +167,7 @@ section{padding:85px 20px;scroll-margin-top:20px}
   letter-spacing:2px;color:var(--gold);
 }
 
-/* EVENTS */
+/* WEDDING EVENTS */
 .eventGrid{
   display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
 }
@@ -346,24 +345,20 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
         Some beautiful relationships begin with a meeting of two families
         and the blessings of their loved ones.
       </p>
-
       <p>
         Our journey began through an arranged marriage, where two families
         came together to unite Srashti and Tanmay in a bond of love, trust,
         respect, and lifelong companionship.
       </p>
-
       <p>
         What started with a family introduction is now the beginning of
         a beautiful new chapter filled with understanding, happiness,
         and togetherness.
       </p>
-
       <p>
         With the blessings of our elders and the love of our families,
         we look forward to building a lifetime of beautiful memories together.
       </p>
-
       <p>
         <strong>Two families, one beautiful bond, and a lifetime of togetherness.</strong>
       </p>
@@ -371,7 +366,7 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
   </div>
 </section>
 
-<!-- EVENTS -->
+<!-- UPDATED EVENTS -->
 <section class="events">
   <div class="container">
     <div class="sectionTitle">
@@ -379,26 +374,30 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
       <div class="gold-line"></div>
       <p>CELEBRATE EVERY BEAUTIFUL MOMENT</p>
     </div>
+
     <div class="eventGrid">
       <div class="eventCard">
-        <h3>Haldi</h3>
+        <h3>Lagan</h3>
         <div class="eventDate">28 November 2026</div>
-        <p>11:00 AM<br>Family Residence</p>
+        <p>Time to be announced<br>Family Residence</p>
       </div>
+
       <div class="eventCard">
         <h3>Mehndi</h3>
-        <div class="eventDate">29 November 2026</div>
-        <p>5:00 PM<br>Family Residence</p>
+        <div class="eventDate">28 November 2026</div>
+        <p>Time to be announced<br>Family Residence</p>
       </div>
+
+      <div class="eventCard">
+        <h3>Haldi</h3>
+        <div class="eventDate">29 November 2026</div>
+        <p>Time to be announced<br>Family Residence</p>
+      </div>
+
       <div class="eventCard">
         <h3>Wedding</h3>
         <div class="eventDate">30 November 2026</div>
         <p>7:00 PM<br>Shreeji Farm House</p>
-      </div>
-      <div class="eventCard">
-        <h3>Reception</h3>
-        <div class="eventDate">1 December 2026</div>
-        <p>7:30 PM<br>Grand Celebration Hall</p>
       </div>
     </div>
   </div>
@@ -431,6 +430,7 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
       <div class="gold-line"></div>
       <p>WITH THE BLESSINGS OF OUR BELOVED FAMILIES</p>
     </div>
+
     <div class="familyGrid">
       <div class="familyCard">
         <h3>Srashti's Family</h3>
@@ -439,6 +439,7 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
         <p><strong>Kushal Agrawal</strong><br>Younger Brother</p>
         <p><strong>Anushka Agrawal</strong><br>Younger Sister</p>
       </div>
+
       <div class="familyCard">
         <h3>Tanmay's Family</h3>
         <p><strong>Mr. Pankaj Goyal</strong><br>Father</p>
@@ -457,6 +458,7 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
       <div class="gold-line"></div>
       <p>WE WOULD LOVE TO CELEBRATE WITH YOU</p>
     </div>
+
     <div class="venueBox">
       <h3>Shreeji Farm House</h3>
       <p>Dayanatpur, Hathras</p>
@@ -474,6 +476,7 @@ footer p{margin-top:15px;color:var(--gold);letter-spacing:3px;font-size:14px}
       <div class="gold-line"></div>
       <p>YOUR PRESENCE IS OUR GREATEST GIFT</p>
     </div>
+
     <div class="rsvpText">
       <p>We warmly invite you to join us on our special day and bless Srashti &amp; Tanmay as they begin their journey together.</p>
       <a href="javascript:void(0)" class="goldBtn rsvpBtn" onclick="alert('Please contact the family to confirm your attendance.')">RSVP NOW</a>
@@ -497,10 +500,11 @@ const weddingDate = new Date("November 30, 2026 19:00:00").getTime();
 
 function updateCountdown(){
   const distance = weddingDate - Date.now();
-  const ids = ["days","hours","minutes","seconds"];
 
   if(distance <= 0){
-    ids.forEach(id => document.getElementById(id).textContent = "00");
+    ["days","hours","minutes","seconds"].forEach(id => {
+      document.getElementById(id).textContent = "00";
+    });
     return;
   }
 
